@@ -21,9 +21,9 @@
             Statement st = conn.createStatement();
 
             int i = st.executeUpdate("insert into proveedor(nombre_empresa,nombre_agente,direccion,tel,email)values('" + nombre_empresa + "','" + nombre_agente + "','" + direccion + "' ," + tel + ", '" + email + "')");
-            //out.println("Agregado correctamente");
+            out.println("Agregado correctamente");
 
-            request.getRequestDispatcher("/Proveedor-Administrador.jsp").forward(request, response);
+            //request.getRequestDispatcher("/Proveedor-Administrador.jsp").forward(request, response);
             //RequestDispatcher dispatcher=getServletContext().getRequestDispatcher( "Maylu/build/web/AdminCaja.jsp" ); dispatcher.forward( request, response ); 
         } catch (Exception e) {
             System.out.print(e);
