@@ -9,28 +9,30 @@
 
 
 <%
-    Connection connection = null;
+    String nombre_codigo = request.getParameter("nombre_codigo");
+    int efectivo = Integer.parseInt(request.getParameter("efectivo"));
+    
+    Connection conn = null;
     Statement statement = null;
     ResultSet resultSet = null;
     String driver = "com.mysql.jdbc.Driver";
-    connection = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
     try {
         Class.forName(driver);
+        conn = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
+        statement = conn.createStatement();
     } catch (ClassNotFoundException e) {
         e.printStackTrace();
     }
 %>
 
 <%
-    String nombre_codigo = request.getParameter("nombre_codigo");
-    int efectivo = Integer.parseInt(request.getParameter("efectivo"));
     if (nombre_codigo != null) {
         Connection con = null;
         PreparedStatement ps = null;
         int personID = Integer.parseInt(nombre_codigo);
         try {
             Class.forName(driver);
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
             String sql = "UPDATE caja SET nombre_codigo=?,efectivo=?" + nombre_codigo;
             ps = con.prepareStatement(sql);
             ps.setString(1, nombre_codigo);

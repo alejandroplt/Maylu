@@ -163,8 +163,7 @@
                         </div>
                     </div>
                     <!-- sidebar-menu  -->
-                    <div class=" sidebar-item sidebar-menu">
-<<<<<<< HEAD
+                     <div class=" sidebar-item sidebar-menu">
                         <ul>
                             <li class="header-menu">
                                 <span>General</span>
@@ -181,7 +180,7 @@
                                     <span class="menu-text">Punto de Venta</span>
                                 </a>
                             </li>
-                            <li >
+                            <li>
                                 <a href="Inventario-Administrador.jsp">
                                     <i class="fa fa-warehouse"></i>
                                     <span class="menu-text">Inventario</span>
@@ -197,6 +196,12 @@
                                 <a href="AdminCaja.jsp">
                                     <i class="fa fa-cash-register"></i>
                                     <span class="menu-text">Caja</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="apartados.jsp">
+                                    <i class="fa fa-cart-plus"></i>
+                                    <span class="menu-text">Apartados</span>
                                 </a>
                             </li>
                             <li>
@@ -242,6 +247,7 @@
                             </li>
                         </ul>
                     </div>
+<<<<<<< HEAD
 =======
                     <ul>
                         <li class="header-menu">
@@ -320,6 +326,8 @@
                         </li>
                     </ul>
                 </div>
+>>>>>>> origin/master
+=======
 >>>>>>> origin/master
                     <!-- sidebar-menu  -->
                 </div>

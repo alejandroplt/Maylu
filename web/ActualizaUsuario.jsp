@@ -196,6 +196,12 @@
                                 </a>
                             </li>
                             <li>
+                                <a href="apartados.jsp">
+                                    <i class="fa fa-cart-plus"></i>
+                                    <span class="menu-text">Apartados</span>
+                                </a>
+                            </li>
+                            <li>
                                 <a href="devoluciones.html">
                                     <i class="fa fa-sync-alt"></i>
                                     <span class="menu-text">Devoluciones</span>

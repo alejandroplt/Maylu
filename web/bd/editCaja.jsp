@@ -9,10 +9,12 @@
 
 <%
     String id_cajaa = request.getParameter("id_caja");
+    
     Connection connection = null;
     Statement statement = null;
     ResultSet resultSet = null;
     String driver = "com.mysql.jdbc.Driver";
+    
     connection = DriverManager.getConnection( "jdbc:mysql://localhost/bdmaylu?user=root&password=");
     try {
         
@@ -51,7 +53,7 @@
 
 
                     --%>
-                    <form action="update-processCaja.jsp" method="post">
+                    <form action="" >
                         <div class="contenedor-etiquetas2">
                             <h4>Nombre</h4>
                             <h4>Efectivo</h4>
@@ -68,11 +70,16 @@
                     </form>
                     <%
                             }
-                            connection.close();
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
-                    %>
+                        if(request.getParameter("actualizar")!=null){
+                            String nom = request.getParameter("nombre_codigo");
+                            int efectivo= Integer.parseInt(request.getParameter("efectivo"));
+                            statement.executeUpdate("UPDATE caja SET nombre_codigo='"+nom+"',efectivo="+efectivo+" WHERE id_caja='"+id_cajaa+"'");
+                            request.getRequestDispatcher("editCaja.jsp").forward(request, response);
+                        }
+                    %>  
 
                 </div>
             </div>
