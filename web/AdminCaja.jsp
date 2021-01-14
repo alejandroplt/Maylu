@@ -156,7 +156,7 @@
                                 <span>General</span>
                             </li>
                             <li>
-                                <a href="principal-admin.jsp.html">
+                                <a href="principal-admin.jsp">
                                     <i class="fa fa-tachometer-alt"></i>
                                     <span class="menu-text">Dashboard</span>
                                 </a>
@@ -168,7 +168,7 @@
                                 </a>
                             </li>
                             <li >
-                                <a href="Inventario-Administrador.html">
+                                <a href="Inventario-Administrador.jsp">
                                     <i class="fa fa-warehouse"></i>
                                     <span class="menu-text">Inventario</span>
                                 </a>
@@ -180,7 +180,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="AdminCaja.html">
+                                <a href="AdminCaja.jsp">
                                     <i class="fa fa-cash-register"></i>
                                     <span class="menu-text">Caja</span>
                                 </a>
@@ -192,13 +192,13 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="Usuario-Administrador.html">
+                                <a href="Usuario-Administrador.jsp">
                                     <i class="fa fa-users"></i>
                                     <span class="menu-text">Usuarios</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="Proveedor-Administrador.html">
+                                <a href="Proveedor-Administrador.jsp">
                                     <i class="fa fa-truck"></i>
                                     <span class="menu-text">Proveedores</span>
                                 </a>
@@ -223,7 +223,7 @@
                             <li>
                                 <a href="#" id="btnabrir" >
                                     <i class="fa fa-power-off"></i>
-                                    <span class="menu-text" onclick="cierra()">Cerrar sesiÃ³n</span>
+                                    <span class="menu-text" onclick="cierra()">Cerrar sesión</span>
                                 </a>
                             </li>
                         </ul>

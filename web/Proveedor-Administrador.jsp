@@ -193,7 +193,7 @@
                     <div class="modal">
                         <div class="modal_titulo">ADVERTENCIA</div>
                         <div class="modal_mensaje">
-                            <p>Â¿Seguro que desea salir?</p>
+                            <p>¿Seguro que desea salir?</p>
                         </div>
                         <div class="modal_botones">
                             <a href="login.html" class="boton" id="btn-yes">SI</a>

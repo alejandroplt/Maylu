@@ -1,14 +1,14 @@
 <%-- 
-    Document   : editCaja
-    Created on : 11/01/2021, 08:41:21 PM
-    Author     : AlejandroPlatas
+    Document   : editProveedor
+    Created on : 13/01/2021, 06:45:01 PM
+    Author     : Roberto Carlos
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.*,java.util.*"%>
 
 <%
-    String id_cajaa = request.getParameter("id_caja");
+    String id_proveedor = request.getParameter("id_proveedor");
     Connection connection = null;
     Statement statement = null;
     ResultSet resultSet = null;
@@ -24,7 +24,7 @@
     try {
         connection = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
         statement = connection.createStatement();
-        String sql = "select * from caja where id_caja=" + id_cajaa;
+        String sql = "select * from proveedor where id_proveedor=" + id_proveedor;
         resultSet = statement.executeQuery(sql);
         while (resultSet.next()) {
 %>
@@ -40,6 +40,7 @@
                     <a href="#" id="btn-cerrar-popup2" class="btn-cerrar-popup2"><i class="fas fa-times"></i></a>
                     <h3>Actualizar Caja</h3>
                     <h4>Ingresa los datos</h4>
+
                     <%--                       
                         try {
                             connection = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
@@ -50,15 +51,22 @@
 
 
                     --%>
-                    <form action="update-processCaja.jsp" method="post">
+                    <form action="update-processProveedor.jsp" method="post">
                         <div class="contenedor-etiquetas2">
-                            <h4>Nombre</h4>
-                            <h4>Efectivo</h4>
+                            <h4>Nombre empresa</h4>
+                            <h4>Nombre agente</h4>
+                            <h4>Direccion</h4>
+                            <h4>Telefono</h4>
+                            <h4>Email</h4>
                         </div>
                         <div class="contenedor-inputs2">
 
-                            <input type="text" name="nombre_codigo" value="<%=resultSet.getString("nombre_codigo")%>" placeholder="Nombre o codigo de caja" >
-                            <input type="text" name="efectivo" value="<%=resultSet.getString("efectivo")%>" placeholder="Cantidad de efectivo">
+                            <input type="text" name="nombre_codigo" value="<%=resultSet.getString("nombre_empresa")%>" placeholder="Nombre o codigo de caja" >
+
+                            <input type="text" name="efectivo" value="<%=resultSet.getString("nombre_agente")%>" placeholder="Cantidad de efectivo">
+                            <input type="text" name="efectivo" value="<%=resultSet.getString("direccion")%>" placeholder="Cantidad de efectivo">
+                            <input type="text" name="efectivo" value="<%=resultSet.getString("tel")%>" placeholder="Cantidad de efectivo">
+                            <input type="text" name="efectivo" value="<%=resultSet.getString("email")%>" placeholder="Cantidad de efectivo">
 
                         </div>
 
@@ -79,4 +87,5 @@
 
     </body>
 </html>
+
 
