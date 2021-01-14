@@ -15,7 +15,6 @@
     ResultSet resultSet = null;
     String driver = "com.mysql.jdbc.Driver";
     
-    connection = DriverManager.getConnection( "jdbc:mysql://localhost/bdmaylu?user=root&password=");
     try {
         
         Class.forName(driver);
@@ -43,17 +42,7 @@
                     <a href="#" id="btn-cerrar-popup2" class="btn-cerrar-popup2"><i class="fas fa-times"></i></a>
                     <h3>Actualizar Caja</h3>
                     <h4>Ingresa los datos</h4>
-                    <%--                       
-                        try {
-                            connection = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
-                            statement = connection.createStatement();
-                            String sql2 = "select * from caja where id_caja=" + id_caja;
-                            resultSet = statement.executeQuery(sql2);
-                            while (resultSet.next()) {
-
-
-                    --%>
-                    <form action="" >
+                    <form action="bd/update-processCaja.jsp" method="post"> 
                         <div class="contenedor-etiquetas2">
                             <h4>Nombre</h4>
                             <h4>Efectivo</h4>
@@ -62,9 +51,7 @@
 
                             <input type="text" name="nombre_codigo" value="<%=resultSet.getString("nombre_codigo")%>" placeholder="Nombre o codigo de caja" >
                             <input type="text" name="efectivo" value="<%=resultSet.getString("efectivo")%>" placeholder="Cantidad de efectivo">
-
                         </div>
-
                         <br>
                         <input type="submit" class="btn-submit" name="actualizar" value="Actualizar">
                     </form>
@@ -73,14 +60,7 @@
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
-                        if(request.getParameter("actualizar")!=null){
-                            String nom = request.getParameter("nombre_codigo");
-                            int efectivo= Integer.parseInt(request.getParameter("efectivo"));
-                            statement.executeUpdate("UPDATE caja SET nombre_codigo='"+nom+"',efectivo="+efectivo+" WHERE id_caja='"+id_cajaa+"'");
-                            request.getRequestDispatcher("editCaja.jsp").forward(request, response);
-                        }
                     %>  
-
                 </div>
             </div>
         </div> 

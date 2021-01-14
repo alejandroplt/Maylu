@@ -9,45 +9,25 @@
 
 
 <%
-    String nombre_codigo = request.getParameter("nombre_codigo");
-    int efectivo = Integer.parseInt(request.getParameter("efectivo"));
     
-    Connection conn = null;
-    Statement statement = null;
-    ResultSet resultSet = null;
-    String driver = "com.mysql.jdbc.Driver";
-    try {
-        Class.forName(driver);
-        conn = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
-        statement = conn.createStatement();
-    } catch (ClassNotFoundException e) {
-        e.printStackTrace();
-    }
-%>
-
-<%
-    if (nombre_codigo != null) {
-        Connection con = null;
-        PreparedStatement ps = null;
-        int personID = Integer.parseInt(nombre_codigo);
+    int id_cajaa = Integer.parseInt(request.getParameter("id_cajaa"));
+    if (request.getParameter("guardar") != null) {
+        String nombre_codigo = request.getParameter("nombre_codigo");
+        int efectivo = Integer.parseInt(request.getParameter("efectivo"));
         try {
-            Class.forName(driver);
-            conn = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
-            String sql = "UPDATE caja SET nombre_codigo=?,efectivo=?" + nombre_codigo;
-            ps = con.prepareStatement(sql);
-            ps.setString(1, nombre_codigo);
-            ps.setInt(2, efectivo);
-            int i = ps.executeUpdate();
-            if (i > 0) {
-                out.print("Actualizado");
-            } else {
-                out.print("There is a problem in updating Record.");
-            }
-        } catch (SQLException sql) {
-            request.setAttribute("error", sql);
-            out.println(sql);
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
+            Statement st = conn.createStatement();
+
+            //int i = st.executeUpdate("insert into caja(nombre_codigo,efectivo)values('" + nombre_codigo + "'," + efectivo + ")");
+            int i= st.executeUpdate("UPDATE caja SET nombre_codigo='"+nombre_codigo+"',efectivo="+efectivo+" WHERE id_caja='"+id_cajaa+"'");
+            out.println("Actualizado correctamente");
+
+            //request.getRequestDispatcher("AdminCaja.jsp").forward(request, response);
+            //RequestDispatcher dispatcher=getServletContext().getRequestDispatcher( "Maylu/build/web/AdminCaja.jsp" ); dispatcher.forward( request, response ); 
+        } catch (Exception e) {
+            out.print(e);
+            e.printStackTrace();
         }
     }
 %>
-
-

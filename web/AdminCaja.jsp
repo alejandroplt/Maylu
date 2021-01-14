@@ -76,65 +76,6 @@
             </div>
         </div>
 
-        <!--ACTUALIZAR-->
-          <!-- <div id="container">
-                <div class="overlay2" id="overlay2">
-                    <div class="popup2" id="popup2">
-                        <a href="#" id="btn-cerrar-popup2" class="btn-cerrar-popup2"><i class="fas fa-times"></i></a>
-                        <h3>Actualizar Caja</h3>
-                        <h4>Ingresa los datos</h4>
-    
-        <%
-            String id_cajaa = request.getParameter("id_caja");
-            Connection connection = null;
-            Statement statement = null;
-            ResultSet resultSet = null;
-            String driver = "com.mysql.jdbc.Driver";
-            connection = DriverManager.getConnection( "jdbc:mysql://localhost/bdmaylu?user=root&password=");
-            try {
-
-                Class.forName(driver);
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            }
-        %>
-        <%
-            try {
-                connection = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
-                statement = connection.createStatement();
-                String sql = "select * from caja where id_caja=" + id_cajaa;
-                resultSet = statement.executeQuery(sql);
-                while (resultSet.next()) {
-        %>
-        <form action="bd/update-processCaja.jsp" method="POST">
-            <div class="contenedor-etiquetas2">
-                <h4>Nombre</h4>
-                <h4>Efectivo</h4>
-            </div>
-            <div class="contenedor-inputs2">
-
-                <input type="text" name="nombre_codigo2" value="<%=resultSet.getString("nombre_codigo")%>" placeholder="Nombre o codigo de caja" >
-
-                <input type="text" name="efectivo2" value="<%=resultSet.getString("efectivo")%>" placeholder="Cantidad de efectivo">
-
-            </div>
-
-            <br>
-            <input type="submit" class="btn-submit" name="actualizar" value="Actualizar">
-        </form>
-
-        <%
-                }
-                connection.close();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        %>
-
-    </div>
-</div>
-</div> -->
-
 
         <div class="page-wrapper default-theme sidebar-bg bg1 toggled">
             <nav id="sidebar" class="sidebar-wrapper">
@@ -163,7 +104,7 @@
                         </div>
                     </div>
                     <!-- sidebar-menu  -->
-                     <div class=" sidebar-item sidebar-menu">
+                    <div class=" sidebar-item sidebar-menu">
                         <ul>
                             <li class="header-menu">
                                 <span>General</span>
@@ -247,90 +188,11 @@
                             </li>
                         </ul>
                     </div>
-<<<<<<< HEAD
-=======
-                    <ul>
-                        <li class="header-menu">
-                            <span>General</span>
-                        </li>
-                        <li>
-                            <a href="principal-admin.jsp">
-                                <i class="fa fa-tachometer-alt"></i>
-                                <span class="menu-text">Dashboard</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="Punto-Venta-Admin.html">
-                                <i class="fa fa-shopping-cart"></i>
-                                <span class="menu-text">Punto de Venta</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="Inventario-Administrador.jsp">
-                                <i class="fa fa-warehouse"></i>
-                                <span class="menu-text">Inventario</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="reportes.html">
-                                <i class="fa fa-chart-line"></i>
-                                <span class="menu-text">Reportes</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="AdminCaja.jsp">
-                                <i class="fa fa-cash-register"></i>
-                                <span class="menu-text">Caja</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="devoluciones.html">
-                                <i class="fa fa-sync-alt"></i>
-                                <span class="menu-text">Devoluciones</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="Usuario-Administrador.jsp">
-                                <i class="fa fa-users"></i>
-                                <span class="menu-text">Usuarios</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="Proveedor-Administrador.jsp">
-                                <i class="fa fa-truck"></i>
-                                <span class="menu-text">Proveedores</span>
-                            </a>
-                        </li>
-                        <li class="header-menu">
-                            <span>Extra</span>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-question"></i>
-                                <span class="menu-text">Ayuda</span>
-                                <span class="badge badge-pill badge-primary">Prox</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-calendar"></i>
-                                <span class="menu-text">Calendario</span>
-                                <span class="badge badge-pill badge-primary">Prox</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" id="btnabrir" >
-                                <i class="fa fa-power-off"></i>
-                                <span class="menu-text" onclick="cierra()">Cerrar sesiÃ³n</span>
-                            </a>
-                        </li>
-                    </ul>
+
+                   
                 </div>
->>>>>>> origin/master
-=======
->>>>>>> origin/master
-                    <!-- sidebar-menu  -->
-                </div>
+
+                <!-- sidebar-menu  -->
                 <div class="sidebar-footer">
                     <div class="dropdown">
                         <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -342,175 +204,173 @@
                 </div>
             </nav>
 
-            <!-- contenido  -->
-            <main class="page-content pt-2">
 
-                <div class="fondo_transparente">
-                    <div class="modal">
-                        <div class="modal_titulo">ADVERTENCIA</div>
-                        <div class="modal_mensaje">
-                            <p>¿Seguro que desea salir?</p>
-                        </div>
-                        <div class="modal_botones">
-                            <a href="login.html" class="boton" id="btn-yes">SI</a>
-                            <a href="#" class="boton" id="btn-no" onclick="NO()">NO</a>
-                        </div>
+        <!-- contenido  -->
+        <main class="page-content pt-2">
+
+            <div class="fondo_transparente">
+                <div class="modal">
+                    <div class="modal_titulo">ADVERTENCIA</div>
+                    <div class="modal_mensaje">
+                        <p>¿Seguro que desea salir?</p>
+                    </div>
+                    <div class="modal_botones">
+                        <a href="login.html" class="boton" id="btn-yes">SI</a>
+                        <a href="#" class="boton" id="btn-no" onclick="NO()">NO</a>
                     </div>
                 </div>
+            </div>
 
-                <div id="overlay" class="overlay"></div>
-                <section id="main-content">
+            <div id="overlay" class="overlay"></div>
+            <section id="main-content">
 
-                    <article>
-                        <div id="divnombre">
-                            <p id="pnombre"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                 fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                                </svg> Nombre</p>
-                        </div>
-                        <div id="divcerrar">
-                            <a href="login.html">
-                                <button class="btn-tiny btn-danger">
-                                    Cerrar Sesión <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                       fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
-                                          d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
-                                    <path fill-rule="evenodd"
-                                          d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
-                                    </svg>
-                                </button>
-                            </a>
-                        </div>
-                        <header id="encabezado">
-                            <img id="img-inventario" class="img-responsive img-rounded" src="img/caja.png" height="150"
-                                 width="150" alt="Caja picture">
+                <article>
+                    <div id="divnombre">
+                        <p id="pnombre"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                             fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                            </svg> Nombre</p>
+                    </div>
+                    <div id="divcerrar">
+                        <a href="login.html">
+                            <button class="btn-tiny btn-danger">
+                                Cerrar Sesión <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                   fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                      d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
+                                <path fill-rule="evenodd"
+                                      d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+                                </svg>
+                            </button>
+                        </a>
+                    </div>
+                    <header id="encabezado">
+                        <img id="img-inventario" class="img-responsive img-rounded" src="img/caja.png" height="150"
+                             width="150" alt="Caja picture">
+                        <br>
+                        <br>
+                        <h1>Caja</h1>
+                    </header>
+
+                    <div id="container1">
+                        <div>
                             <br>
-                            <br>
-                            <h1>Caja</h1>
-                        </header>
-
-                        <div id="container1">
-                            <div>
-                                <br>
-                                <a href="#" id="btn-abrir-popup" class="btn btn-success" data-toggle="modal">Agregar
-                                    caja</a>
-                                <div class="field" id="searchform">
-                                    <input type="text" id="searchterm" placeholder="Ingresar nombre o codigo de caja" />
-                                    <button type="button" id="search">Buscar</button>
-                                </div>
+                            <a href="#" id="btn-abrir-popup" class="btn btn-success" data-toggle="modal">Agregar
+                                caja</a>
+                            <div class="field" id="searchform">
+                                <input type="text" id="searchterm" placeholder="Ingresar nombre o codigo de caja" />
+                                <button type="button" id="search">Buscar</button>
                             </div>
-
                         </div>
 
-                        <div class="table-responsive">
-                            <table class="table table-hover table-bordered" id="tablee">
-                                <thead>
-                                    <tr>
-                                        <th>Nombre o codigo de caja</th>
-                                        <th>Efectivo</th>
-                                        <th>Opciones</th>
-                                    </tr>
-                                </thead>
+                    </div>
 
-                                <tbody>
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered" id="tablee">
+                            <thead>
+                                <tr>
+                                    <th>Nombre o codigo de caja</th>
+                                    <th>Efectivo</th>
+                                    <th>Opciones</th>
+                                </tr>
+                            </thead>
 
-                                    <tr>
-                                        <%
-                                            Connection con = null;
-                                            Statement sta = null;
-                                            ResultSet rs = null;
+                            <tbody>
 
-                                            try {
-                                                Class.forName("com.mysql.jdbc.Driver");
-                                                con = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
-
-                                                sta = con.createStatement();
-                                                rs = sta.executeQuery("SELECT * FROM caja");
-
-                                                while (rs.next()) {
-                                        %>
-
-                                        <%--
-                                            try {
-                                                connection = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
-                                                statement = connection.createStatement();
-                                                String sql = "select * from caja";
-                                                resultSet = statement.executeQuery(sql);
-                                                while (resultSet.next()) {
-                                        --%>
-                                    </tr>
-                                    <tr>
-
-                                        <td><%= rs.getString("nombre_codigo")%></td>
-                                        <td><%=rs.getString("efectivo")%></td>
-                                        <td>
-                                            <a href="bd/editCaja.jsp?id_caja=<%=rs.getString("id_caja")%>">
-                                               <!--< <button id="btn-abrir-popup2" class=" btn-abrir-popup2 btn btn-warning">-->
-                                                 <button class="btn btn-warning">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                         fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
-                                                    <path
-                                                        d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
-                                                    <path fill-rule="evenodd"
-                                                          d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
-                                                    </svg>
-
-                                                </button>
-                                            </a>
-                                            <a href="bd/deleteCaja.jsp?id_caja=<%=rs.getString("id_caja")%>">
-                                                <button class="btn btn-danger">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                         fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
-                                                    <path fill-rule="evenodd"
-                                                          d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z" />
-                                                    </svg>
-                                                </button>
-                                        </td>
-                                    </tr>
-
+                                <tr>
                                     <%
-                                            }
-                                            sta.close();
-                                            rs.close();
-                                            con.close();
+                                        Connection con = null;
+                                        Statement sta = null;
+                                        ResultSet rs = null;
 
-                                        } catch (Exception e) {
-                                        }
+                                        try {
+                                            Class.forName("com.mysql.jdbc.Driver");
+                                            con = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
+
+                                            sta = con.createStatement();
+                                            rs = sta.executeQuery("SELECT * FROM caja");
+
+                                            while (rs.next()) {
                                     %>
-                                    </tr>
 
-                                </tbody>
-                            </table>
-                            <br>
-                        </div>
-                    </article>
-                </section>
-            </main>
+                                    <%--
+                                        try {
+                                            connection = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
+                                            statement = connection.createStatement();
+                                            String sql = "select * from caja";
+                                            resultSet = statement.executeQuery(sql);
+                                            while (resultSet.next()) {
+                                    --%>
+                                </tr>
+                                <tr>
 
-            <!-- page-content" -->
-        </div>
+                                    <td><%= rs.getString("nombre_codigo")%></td>
+                                    <td><%=rs.getString("efectivo")%></td>
+                                    <td>
+                                        <a href="bd/editCaja.jsp?id_caja=<%=rs.getString("id_caja")%>">
+                                            <!--< <button id="btn-abrir-popup2" class=" btn-abrir-popup2 btn btn-warning">-->
+                                            <button class="btn btn-warning">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                     fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
+                                                <path fill-rule="evenodd"
+                                                      d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
+                                                </svg>
 
-        <!-- page-wrapper -->
+                                            </button>
+                                        </a>
+                                        <a href="bd/deleteCaja.jsp?id_caja=<%=rs.getString("id_caja")%>">
+                                            <button class="btn btn-danger">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                     fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd"
+                                                      d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z" />
+                                                </svg>
+                                            </button>
+                                    </td>
+                                </tr>
 
-        <!-- using online scripts -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-                integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
-        </script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-                integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
-        </script>
-        <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+                                <%
+                                        }
+                                        sta.close();
+                                        rs.close();
+                                        con.close();
 
-        <!-- using local scripts -->
-        <!-- <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-        <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
-        <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script> -->
+                                    } catch (Exception e) {
+                                    }
+                                %>
+                                </tr>
 
-        <script src="js/popups.js"></script>
-        <script src="js/administrador/principal-admin.js"></script>
+                            </tbody>
+                        </table>
+                        <br>
+                    </div>
+                </article>
+            </section>
+        </main>
+        <!-- page-content" -->
+    <!-- page-wrapper -->
 
-    </body>
+    <!-- using online scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+            integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+            integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+    </script>
+    <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!-- using local scripts -->
+    <!-- <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script> -->
+
+    <script src="js/popups.js"></script>
+    <script src="js/administrador/principal-admin.js"></script>
+
+</body>
 
 </html>
