@@ -325,7 +325,6 @@
                                         <td><%=rs.getString("precio_venta")%></td>
                                         <td><%=rs.getString("descuento")%></td>
                                         <td><%=rs.getString("stock")%></td>
-                                        <td><%=rs.getString("img")%></td>
                                     </tr>
                                     <tr>
                                     <%

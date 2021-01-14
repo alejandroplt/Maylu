@@ -1,4 +1,5 @@
 <%@page import="java.sql.*"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%--
     Connection connection = null;
     Statement statement = null;
@@ -76,33 +77,45 @@
         </div>
 
         <!--ACTUALIZAR-->
-        <!--    <div id="container">
+          <!-- <div id="container">
                 <div class="overlay2" id="overlay2">
                     <div class="popup2" id="popup2">
                         <a href="#" id="btn-cerrar-popup2" class="btn-cerrar-popup2"><i class="fas fa-times"></i></a>
                         <h3>Actualizar Caja</h3>
                         <h4>Ingresa los datos</h4>
     
-        <%--                       
+        <%
+            String id_cajaa = request.getParameter("id_caja");
+            Connection connection = null;
+            Statement statement = null;
+            ResultSet resultSet = null;
+            String driver = "com.mysql.jdbc.Driver";
+            connection = DriverManager.getConnection( "jdbc:mysql://localhost/bdmaylu?user=root&password=");
+            try {
+
+                Class.forName(driver);
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        %>
+        <%
             try {
                 connection = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
                 statement = connection.createStatement();
-                String sql2 = "select * from caja where id_caja=" + id_caja;
-                resultSet = statement.executeQuery(sql2);
+                String sql = "select * from caja where id_caja=" + id_cajaa;
+                resultSet = statement.executeQuery(sql);
                 while (resultSet.next()) {
-
-
-        --%>
-        <form action="">
+        %>
+        <form action="bd/update-processCaja.jsp" method="POST">
             <div class="contenedor-etiquetas2">
                 <h4>Nombre</h4>
                 <h4>Efectivo</h4>
             </div>
             <div class="contenedor-inputs2">
 
-                <input type="text" name="nombre_codigo" value="<%--=resultSet.getString("nombre_codigo")--%>" placeholder="Nombre o codigo de caja" >
+                <input type="text" name="nombre_codigo2" value="<%=resultSet.getString("nombre_codigo")%>" placeholder="Nombre o codigo de caja" >
 
-                <input type="text" name="efectivo" value="33" placeholder="Cantidad de efectivo">
+                <input type="text" name="efectivo2" value="<%=resultSet.getString("efectivo")%>" placeholder="Cantidad de efectivo">
 
             </div>
 
@@ -110,13 +123,13 @@
             <input type="submit" class="btn-submit" name="actualizar" value="Actualizar">
         </form>
 
-        <%--
+        <%
                 }
                 connection.close();
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        --%>
+        %>
 
     </div>
 </div>
@@ -224,7 +237,7 @@
                             <li>
                                 <a href="#" id="btnabrir" >
                                     <i class="fa fa-power-off"></i>
-                                    <span class="menu-text" onclick="cierra()">Cerrar sesi�n</span>
+                                    <span class="menu-text" onclick="cierra()">Cerrar sesión</span>
                                 </a>
                             </li>
                         </ul>
@@ -302,7 +315,7 @@
                         <li>
                             <a href="#" id="btnabrir" >
                                 <i class="fa fa-power-off"></i>
-                                <span class="menu-text" onclick="cierra()">Cerrar sesión</span>
+                                <span class="menu-text" onclick="cierra()">Cerrar sesiÃ³n</span>
                             </a>
                         </li>
                     </ul>
@@ -328,7 +341,7 @@
                     <div class="modal">
                         <div class="modal_titulo">ADVERTENCIA</div>
                         <div class="modal_mensaje">
-                            <p>�Seguro que desea salir?</p>
+                            <p>¿Seguro que desea salir?</p>
                         </div>
                         <div class="modal_botones">
                             <a href="login.html" class="boton" id="btn-yes">SI</a>
@@ -350,7 +363,7 @@
                         <div id="divcerrar">
                             <a href="login.html">
                                 <button class="btn-tiny btn-danger">
-                                    Cerrar Sesi�n <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    Cerrar Sesión <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                        fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd"
                                           d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
@@ -424,8 +437,8 @@
                                         <td><%=rs.getString("efectivo")%></td>
                                         <td>
                                             <a href="bd/editCaja.jsp?id_caja=<%=rs.getString("id_caja")%>">
-                                                <!--<button id="btn-abrir-popup2" class=" btn-abrir-popup2 btn btn-warning">-->
-                                                <button class="btn btn-warning">
+                                               <!--< <button id="btn-abrir-popup2" class=" btn-abrir-popup2 btn btn-warning">-->
+                                                 <button class="btn btn-warning">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                          fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
                                                     <path

@@ -8,12 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description"
               content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
-<<<<<<< HEAD
-        <title>MayLu - Administrador</title>
-=======
-        <title>MayLu - Almacén</title>
->>>>>>> origin/master
 
+        <title>MayLu - Administrador</title>    
         <!-- using online links -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
               integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
@@ -29,7 +25,7 @@
         <link rel="stylesheet" href="styles/estilos-principal.css"> 
         <link rel="stylesheet" href="styles/sidebar-themes.css">
         <link rel="stylesheet" href="styles/estilos-nuevoproducto.css">
-        <link rel="stylesheet" href="styles/popups.css">
+        <link rel="stylesheet" href="styles/popups.css"> 
         <link rel="shortcut icon" type="image/png" href="img/icon.png" />
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
@@ -106,7 +102,7 @@
                                 <span>General</span>
                             </li>
                             <li>
-                                <a href="principal-admin.jsp.html">
+                                <a href="principal-admin.jsp.">
                                     <i class="fa fa-tachometer-alt"></i>
                                     <span class="menu-text">Dashboard</span>
                                 </a>
@@ -118,7 +114,7 @@
                                 </a>
                             </li>
                             <li >
-                                <a href="Inventario-Administrador.html">
+                                <a href="Inventario-Administrador.jsp">
                                     <i class="fa fa-warehouse"></i>
                                     <span class="menu-text">Inventario</span>
                                 </a>
@@ -130,7 +126,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="AdminCaja.html">
+                                <a href="AdminCaja.jsp">
                                     <i class="fa fa-cash-register"></i>
                                     <span class="menu-text">Caja</span>
                                 </a>
@@ -142,13 +138,13 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="Usuario-Administrador.html">
+                                <a href="Usuario-Administrador.jsp">
                                     <i class="fa fa-users"></i>
                                     <span class="menu-text">Usuarios</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="Proveedor-Administrador.html">
+                                <a href="Proveedor-Administrador.jsp">
                                     <i class="fa fa-truck"></i>
                                     <span class="menu-text">Proveedores</span>
                                 </a>
@@ -173,7 +169,7 @@
                             <li>
                                 <a href="#" id="btnabrir" >
                                     <i class="fa fa-power-off"></i>
-                                    <span class="menu-text" onclick="cierra()">Cerrar sesiÃ³n</span>
+                                    <span class="menu-text" onclick="cierra()">Cerrar sesión</span>
                                 </a>
                             </li>
                         </ul>
@@ -218,7 +214,7 @@
                         <div id="divcerrar">
                             <a href="login.html">
                                 <button class="btn-tiny btn-danger">
-                                    Cerrar SesiÃ³n <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    Cerrar Sesión <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                         fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd"
                                           d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
@@ -280,15 +276,6 @@
 
                                                 while (rs.next()) {
                                         %>
-
-                                        <%--
-                                            try {
-                                                connection = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
-                                                statement = connection.createStatement();
-                                                String sql = "select * from caja";
-                                                resultSet = statement.executeQuery(sql);
-                                                while (resultSet.next()) {
-                                        --%>
                                     <tr>
 
                                         <td><%= rs.getString("nombre_empresa")%></td>
@@ -321,36 +308,26 @@
                                                 </button>
                                         </td>
                                     </tr>
-
-
                                     <%
-
                                             }
-
                                             sta.close();
                                             rs.close();
                                             con.close();
 
                                         } catch (Exception e) {
                                         }
-
                                     %>
                                     </tr>
-
                                 </tbody>
                             </table>
                             <br>
                         </div>
-
                     </article>
                 </section>
             </main>
-
             <!-- page-content" -->
         </div>
-
         <!-- page-wrapper -->
-
         <!-- using online scripts -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
@@ -369,7 +346,5 @@
 
         <script src="js/popups.js"></script>
         <script src="js/administrador/principal-admin.js"></script>
-
     </body>
-
 </html>
