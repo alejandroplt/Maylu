@@ -548,3 +548,9 @@ body {
   }
 
 }
+
+input[type="date"]::-webkit-inner-spin-button,
+                  ::-webkit-calendar-picker-indicator,
+                  ::-webkit-datetime-edit{
+    display: none;
+}

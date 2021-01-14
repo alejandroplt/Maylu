@@ -192,13 +192,13 @@
                         </div>
                     </div>
                     <!-- sidebar-menu  -->
-                    <div class=" sidebar-item sidebar-menu">
+                                        <div class=" sidebar-item sidebar-menu">
                         <ul>
                             <li class="header-menu">
                                 <span>General</span>
                             </li>
                             <li>
-                                <a href="principal-admin.jsp.html">
+                                <a href="principal-admin.jsp">
                                     <i class="fa fa-tachometer-alt"></i>
                                     <span class="menu-text">Dashboard</span>
                                 </a>
@@ -209,8 +209,8 @@
                                     <span class="menu-text">Punto de Venta</span>
                                 </a>
                             </li>
-                            <li >
-                                <a href="Inventario-Administrador.html">
+                            <li>
+                                <a href="Inventario-Administrador.jsp">
                                     <i class="fa fa-warehouse"></i>
                                     <span class="menu-text">Inventario</span>
                                 </a>
@@ -222,9 +222,15 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="AdminCaja.html">
+                                <a href="AdminCaja.jsp">
                                     <i class="fa fa-cash-register"></i>
                                     <span class="menu-text">Caja</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="apartados.jsp">
+                                    <i class="fa fa-cart-plus"></i>
+                                    <span class="menu-text">Apartados</span>
                                 </a>
                             </li>
                             <li>
@@ -234,13 +240,13 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="Usuario-Administrador.html">
+                                <a href="Usuario-Administrador.jsp">
                                     <i class="fa fa-users"></i>
                                     <span class="menu-text">Usuarios</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="Proveedor-Administrador.html">
+                                <a href="Proveedor-Administrador.jsp">
                                     <i class="fa fa-truck"></i>
                                     <span class="menu-text">Proveedores</span>
                                 </a>
