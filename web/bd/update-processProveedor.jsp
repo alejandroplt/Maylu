@@ -12,7 +12,7 @@
     try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
-            Statement st = conn.createStatement();
+            PreparedStatement st = null;
             ResultSet resultSet = null;
             String id_proveedor = request.getParameter("id_proveedor");
             String nombre_empresa = request.getParameter("nombre_empresa");
@@ -23,7 +23,9 @@
             String sql = "UPDATE proveedor SET nombre_empresa='"+nombre_empresa+"',nombre_agente='"+nombre_agente+"',direccion='"+direccion+"',tel='"+tel+"',email='"+email+"' WHERE id_proveedor=" + id_proveedor;
             st = conn.prepareStatement(sql);
             int res = st.executeUpdate(); 
-            out.println("Agregado correctamente");
+            if(res>0){
+                  System.out.println("Agregado correctamente");
+            }
 
             //request.getRequestDispatcher("AdminCaja.jsp").forward(request, response);
             //RequestDispatcher dispatcher=getServletContext().getRequestDispatcher( "Maylu/build/web/AdminCaja.jsp" ); dispatcher.forward( request, response ); 
