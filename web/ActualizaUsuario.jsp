@@ -102,7 +102,7 @@
                                 <h4>Correo</h4>
                                 <h4>Usuario</h4>
                                 <h4>Contraseña</h4>
-                            </div>
+                            </div> 
                             <div class="contenedor-inputs2">
                                 <input type="text" name="nombre_com2" placeholder="Nombre completo" id="nombre_com2">
                                 <select name="puesto2" class="select">
