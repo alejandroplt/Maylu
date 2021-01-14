@@ -25,7 +25,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description"
               content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
-        <title>MayLu - Almac�n</title>
+        <title>MayLu - Administrador</title>
 
         <!-- using online links -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
@@ -55,7 +55,7 @@
                     <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
                     <h3>Agregar Caja</h3>
                     <h4>Ingresa los datos</h4>
-                    <form action="bd/InsertCaja.jsp" method="post" >
+                    <form action="bd/InsertCaja.jsp" method="post">
                         <div class="contenedor-etiquetas">
                             <h4>Nombre/Codigo</h4>
                             <h4>Efectivo</h4>
@@ -151,83 +151,83 @@
                     </div>
                     <!-- sidebar-menu  -->
                     <div class=" sidebar-item sidebar-menu">
-                        <ul>
-                            <li class="header-menu">
-                                <span>General</span>
-                            </li>
-                            <li>
-                                <a href="principal-admin.jsp.html">
-                                    <i class="fa fa-tachometer-alt"></i>
-                                    <span class="menu-text">Dashboard</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="Punto-Venta-Admin.html">
-                                    <i class="fa fa-shopping-cart"></i>
-                                    <span class="menu-text">Punto de Venta</span>
-                                </a>
-                            </li>
-                            <li >
-                                <a href="Inventario-Administrador.html">
-                                    <i class="fa fa-warehouse"></i>
-                                    <span class="menu-text">Inventario</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="reportes.html">
-                                    <i class="fa fa-chart-line"></i>
-                                    <span class="menu-text">Reportes</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="AdminCaja.html">
-                                    <i class="fa fa-cash-register"></i>
-                                    <span class="menu-text">Caja</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="devoluciones.html">
-                                    <i class="fa fa-sync-alt"></i>
-                                    <span class="menu-text">Devoluciones</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="Usuario-Administrador.html">
-                                    <i class="fa fa-users"></i>
-                                    <span class="menu-text">Usuarios</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="Proveedor-Administrador.html">
-                                    <i class="fa fa-truck"></i>
-                                    <span class="menu-text">Proveedores</span>
-                                </a>
-                            </li>
-                            <li class="header-menu">
-                                <span>Extra</span>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-question"></i>
-                                    <span class="menu-text">Ayuda</span>
-                                    <span class="badge badge-pill badge-primary">Prox</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-calendar"></i>
-                                    <span class="menu-text">Calendario</span>
-                                    <span class="badge badge-pill badge-primary">Prox</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" id="btnabrir" >
-                                    <i class="fa fa-power-off"></i>
-                                    <span class="menu-text" onclick="cierra()">Cerrar sesión</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                    <ul>
+                        <li class="header-menu">
+                            <span>General</span>
+                        </li>
+                        <li>
+                            <a href="principal-admin.jsp">
+                                <i class="fa fa-tachometer-alt"></i>
+                                <span class="menu-text">Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Punto-Venta-Admin.html">
+                                <i class="fa fa-shopping-cart"></i>
+                                <span class="menu-text">Punto de Venta</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Inventario-Administrador.jsp">
+                                <i class="fa fa-warehouse"></i>
+                                <span class="menu-text">Inventario</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="reportes.html">
+                                <i class="fa fa-chart-line"></i>
+                                <span class="menu-text">Reportes</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="AdminCaja.jsp">
+                                <i class="fa fa-cash-register"></i>
+                                <span class="menu-text">Caja</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="devoluciones.html">
+                                <i class="fa fa-sync-alt"></i>
+                                <span class="menu-text">Devoluciones</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Usuario-Administrador.jsp">
+                                <i class="fa fa-users"></i>
+                                <span class="menu-text">Usuarios</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Proveedor-Administrador.jsp">
+                                <i class="fa fa-truck"></i>
+                                <span class="menu-text">Proveedores</span>
+                            </a>
+                        </li>
+                        <li class="header-menu">
+                            <span>Extra</span>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-question"></i>
+                                <span class="menu-text">Ayuda</span>
+                                <span class="badge badge-pill badge-primary">Prox</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-calendar"></i>
+                                <span class="menu-text">Calendario</span>
+                                <span class="badge badge-pill badge-primary">Prox</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" id="btnabrir" >
+                                <i class="fa fa-power-off"></i>
+                                <span class="menu-text" onclick="cierra()">Cerrar sesión</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
                     <!-- sidebar-menu  -->
                 </div>
                 <div class="sidebar-footer">
@@ -299,7 +299,6 @@
                                 </div>
                             </div>
 
-
                         </div>
 
                         <div class="table-responsive">
@@ -338,6 +337,7 @@
                                                 resultSet = statement.executeQuery(sql);
                                                 while (resultSet.next()) {
                                         --%>
+                                    </tr>
                                     <tr>
 
                                         <td><%= rs.getString("nombre_codigo")%></td>
@@ -367,18 +367,14 @@
                                         </td>
                                     </tr>
 
-
                                     <%
-
                                             }
-
                                             sta.close();
                                             rs.close();
                                             con.close();
 
                                         } catch (Exception e) {
                                         }
-
                                     %>
                                     </tr>
 
@@ -386,11 +382,8 @@
                             </table>
                             <br>
                         </div>
-
                     </article>
                 </section>
-
-
             </main>
 
             <!-- page-content" -->
@@ -415,7 +408,7 @@
         <script src="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script> -->
 
         <script src="js/popups.js"></script>
-        <script src="js/almacen/principal-almacen.js"></script>
+        <script src="js/administrador/principal-admin.js"></script>
 
     </body>
 
