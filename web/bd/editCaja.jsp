@@ -13,8 +13,9 @@
     Statement statement = null;
     ResultSet resultSet = null;
     String driver = "com.mysql.jdbc.Driver";
-    connection = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
+    connection = DriverManager.getConnection( "jdbc:mysql://localhost/bdmaylu?user=root&password=");
     try {
+        
         Class.forName(driver);
     } catch (ClassNotFoundException e) {
         e.printStackTrace();
