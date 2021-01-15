@@ -491,7 +491,11 @@ body {
   font-size: 18px;
 }
 
-.modal_mensaje {
+.modal_mensaje{
+    background-color: white;
+}
+
+ .modal_mensaje > p{
   padding: 0px 5px;
   text-align: center;
   color: #030249;
@@ -501,7 +505,6 @@ body {
   width: 100%;
   background: whitesmoke;
   border-top: whitesmoke 1px;
-  /* padding-top: 10px; */
   display: flex;
   margin-bottom: 15px;
   justify-content: space-evenly;
@@ -537,7 +540,6 @@ body {
     height: 40vh;
     width: 45%;
   }
-
   .modal .boton {
     width: 40%;
     padding: 5px 0px;

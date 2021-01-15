@@ -1,3 +1,10 @@
+<%-- 
+    Document   : Inventario-Vendedor.jsp
+    Created on : 15/01/2021, 03:54:01 PM
+    Author     : Carlos Loaeza
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.*"%>
 <!DOCTYPE html>
 <html lang="es">
@@ -8,7 +15,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description"
               content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
-        <title>MayLú - Almacén</title>
+        <title>MayLÃº - AlmacÃ©n</title>
 
         <!-- using online links -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
@@ -16,12 +23,7 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
               integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
         <link rel="stylesheet" href="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css">
-
-        <!-- using local links -->
-        <!-- <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
-        <link rel="stylesheet" href="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css"> -->
-
+        
         <link rel="stylesheet" href="styles/estilos-principal.css">
         <link rel="stylesheet" href="styles/sidebar-themes.css">
         <link rel="stylesheet" href="styles/estilos-nuevoproducto.css">
@@ -43,7 +45,7 @@
                         <div class="contenedor-etiquetas">
                             <h4>Modelo</h4>
                             <h4>Proveedor</h4>
-                            <h4>Número</h4>
+                            <h4>NÃºmero</h4>
                             <h4>Color</h4>
                             <h4>Precio Compra</h4>
                             <h4>Precio Venta</h4>
@@ -54,7 +56,7 @@
                             <input type="text" name= "modelo" placeholder="Modelo">
 
                             <select name="Proveedor" class="select">
-                                <option selected value="0"> Elige una opción </option>
+                                <option selected value="0"> Elige una opciÃ³n </option>
                                 <option value="1">Windows Vista</option>
                                 <option value="2">Windows 7</option>
                                 <option value="3">Windows XP</option>
@@ -63,7 +65,7 @@
                                 <option value="12">Suse</option>
                             </select>
 
-                            <input type="text" name="talla" placeholder="Número">
+                            <input type="text" name="talla" placeholder="NÃºmero">
 
                             <input type="text" name="color" placeholder="Color">
 
@@ -133,7 +135,7 @@
                             <input type="text" placeholder="Modelo">
 
                             <select name="Proveedor" class="select">
-                                <option selected value="0"> Elige una opciÃ³n </option>
+                                <option selected value="0"> Elige una opciÃƒÂ³n </option>
                                 <option value="1">Windows Vista</option>
                                 <option value="2">Windows 7</option>
                                 <option value="3">Windows XP</option>
@@ -172,7 +174,7 @@
                     <div class="sidebar-item sidebar-brand">
                         <span align="center">
                             <i class="fa fa-shoe-prints"></i>
-                            MayLÃº
+                            MayLÃƒÂº
                         </span>
                     </div>
                     <!-- sidebar-header  -->
@@ -198,57 +200,15 @@
                                 <span>General</span>
                             </li>
                             <li>
-                                <a href="principal-admin.jsp">
+                                <a href="principal-almacen.html">
                                     <i class="fa fa-tachometer-alt"></i>
                                     <span class="menu-text">Dashboard</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="Punto-Venta-Admin.html">
-                                    <i class="fa fa-shopping-cart"></i>
-                                    <span class="menu-text">Punto de Venta</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="Inventario-Administrador.jsp">
                                     <i class="fa fa-warehouse"></i>
                                     <span class="menu-text">Inventario</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="reportes.html">
-                                    <i class="fa fa-chart-line"></i>
-                                    <span class="menu-text">Reportes</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="AdminCaja.jsp">
-                                    <i class="fa fa-cash-register"></i>
-                                    <span class="menu-text">Caja</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="apartados.jsp">
-                                    <i class="fa fa-cart-plus"></i>
-                                    <span class="menu-text">Apartados</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="devoluciones.html">
-                                    <i class="fa fa-sync-alt"></i>
-                                    <span class="menu-text">Devoluciones</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="Usuario-Administrador.jsp">
-                                    <i class="fa fa-users"></i>
-                                    <span class="menu-text">Usuarios</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="Proveedor-Administrador.jsp">
-                                    <i class="fa fa-truck"></i>
-                                    <span class="menu-text">Proveedores</span>
                                 </a>
                             </li>
                             <li class="header-menu">
@@ -314,7 +274,7 @@
                         </div>
                         <div id="divcerrar">
                             <button class="btn-tiny btn-danger">
-                                Cerrar Sesión <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                Cerrar SesiÃ³n <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                     fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"
                                       d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
@@ -349,7 +309,7 @@
                                     <tr>
                                         <th>Modelo</th>
                                         <th>Proveedor</th>
-                                        <th>Número</th>
+                                        <th>NÃºmero</th>
                                         <th>Color</th>
                                         <th>Precio Compra</th>
                                         <th>Precio Venta</th>
@@ -440,12 +400,6 @@
                 integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
         </script>
         <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-
-        <!-- using local scripts -->
-        <!-- <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-        <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
-        <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script> -->
 
         <script src="js/popups.js"></script>
         <script src="js/almacen/principal-almacen.js"></script>

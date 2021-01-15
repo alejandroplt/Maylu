@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description"
               content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
-        <title>MayLÃº - Administrador</title>
+        <title>MayLú - Administrador</title>
 
         <!-- using online links -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
@@ -15,11 +15,6 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
               integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
         <link rel="stylesheet" href="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css">
-
-        <!-- using local links -->
-        <!-- <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
-        <link rel="stylesheet" href="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css"> -->
 
         <link rel="stylesheet" href="styles/estilos-principal.css">
         <link rel="stylesheet" href="styles/sidebar-themes.css">
@@ -177,7 +172,7 @@
                         <div class="form-group col-md-3 ">
                             <div class="article">
                                 <a href="Inventario-Administrador.html">
-                                    <img src="/img/cajitas.svg" width="200" height="150" alt="">
+                                    <img src="img/cajitas.svg" width="200" height="150" alt="">
                                     <p>Inventario</p>
                                 </a>
                             </div>
@@ -185,7 +180,7 @@
                         <div class="form-group col-md-3">
                             <div class="article">
                                 <a href="Punto-Venta-Admin.html">
-                                    <img src="/img/carrito.svg" width="200" height="150" alt="">
+                                    <img src="img/carrito.svg" width="200" height="150" alt="">
                                     <p>Punto de Venta</p>
                                 </a>
                             </div>
@@ -193,7 +188,7 @@
                         <div class="form-group col-md-3">
                             <div class="article">
                                 <a href="reportes.html">
-                                    <img src="/img/document.svg" width="200" height="150" alt="">
+                                    <img src="img/document.svg" width="200" height="150" alt="">
                                     <p>Reportes</p>
                                 </a>
                             </div>
@@ -201,7 +196,7 @@
                         <div class="form-group col-md-3">
                             <div class="article">
                                 <a href="AdminCaja.html">
-                                    <img src="/img/wallet.svg" width="200" height="150" alt="">
+                                    <img src="img/wallet.svg" width="200" height="150" alt="">
                                     <p>Caja</p>
                                 </a>
                             </div>
@@ -210,7 +205,7 @@
                         <div class="form-group col-md-3">
                             <div class="article">
                                 <a href="devoluciones.html">
-                                    <img src="/img/broked.svg" width="200" height="150" alt="">
+                                    <img src="img/broked.svg" width="200" height="150" alt="">
                                     <p>Devoluciones</p>
                                 </a>
                             </div>
@@ -218,7 +213,7 @@
                         <div class="form-group col-md-3">
                             <div class="article">
                                 <a href="Proveedor-Administrador.html">
-                                    <img src="/img/provider.svg" width="200" height="150" alt="">
+                                    <img src="img/provider.svg" width="200" height="150" alt="">
                                     <p>Proveedores</p>
                                 </a>
                             </div>
@@ -226,7 +221,7 @@
                         <div class="form-group col-md-3">
                             <div class="article">
                                 <a href="Usuario-Administrador.html">
-                                    <img src="/img/user.svg" width="200" height="150" alt="">
+                                    <img src="img/user.svg" width="200" height="150" alt="">
                                     <p>Usuarios</p>
                                 </a>
                             </div>
@@ -234,7 +229,7 @@
                         <div class="form-group col-md-3">
                             <div class="article">
                                 <a href="">
-                                    <img src="/img/questions.svg" width="200" height="150" alt="">
+                                    <img src="img/questions.svg" width="200" height="150" alt="">
                                     <p>Ayuda</p>
                                 </a>
                             </div>

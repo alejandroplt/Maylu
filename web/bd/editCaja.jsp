@@ -7,33 +7,13 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.*,java.util.*"%>
 
-<%
-    String id_cajaa = request.getParameter("id_caja");
-    
-    Connection connection = null;
-    Statement statement = null;
-    ResultSet resultSet = null;
-    String driver = "com.mysql.jdbc.Driver";
-    
-    try {
-        
-        Class.forName(driver);
-    } catch (ClassNotFoundException e) {
-        e.printStackTrace();
-    }
-%>
-<%
-    try {
-        connection = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
-        statement = connection.createStatement();
-        String sql = "select * from caja where id_caja=" + id_cajaa;
-        resultSet = statement.executeQuery(sql);
-        while (resultSet.next()) {
-%>
+
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Actualiza Caja</title>
+                <link rel="stylesheet" href="actualiza-styles.css"> 
     </head>
     <body>
         <div id="container">
@@ -48,7 +28,30 @@
                             <h4>Efectivo</h4>
                         </div>
                         <div class="contenedor-inputs2">
+                            <%
+                                String id_cajaa = request.getParameter("id_caja");
 
+                                Connection connection = null;
+                                Statement statement = null;
+                                ResultSet resultSet = null;
+                                String driver = "com.mysql.jdbc.Driver";
+
+                                try {
+
+                                    Class.forName(driver);
+                                } catch (ClassNotFoundException e) {
+                                    e.printStackTrace();
+                                }
+                            %>
+                            <%
+                                try {
+                                    connection = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
+                                    statement = connection.createStatement();
+                                    String sql = "select * from caja where id_caja=" + id_cajaa;
+                                    resultSet = statement.executeQuery(sql);
+                                    while (resultSet.next()) {
+                            %>
+ 
                             <input type="text" name="nombre_codigo" value="<%=resultSet.getString("nombre_codigo")%>" placeholder="Nombre o codigo de caja" >
                             <input type="text" name="efectivo" value="<%=resultSet.getString("efectivo")%>" placeholder="Cantidad de efectivo">
                         </div>
@@ -64,7 +67,6 @@
                 </div>
             </div>
         </div> 
-
     </body>
 </html>
 
