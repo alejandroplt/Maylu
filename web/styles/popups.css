@@ -470,10 +470,6 @@ th {
     width: 100%;
 }
 
-.detalles .recibido{
-    padding-left: 10px;
-}
-
 .detalles >h1{
     color: #030249;
     padding-left: 80px;
@@ -484,14 +480,19 @@ th {
     font-size: larger;
     padding-left: 10px;
 }
+.detalles .recibido{
+    padding-left: 10px;
+    display: flex;
+}
 
 .detalles .recibido >h3{
     color: #030249;
     font-size: larger;
+    width: 60%
 }
 
 .detalles .recibido > input {
-    width: 100%;
+    width: 40%;
     margin-bottom: 15px;
     height: 30px;
     font-size: 18px;

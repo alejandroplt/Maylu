@@ -235,7 +235,7 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="detalles">
-                                    <img src="img/logito.jpg" width="290" height="150" alt="">
+                                    <p align="center"><img src="img/logito.jpg" width="250" height="150" alt=""></p>
                                     <h1>Detalles</h1>
                                     <h3>Fecha y hora: </h3>
                                     <div class="wrap">

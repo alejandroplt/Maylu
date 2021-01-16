@@ -100,12 +100,12 @@ body {
 .field>input[type=text] {
   flex:1;
   padding:0.6em;
-  border:0.2em solid  #1310d3;
+  border:0.2em solid  #030249;
 }
 
 .field>button {
   padding:0.6em 0.8em;
-  background-color: #1310d3;
+  background-color: #030249;
   color:white;
   border:none;
 }
