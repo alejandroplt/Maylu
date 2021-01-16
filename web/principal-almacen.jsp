@@ -1,3 +1,12 @@
+<%-- 
+    Document   : principal-almacen
+    Created on : 15/01/2021, 06:08:57 PM
+    Author     : Carlos Loaeza
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.sql.*,java.util.*"%>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -114,7 +123,7 @@
                         <p>¿Seguro que desea salir?</p>
                     </div>
                     <div class="modal_botones">
-                        <a href="login.html" class="boton" id="btn-yes">SI</a>
+                        <a href="login.jsp" class="boton" id="btn-yes">SI</a>
                         <a href="#" class="boton" id="btn-no" onclick="NO()">NO</a>
                     </div>
                 </div>

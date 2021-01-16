@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description"
               content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
-        <title>MayLu - Administrador</title>
+        <title>MayLú - Administrador</title>
 
         <!-- using online links -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
@@ -17,11 +17,6 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
               integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
         <link rel="stylesheet" href="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css">
-
-        <!-- using local links -->
-        <!-- <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
-        <link rel="stylesheet" href="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css"> -->
 
         <link rel="stylesheet" href="styles/estilos-principal.css">
         <link rel="stylesheet" href="styles/sidebar-themes.css">
@@ -82,56 +77,6 @@
             </div>
         </div>
 
-        <!--
-        <div id="container">
-            <div class="overlay2" id="overlay2">
-                <div class="popup2" id="popup2">
-                    <a href="#" id="btn-cerrar-popup2" class="btn-cerrar-popup2"><i class="fas fa-times"></i></a>
-                    <h3>Agregar Usuario</h3>
-                    <h2>Ingresa los datos</h4>
-                        <form action="bd/consultUser.jsp" method="post" name="update">
-                            <div class="contenedor-etiquetas2">
-                                <h4>Nombre</h4>
-                                <h4>Puesto</h4>
-                                <h4>Caja</h4>
-                                <h4>Genero</h4>
-                                <h4>Dirección</h4>
-                                <h4>Telefono</h4>
-                                <h4>Correo</h4>
-                                <h4>Usuario</h4>
-                                <h4>Contraseña</h4>
-                            </div>
-                            <div class="contenedor-inputs2">
-                                <input type="text" name="nombre_com2" placeholder="Nombre completo" id="nombre_com2">
-                                <select name="puesto2" class="select">
-                                    <option selected value="0"> Elige una opción </option>
-                                    <option value="1">Admistrador</option>
-                                    <option value="2">Vendedor</option>
-                                    <option value="3">Almacenista</option>
-                                </select>
-                                <select name="id_caja2" class="select">
-                                    <option selected value="0"> Elige una opción </option>
-                                    <option value="1">1</option>
-                                </select>
-                                <select name="genero2" class="select">
-                                    <option selected value="0"> Elige una opción </option>
-                                    <option value="1">Masculino</option>
-                                    <option value="2">Femenino</option>
-                                </select>
-                                <input type="text" name="direccion2" placeholder="Dirección">
-                                <input type="text" name="tel2" placeholder="Telefono">
-                                <input type="text" name="email2" placeholder="Correo electrónico">
-                                <input type="text" name="usuario2" placeholder="Usuario">
-                                <input type="text" name="contra2" placeholder="Contraseña">
-                            </div>
-                            <br>
-                            <input type="submit" class="btn-submit btn-block" name="guardar" value="Guardar">
-                        </form>
-                </div>
-            </div>
-        </div>
-        -->
-
         <div class="page-wrapper default-theme sidebar-bg bg1 toggled">
             <nav id="sidebar" class="sidebar-wrapper">
                 <div class="sidebar-content">
@@ -159,7 +104,7 @@
                         </div>
                     </div>
                     <!-- sidebar-menu  -->
-                                        <div class=" sidebar-item sidebar-menu">
+                    <div class=" sidebar-item sidebar-menu">
                         <ul>
                             <li class="header-menu">
                                 <span>General</span>
@@ -171,7 +116,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="Punto-Venta-Admin.html">
+                                <a href="PuntoVenta-Admin.jsp">
                                     <i class="fa fa-shopping-cart"></i>
                                     <span class="menu-text">Punto de Venta</span>
                                 </a>
@@ -238,7 +183,7 @@
                             <li>
                                 <a href="#" id="btnabrir" >
                                     <i class="fa fa-power-off"></i>
-                                    <span class="menu-text" onclick="cierra()">Cerrar sesiÃ³n</span>
+                                    <span class="menu-text" onclick="cierra()">Cerrar sesión</span>
                                 </a>
                             </li>
                         </ul>
@@ -264,7 +209,7 @@
                             <p>¿Seguro que desea salir?</p>
                         </div>
                         <div class="modal_botones">
-                            <a href="login.html" class="boton" id="btn-yes">SI</a>
+                            <a href="login.jsp" class="boton" id="btn-yes">SI</a>
                             <a href="#" class="boton" id="btn-no" onclick="NO()">NO</a>
                         </div>
                     </div>
@@ -273,12 +218,6 @@
                 <section id="main-content">
 
                     <article>
-                        <div id="divnombre">
-                            <p id="pnombre"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                 fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                                </svg> Nombre</p>
-                        </div>
                         <div id="divcerrar">
                             <a href="login.html">
                                 <button class="btn-tiny btn-danger">
@@ -361,16 +300,16 @@
                                         <td>
                                             <!--<a href="bd/consultUser.jsp?id_usuario=<%=rs.getString("id_usuario")%>">-->
                                             <a href="ActualizaUsuario.jsp?id_usuario=<%=rs.getString("id_usuario")%>" method="post">
-                                            <button id="btn-abrir-popup2" class=" btn-abrir-popup2 btn btn-warning">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                     fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
-                                                <path
-                                                    d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
-                                                <path fill-rule="evenodd"
-                                                      d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
-                                                </svg>
-                                            </button>
-                                                </a>
+                                                <button id="btn-abrir-popup2" class=" btn-abrir-popup2 btn btn-warning">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                         fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
+                                                    <path fill-rule="evenodd"
+                                                          d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
+                                                    </svg>
+                                                </button>
+                                            </a>
                                             <!--</a>-->
                                             <a href="bd/deleteUser.jsp?id_usuario=<%=rs.getString("id_usuario")%>">
                                                 <button class="btn btn-danger" >
@@ -384,14 +323,14 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                    <%
+                                        <%
+                                                }
+                                                sta.close();
+                                                rs.close();
+                                                con.close();
+                                            } catch (Exception e) {
                                             }
-                                            sta.close();
-                                            rs.close();
-                                            con.close();
-                                        } catch (Exception e) {
-                                        }
-                                    %>
+                                        %>
                                     </tr>
                                 </tbody>
                             </table>
@@ -413,12 +352,6 @@
                 integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
         </script>
         <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-
-        <!-- using local scripts -->
-        <!-- <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-        <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
-        <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script> -->
 
         <script src="js/popups.js"></script>
         <script src="js/administrador/principal-admin.js"></script>

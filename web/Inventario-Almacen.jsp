@@ -200,7 +200,7 @@
                                 <span>General</span>
                             </li>
                             <li>
-                                <a href="principal-almacen.html">
+                                <a href="principal-almacen.jsp">
                                     <i class="fa fa-tachometer-alt"></i>
                                     <span class="menu-text">Dashboard</span>
                                 </a>
@@ -257,7 +257,7 @@
                             <p>¿Seguro que desea salir?</p>
                         </div>
                         <div class="modal_botones">
-                            <a href="login.html" class="boton" id="btn-yes">SI</a>
+                            <a href="login.jsp" class="boton" id="btn-yes">SI</a>
                             <a href="#" class="boton" id="btn-no" onclick="NO()">NO</a>
                         </div>
                     </div>
@@ -266,12 +266,6 @@
                 <section id="main-content">
 
                     <article>
-                        <div id="divnombre">
-                            <p id="pnombre"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                 fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                                </svg> Nombre</p>
-                        </div>
                         <div id="divcerrar">
                             <button class="btn-tiny btn-danger">
                                 Cerrar Sesión <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"

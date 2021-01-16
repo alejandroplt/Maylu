@@ -1,3 +1,10 @@
+
+<%-- 
+    Document   : principal-admin
+    Created on : 15/01/2021, 06:07:04 PM
+    Author     : Carlos Loaeza
+--%>
+<%@page import="java.sql.*,java.util.*"%>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -63,7 +70,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="Punto-Venta-Admin.html">
+                                <a href="PuntoVenta-Admin.jsp">
                                     <i class="fa fa-shopping-cart"></i>
                                     <span class="menu-text">Punto de Venta</span>
                                 </a>
@@ -130,14 +137,11 @@
                             <li>
                                 <a href="#" id="btnabrir" >
                                     <i class="fa fa-power-off"></i>
-                                    <span class="menu-text" onclick="cierra()">Cerrar sesiÃ³n</span>
+                                    <span class="menu-text" onclick="cierra()">Cerrar sesión</span>
                                 </a>
                             </li>
                         </ul>
                     </div>
-
-
-
                     <!-- sidebar-menu  -->
                 </div>
                 <div class="sidebar-footer">
@@ -160,7 +164,7 @@
                             <p>¿Seguro que desea salir?</p>
                         </div>
                         <div class="modal_botones">
-                            <a href="login.html" class="boton" id="btn-yes">SI</a>
+                            <a href="login.jsp" class="boton" id="btn-yes">SI</a>
                             <a href="#" class="boton" id="btn-no" onclick="NO()">NO</a>
                         </div>
                     </div>
@@ -171,7 +175,7 @@
                     <div class="row">
                         <div class="form-group col-md-3 ">
                             <div class="article">
-                                <a href="Inventario-Administrador.html">
+                                <a href="Inventario-Administrador.jsp">
                                     <img src="img/cajitas.svg" width="200" height="150" alt="">
                                     <p>Inventario</p>
                                 </a>
@@ -179,7 +183,7 @@
                         </div>
                         <div class="form-group col-md-3">
                             <div class="article">
-                                <a href="Punto-Venta-Admin.html">
+                                <a href="PuntoVenta-Admin.jsp">
                                     <img src="img/carrito.svg" width="200" height="150" alt="">
                                     <p>Punto de Venta</p>
                                 </a>
@@ -195,7 +199,7 @@
                         </div>
                         <div class="form-group col-md-3">
                             <div class="article">
-                                <a href="AdminCaja.html">
+                                <a href="AdminCaja.jsp">
                                     <img src="img/wallet.svg" width="200" height="150" alt="">
                                     <p>Caja</p>
                                 </a>
@@ -212,7 +216,7 @@
                         </div>
                         <div class="form-group col-md-3">
                             <div class="article">
-                                <a href="Proveedor-Administrador.html">
+                                <a href="Proveedor-Administrador.jsp">
                                     <img src="img/provider.svg" width="200" height="150" alt="">
                                     <p>Proveedores</p>
                                 </a>
@@ -220,7 +224,7 @@
                         </div>
                         <div class="form-group col-md-3">
                             <div class="article">
-                                <a href="Usuario-Administrador.html">
+                                <a href="Usuario-Administrador.jsp">
                                     <img src="img/user.svg" width="200" height="150" alt="">
                                     <p>Usuarios</p>
                                 </a>
@@ -249,12 +253,6 @@
                 integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
         </script>
         <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-
-        <!-- using local scripts -->
-        <!-- <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-        <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
-        <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script> -->
 
         <script src="js/administrador/principal-admin.js"></script>
 

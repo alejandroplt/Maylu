@@ -1,3 +1,12 @@
+<%-- 
+    Document   : PuntoVenta-Vendedor
+    Created on : 15/01/2021, 06:04:01 PM
+    Author     : Carlos Loaeza
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.sql.*,java.util.*"%>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -7,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description"
         content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
-    <title>MayLu - Administrador</title>
+    <title>MayLu - Vendedor</title>
 
     <!-- using online links -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
@@ -30,17 +39,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 </head>
 
-<body >
+<body>
 
     <div class="page-wrapper default-theme sidebar-bg bg1 toggled">
         <nav id="sidebar" class="sidebar-wrapper">
             <div class="sidebar-content">
                 <!-- sidebar-brand  -->
                 <div class="sidebar-item sidebar-brand">
-                    <span align="center">
+                    <a href="#" align="center">
                         <i class="fa fa-shoe-prints"></i>
-                        MayLú
-                    </span>
+                        MayLú</a>
                 </div>
                 <!-- sidebar-header  -->
                 <div class="sidebar-item sidebar-header d-flex flex-nowrap">
@@ -51,7 +59,7 @@
                         <span class="user-name"><strong>Carlos
                                 Loaeza</strong>
                         </span>
-                        <span class="user-role">Administrador</span>
+                        <span class="user-role">Vendedor</span>
                         <span class="user-status">
                             <i class="fa fa-circle"></i>
                             <span>Online</span>
@@ -59,63 +67,27 @@
                     </div>
                 </div>
                 <!-- sidebar-menu  -->
-                                    <div class=" sidebar-item sidebar-menu">
+                <div class=" sidebar-item sidebar-menu">
                         <ul>
                             <li class="header-menu">
                                 <span>General</span>
                             </li>
                             <li>
-                                <a href="principal-admin.jsp">
+                                <a href="principal-vendedor.html">
                                     <i class="fa fa-tachometer-alt"></i>
                                     <span class="menu-text">Dashboard</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="Punto-Venta-Admin.html">
+                                <a href="Punto-Venta-Vendedor.html">
                                     <i class="fa fa-shopping-cart"></i>
                                     <span class="menu-text">Punto de Venta</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="Inventario-Administrador.jsp">
+                                <a href="Inventario-Vendedor.jsp">
                                     <i class="fa fa-warehouse"></i>
                                     <span class="menu-text">Inventario</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="reportes.html">
-                                    <i class="fa fa-chart-line"></i>
-                                    <span class="menu-text">Reportes</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="AdminCaja.jsp">
-                                    <i class="fa fa-cash-register"></i>
-                                    <span class="menu-text">Caja</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="apartados.jsp">
-                                    <i class="fa fa-cart-plus"></i>
-                                    <span class="menu-text">Apartados</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="devoluciones.html">
-                                    <i class="fa fa-sync-alt"></i>
-                                    <span class="menu-text">Devoluciones</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="Usuario-Administrador.jsp">
-                                    <i class="fa fa-users"></i>
-                                    <span class="menu-text">Usuarios</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="Proveedor-Administrador.jsp">
-                                    <i class="fa fa-truck"></i>
-                                    <span class="menu-text">Proveedores</span>
                                 </a>
                             </li>
                             <li class="header-menu">
@@ -138,7 +110,7 @@
                             <li>
                                 <a href="#" id="btnabrir" >
                                     <i class="fa fa-power-off"></i>
-                                    <span class="menu-text" onclick="cierra()">Cerrar sesiÃ³n</span>
+                                    <span class="menu-text" onclick="cierra()">Cerrar sesión</span>
                                 </a>
                             </li>
                         </ul>
@@ -164,20 +136,15 @@
                         <p>¿Seguro que desea salir?</p>
                     </div>
                     <div class="modal_botones">
-                        <a href="login.html" class="boton" id="btn-yes">SI</a>
+                        <a href="login.jsp" class="boton" id="btn-yes">SI</a>
                         <a href="#" class="boton" id="btn-no" onclick="NO()">NO</a>
                     </div>
                 </div>
             </div>
             <div id="overlay" class="overlay"></div>
             <section id="main-content">
+
                 <article>
-                    <div id="divnombre">
-                        <p id="pnombre"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                            </svg> Nombre</p>
-                    </div> 
                     <div id="divcerrar">
                         <button class="btn-tiny btn-danger">
                             Cerrar Sesión <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -196,7 +163,6 @@
                         <h1>Punto de Venta</h1>
                     </header>
 
-                    
                     <div class="row ventas">
                         <div class="col-md-8">
                             <div class="datos">
@@ -226,16 +192,6 @@
                                                     <td>22</td>
                                                     <td>Rojo</td>
                                                     <td>7</td>
-                                                    <td><button class="quitar" onclick="borraElemento(this);"><i
-                                                        class="fas fa-trash-alt"></i></button></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>4500MX</td>
-                                                    <td></td>
-                                                    <td>$280</td>
-                                                    <td>24</td>
-                                                    <td>Rosa</td>
-                                                    <td>10</td>
                                                     <td><button class="quitar" onclick="borraElemento(this);"><i
                                                         class="fas fa-trash-alt"></i></button></td>
                                                 </tr>
@@ -284,7 +240,6 @@
                             </div>
                         </div>
                     </div>
-
                 </article>
             </section>
 
@@ -306,14 +261,8 @@
         </script>
     <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
 
-    <!-- using local scripts -->
-    <!-- <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script> -->
-
     <script src="js/popups.js"></script>
-    <script src="js/administrador/principal-admin.js"></script>
+    <script src="js/vendedor/principal-vendedor.js"></script>
 
 </body>
 

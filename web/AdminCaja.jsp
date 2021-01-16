@@ -62,7 +62,7 @@
                     <div class="sidebar-item sidebar-brand">
                         <span align="center">
                             <i class="fa fa-shoe-prints"></i>
-                            MayLu
+                            MayLú
                         </span>
                     </div>
                     <!-- sidebar-header  -->
@@ -94,7 +94,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="Punto-Venta-Admin.html">
+                                <a href="PuntoVenta-Admin.jsp">
                                     <i class="fa fa-shopping-cart"></i>
                                     <span class="menu-text">Punto de Venta</span>
                                 </a>
@@ -166,10 +166,7 @@
                             </li>
                         </ul>
                     </div>
-
-
                 </div>
-
                 <!-- sidebar-menu  -->
                 <div class="sidebar-footer">
                     <div class="dropdown">
@@ -193,7 +190,7 @@
                             <p>¿Seguro que desea salir?</p>
                         </div>
                         <div class="modal_botones">
-                            <a href="login.html" class="boton" id="btn-yes">SI</a>
+                            <a href="login.jsp" class="boton" id="btn-yes">SI</a>
                             <a href="#" class="boton" id="btn-no" onclick="NO()">NO</a>
                         </div>
                     </div>

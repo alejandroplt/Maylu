@@ -1,5 +1,14 @@
-<!DOCTYPE html>
+<%-- 
+    Document   : login
+    Created on : 15/01/2021, 06:05:43 PM
+    Author     : Carlos Loaeza
+--%>
 
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%@page import="java.sql.*,java.util.*"%>
+
+<!DOCTYPE html>
 <html> 
     <head>
         <title>MayLú - Login</title>
