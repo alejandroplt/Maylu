@@ -26,7 +26,7 @@
 
         <link rel="stylesheet" href="styles/estilos-principal.css">
         <link rel="stylesheet" href="styles/sidebar-themes.css">
-        <link rel="stylesheet" href="styles/estilos-nuevoproducto.css">
+        <link rel="stylesheet" href="styles/estilos-apartados.css">
         <link rel="stylesheet" href="styles/popups.css">
         <link rel="shortcut icon" type="image/png" href="img/icon.png" />
         <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -237,9 +237,9 @@
                             <h1>Apartados</h1>
                         </header>
 
-                        <div id="container1">
+                        <div id="container">
                             <div>
-                                <a href="#" id="btn-abrir-popup" class="btn btn-success" data-toggle="modal">Apartar</a>
+                                <button type="button" id="btn-abrir-popup">Apartar</button>
                             </div>
                         </div>
                         <div class="table-responsive">
