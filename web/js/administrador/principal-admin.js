@@ -94,5 +94,8 @@ function NO() {
   });
 }
 
-
+function borraElemento(e) {
+    var i = e.parentNode.parentNode.rowIndex;
+    document.getElementById("tabla").deleteRow(i);
+}
 

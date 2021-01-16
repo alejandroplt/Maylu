@@ -453,83 +453,100 @@ th {
 }
 
 .ventas{
-	width: 100%;
-}
-
-.datos{
-	margin: 0;
-}
-
-.datos >table{
-	margin: 0;
-	padding: 0;
-}
-
-.detalles{
-	border-style: solid;
     width: 100%;
 }
 
-.detalles >h1{
-	color: #030249;
-	padding-left: 80px;
+.datos{
+    margin: 0;
 }
 
-.detalles >h3{
-	color: #030249;
-	font-size: larger;
+.datos >table{
+    margin: 0;
+    padding: 0;
+}
+
+.detalles{
+    border-style: solid;
+    width: 100%;
+}
+
+.detalles .recibido{
     padding-left: 10px;
 }
 
+.detalles >h1{
+    color: #030249;
+    padding-left: 80px;
+}
+
+.detalles >h3{
+    color: #030249;
+    font-size: larger;
+    padding-left: 10px;
+}
+
+.detalles .recibido >h3{
+    color: #030249;
+    font-size: larger;
+}
+
+.detalles .recibido > input {
+    width: 100%;
+    margin-bottom: 15px;
+    height: 30px;
+    font-size: 18px;
+    text-align: left;
+}
+
 #HoraActual{
-		font-size: larger;
-		font-family: Arial,sans-serif;
-		color: #030249;
+    font-size: larger;
+    font-family: Arial,sans-serif;
+    color: #030249;
 
 }
 
 .botones{
-	padding-left: 10px;
-	padding-bottom: 10px;
-	width: 100%;
-	display: inline-block;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    display: inline-block;
 }
 
 #hecho {
-	
+
 }
 
 #cancel{
-	background-color: rgb(146, 13, 13);
+    background-color: rgb(146, 13, 13);
 }
 
 .wrap {
-	width: 90%;
-	max-width: 1000px;
-	/*margin:auto;*/
+    width: 90%;
+    max-width: 1000px;
+    /*margin:auto;*/
 }
 
 .wrap p {
-	display: inline-block;
-	line-height: 1em;
-	color: #43434b;
+    display: inline-block;
+    line-height: 1em;
+    color: #43434b;
 }
 
 .fecha {
-	text-align: center;
-	font-size:1em;
-	padding: 5px;
-	width: 100%;
+    text-align: center;
+    font-size:1em;
+    padding: 5px;
+    width: 100%;
 }
 
 .reloj {
-	width: 100%;
-	font-size: 1em;
-	text-align: center;
+    width: 100%;
+    font-size: 1em;
+    text-align: center;
 }
 
 .quitar {
-    background-color: #f10032;
+    background-color: rgb(146, 13, 13);
     border-radius: 8px;
     color: #ffffff;
     height: 40px;
@@ -556,7 +573,7 @@ th {
     border-radius: 3px;
 }
 
- .completo:hover {
+.completo:hover {
     background: rgba(94, 125, 227, .9);
 }
 
