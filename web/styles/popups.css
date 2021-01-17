@@ -488,11 +488,11 @@ th {
 .detalles .recibido >h3{
     color: #030249;
     font-size: larger;
-    width: 60%
+    width: 30%
 }
 
 .detalles .recibido > input {
-    width: 40%;
+    width: 60%;
     margin-bottom: 15px;
     height: 30px;
     font-size: 18px;
@@ -503,7 +503,6 @@ th {
     font-size: larger;
     font-family: Arial,sans-serif;
     color: #030249;
-
 }
 
 .botones{
