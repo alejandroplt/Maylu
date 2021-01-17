@@ -1,4 +1,4 @@
-<%-- 
+    <%-- 
     Document   : ActualizaUsuario
     Created on : 13/01/2021, 05:55:33 PM
     Author     : Carlos Loaeza
@@ -350,13 +350,7 @@
                 integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
         </script>
         <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-
-        <!-- using local scripts -->
-        <!-- <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-        <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
-        <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script> -->
-
+        
         <script src="js/popups.js"></script>
         <script src="js/administrador/principal-admin.js"></script>
 

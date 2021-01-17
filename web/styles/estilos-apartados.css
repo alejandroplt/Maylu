@@ -78,16 +78,6 @@ body {
     margin-right: 50px;
     float: right;
     display:flex;
-    width:70%;
-    flex-direction:row;
-    box-shadow:
-        1px 1px 0 #030249,
-        2px 2px 0 #030249,
-        3px 3px 0 #030249,
-        4px 4px 0 #030249,
-        5px 5px 0 #030249,
-        6px 6px 0 #030249,
-        7px 7px 0 #030249;
     width:80%;
     flex-direction:row;
     box-shadow:
@@ -104,7 +94,6 @@ body {
 .field>input[type=text],
 .field>button {
     display:block;
-    font:1.2em 'Montserrat Alternates';
     font-family: Helvetica, Arial, sans-serif;
 }
 
@@ -117,7 +106,6 @@ body {
     border-radius: 0;
     padding:0.6% 0.8%;
     border:0.2em solid  #030249;
-
 }
 
 .field>input[type=text] {
