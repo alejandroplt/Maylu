@@ -23,7 +23,7 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
               integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
         <link rel="stylesheet" href="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css">
-        
+
         <link rel="stylesheet" href="styles/estilos-principal.css">
         <link rel="stylesheet" href="styles/sidebar-themes.css">
         <link rel="stylesheet" href="styles/estilos-nuevoproducto.css">
@@ -186,7 +186,7 @@
                             <span class="user-name"><strong>Carlos
                                     Loaeza</strong>
                             </span>
-                            <span class="user-role">Administrador</span>
+                            <span class="user-role">Almacenista</span>
                             <span class="user-status">
                                 <i class="fa fa-circle"></i>
                                 <span>Online</span>
@@ -194,7 +194,7 @@
                         </div>
                     </div>
                     <!-- sidebar-menu  -->
-                                        <div class=" sidebar-item sidebar-menu">
+                    <div class=" sidebar-item sidebar-menu">
                         <ul>
                             <li class="header-menu">
                                 <span>General</span>
@@ -269,7 +269,7 @@
                         <div id="divcerrar">
                             <button class="btn-tiny btn-danger">
                                 Cerrar Sesión <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                    fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                                                   fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"
                                       d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
                                 <path fill-rule="evenodd"
@@ -284,19 +284,14 @@
                             <h1>Inventario</h1>
                         </header>
 
-                        <div id="container1">
-                            <div>
-                                <br>                               
-                                <div class="field" id="searchform">
-                                    <input type="text" id="searchterm" placeholder="Ingresar Modelo" />
-                                    <button type="button" id="search">Buscar</button>
-                                    <button type="button" id="btn-abrir-popup"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
-                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
-                                        </svg></button>
-                                </div>
+                        <div id="container1">                            
+                            <div class="field" id="searchform">
+                                <input type="text" id="searchterm" placeholder="Ingresar Modelo" />
+                                <button type="button" id="search">Buscar</button>
+                                <button type="button" id="btn-abrir-popup"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+                                    </svg> Agregar</button>
                             </div>
-
-
                         </div>
 
                         <div class="table-responsive">
@@ -349,11 +344,7 @@
                                                 </svg>
                                             </button>
                                             <button class="btn btn-danger">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                     fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
-                                                <path fill-rule="evenodd"
-                                                      d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z" />
-                                                </svg>
+                                                <i class="fas fa-eye-slash"></i>
                                             </button>
                                         </td>
                                     </tr>

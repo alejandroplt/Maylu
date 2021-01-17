@@ -64,18 +64,14 @@ h3 {
     margin-top: 20px;
     padding-left: 80px;
     font-size: 25px;
-    font-family: 'Lobster', cursive;
+    font-family: "Tangerine";
     font-weight: lighter;
 }
 
 label {
     padding-left: 10px;
     font-size: 20px;
-    font-family: 'Lobster', cursive;
-    color: #000000;
-}
-
-span {
+    font-family: "Tangerine";
     color: #000000;
 }
 
@@ -117,7 +113,8 @@ button {
 }
 
 button:hover {
-    background: #616363;
+    background-color: #000000;
+    color: #fff;
   }
 
 

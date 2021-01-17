@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description"
               content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
-        <title>MayLú - Almacén</title>
+        <title>MayLú - Administrador</title>
 
         <!-- using online links -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
@@ -33,15 +33,16 @@
                     <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
                     <h3>Agregar Producto</h3>
                     <h4>Ingresa los datos</h4>
+                    <h5>* Campo obligatorio</h5>
                     <form action="">
                         <div class="contenedor-etiquetas">
-                            <h4>Modelo</h4>
-                            <h4>Proveedor</h4>
-                            <h4>Número</h4>
-                            <h4>Color</h4>
-                            <h4>Precio Compra</h4>
-                            <h4>Precio Venta</h4>
-                            <h4>Stock</h4>
+                            <h4>Modelo*</h4>
+                            <h4>Proveedor*</h4>
+                            <h4>Número*</h4>
+                            <h4>Color*</h4>
+                            <h4>Precio Compra*</h4>
+                            <h4>Precio Venta*</h4>
+                            <h4>Stock*</h4>
                         </div>
                         <div class="contenedor-inputs">
 
@@ -112,22 +113,23 @@
                     <a href="#" id="btn-cerrar-popup2" class="btn-cerrar-popup2"><i class="fas fa-times"></i></a>
                     <h3>Actualizar Producto</h3>
                     <h4>Ingresa los datos</h4>
+                    <h5>* Campo obligatorio</h5>
                     <form action="">
                         <div class="contenedor-etiquetas2">
-                            <h4>Modelo</h4>
-                            <h4>Proveedor</h4>
-                            <h4>Talla</h4>
-                            <h4>Color</h4>
-                            <h4>Precio Compra</h4>
-                            <h4>Precio Venta</h4>
-                            <h4>Stock</h4>
+                            <h4>Modelo*</h4>
+                            <h4>Proveedor*</h4>
+                            <h4>Talla*</h4>
+                            <h4>Color*</h4>
+                            <h4>Precio Compra*</h4>
+                            <h4>Precio Venta*</h4>
+                            <h4>Stock*</h4>
                         </div>
                         <div class="contenedor-inputs2">
 
                             <input type="text" placeholder="Modelo">
 
                             <select name="Proveedor" class="select">
-                                <option selected value="0"> Elige una opciÃ³n </option>
+                                <option selected value="0"> Elige una opción </option>
                                 <option value="1">Windows Vista</option>
                                 <option value="2">Windows 7</option>
                                 <option value="3">Windows XP</option>
@@ -297,12 +299,6 @@
                 <section id="main-content">
 
                     <article>
-                        <div id="divnombre">
-                            <p id="pnombre"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                 fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                                </svg> Nombre</p>
-                        </div>
                         <div id="divcerrar">
                             <button class="btn-tiny btn-danger">
                                 Cerrar Sesión <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -322,18 +318,13 @@
                         </header>
 
                         <div id="container1">
-                            <div>
-                                <br>
-
-                                <div class="field" id="searchform">
-                                    <input type="text" id="searchterm" placeholder="Ingresar Modelo" />
-                                    <button type="button" id="search">Buscar</button>
-                                    <button type="button" id="btn-abrir-popup"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
-                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
-                                        </svg></button>
-                                </div>                                   
-                            </div>
-
+                            <div class="field" id="searchform">
+                                <input type="text" id="searchterm" placeholder="Ingresar Modelo" />
+                                <button type="button" id="search">Buscar</button>
+                                <button type="button" id="btn-abrir-popup"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+                                    </svg> Agregar</button>
+                            </div>                                   
 
                         </div>
 
@@ -387,11 +378,7 @@
                                                 </svg>
                                             </button>
                                             <button class="btn btn-danger">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                     fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
-                                                <path fill-rule="evenodd"
-                                                      d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z" />
-                                                </svg>
+                                                <i class="fas fa-eye-slash"></i>
                                             </button>
                                         </td>
                                     </tr>

@@ -15,7 +15,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description"
               content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
-        <title>MayLú - Almacén</title>
+        <title>MayLú - Vendedor</title>
 
         <!-- using online links -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
@@ -35,107 +35,6 @@
 
     <body>
 
-        <div id="container">
-            <div class="overlay" id="overlay">
-                <div class="popup" id="popup">
-                    <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
-                    <h3>Agregar Producto</h3>
-                    <h4>Ingresa los datos</h4>
-                    <form action="">
-                        <div class="contenedor-etiquetas">
-                            <h4>Modelo</h4>
-                            <h4>Proveedor</h4>
-                            <h4>Número</h4>
-                            <h4>Color</h4>
-                            <h4>Precio Compra</h4>
-                            <h4>Precio Venta</h4>
-                            <h4>Stock</h4>
-                        </div>
-                        <div class="contenedor-inputs">
-
-                            <input type="text" placeholder="Modelo">
-
-                            <select name="Proveedor" class="select">
-                                <option selected value="0"> Elige una opción </option>
-                                <option value="1">Windows Vista</option>
-                                <option value="2">Windows 7</option>
-                                <option value="3">Windows XP</option>
-                                <option value="4">Fedora</option>
-                                <option value="5">Debian</option>
-                                <option value="6">Suse</option>
-                            </select>
-
-                            <input type="text" placeholder="Número">
-
-                            <input type="text" placeholder="Color">
-
-                            <input type="text" placeholder="Precio Compra">
-
-                            <input type="text" placeholder="Precio Venta">
-
-                            <input type="text" placeholder="Stock">
-                        </div>
-                        <div class="contenedor-imagen">
-                            <input type="file" placeholder="Cargar">
-                        </div>
-                        <br>
-                        <input type="submit" class="btn-submit" value="Guardar">
-                    </form>
-                </div>
-            </div>
-        </div>
-
-
-        <div id="container">
-            <div class="overlay2" id="overlay2">
-                <div class="popup2" id="popup2">
-                    <a href="#" id="btn-cerrar-popup2" class="btn-cerrar-popup2"><i class="fas fa-times"></i></a>
-                    <h3>Actualizar Producto</h3>
-                    <h4>Ingresa los datos</h4>
-                    <form action="">
-                        <div class="contenedor-etiquetas2">
-                            <h4>Modelo</h4>
-                            <h4>Proveedor</h4>
-                            <h4>Talla</h4>
-                            <h4>Color</h4>
-                            <h4>Precio Compra</h4>
-                            <h4>Precio Venta</h4>
-                            <h4>Stock</h4>
-                        </div>
-                        <div class="contenedor-inputs2">
-
-                            <input type="text" placeholder="Modelo">
-
-                            <select name="Proveedor" class="select">
-                                <option selected value="0"> Elige una opción </option>
-                                <option value="1">Windows Vista</option>
-                                <option value="2">Windows 7</option>
-                                <option value="3">Windows XP</option>
-                                <option value="10">Fedora</option>
-                                <option value="11">Debian</option>
-                                <option value="12">Suse</option>
-                            </select>
-
-                            <input type="text" placeholder="Talla">
-
-                            <input type="text" placeholder="Color">
-
-                            <input type="text" placeholder="Precio Compra">
-
-                            <input type="text" placeholder="Precio Venta">
-
-                            <input type="text" placeholder="Stock">
-                        </div>
-                        <div class="contenedor-imagen">
-                            <input type="file" placeholder="Cargar">
-                        </div>
-                        <br>
-                        <input type="submit" class="btn-submit" value="Guardar">
-                    </form>
-                </div>
-            </div>
-        </div>
-
         <div class="page-wrapper default-theme sidebar-bg bg1 toggled">
             <nav id="sidebar" class="sidebar-wrapper">
                 <div class="sidebar-content">
@@ -154,7 +53,7 @@
                             <span class="user-name"><strong>Carlos
                                     Loaeza</strong>
                             </span>
-                            <span class="user-role">Almacén</span>
+                            <span class="user-role">Vendedor</span>
                             <span class="user-status">
                                 <i class="fa fa-circle"></i>
                                 <span>Online</span>
@@ -260,17 +159,10 @@
                         </header>
 
                         <div id="container1">
-                            <div>
-                                <div class="field" id="searchform">
-                                    <input type="text" id="searchterm" placeholder="Ingresar Modelo" />
-                                    <button type="button" id="search">Buscar</button>
-                                    <button type="button" id="btn-abrir-popup"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
-                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
-                                        </svg></button>
-                                </div>
+                            <div class="field" id="searchform">
+                                <input type="text" id="searchterm" placeholder="Ingresar Modelo" />
+                                <button type="button" id="search">Buscar</button>
                             </div>
-
-
                         </div>
 
                         <div class="table-responsive">

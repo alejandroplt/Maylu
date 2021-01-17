@@ -1,3 +1,12 @@
+<%-- 
+    Document   : devoluciones
+    Created on : 17/01/2021, 04:40:53 PM
+    Author     : Carlos Loaeza
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.sql.*,java.util.*"%>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -7,7 +16,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description"
               content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
-        <title>MayLú - Devoluciones</title>
+        <title>MayLú - Administrador</title>
 
         <!-- using online links -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
@@ -27,7 +36,6 @@
     </head>
 
     <body>
-
         <div id="container">
             <div class="overlay" id="overlay">
                 <div class="popup" id="popup">

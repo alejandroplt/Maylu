@@ -35,17 +35,18 @@
                     <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
                     <h3>Agregar Usuario</h3>
                     <h2>Ingresa los datos</h4>
+                    <h5>* Campo obligatorio</h5>
                         <form action="bd/insertUser.jsp" method="post">
                             <div class="contenedor-etiquetas">
-                                <h4>Nombre</h4>
-                                <h4>Puesto</h4>
-                                <h4>Caja</h4>
-                                <h4>Genero</h4>
-                                <h4>Dirección</h4>
-                                <h4>Telefono</h4>
-                                <h4>Correo</h4>
-                                <h4>Usuario</h4>
-                                <h4>Contraseña</h4>
+                                <h4>Nombre*</h4>
+                                <h4>Puesto*</h4>
+                                <h4>Caja*</h4>
+                                <h4>Genero*</h4>
+                                <h4>Dirección*</h4>
+                                <h4>Telefono*</h4>
+                                <h4>Correo*</h4>
+                                <h4>Usuario*</h4>
+                                <h4>Contraseña*</h4>
                             </div>
                             <div class="contenedor-inputs">
                                 <input type="text" name="nombre_com" placeholder="Nombre completo">
@@ -247,7 +248,7 @@
                                     <button type="button" id="search">Buscar</button>
                                     <button type="button" id="btn-abrir-popup"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
                                         <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
-                                        </svg></button>
+                                        </svg> Agregar</button>
                                 </div>
                             </div>
                         </div>

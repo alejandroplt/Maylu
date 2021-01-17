@@ -96,6 +96,13 @@
 .popup h4 {
     font-size: 26px;
     font-weight: 300;
+    margin-bottom: 10px;
+    opacity: 0;
+}
+
+.popup h5{
+    font-size: 20px;
+    font-weight: 250;
     margin-bottom: 40px;
     opacity: 0;
 }
@@ -128,7 +135,7 @@
     width: 50%;
     height: 15px;
     font-size: 18px;
-    text-align: left;
+    text-align: right;
 }
 
 .popup form .contenedor-etiquetas h4 {
@@ -136,7 +143,7 @@
     height: 5px;
     font-size: 18px;
     line-height: 52px;
-    text-align: left;
+    text-align: right;
 
 }
 
@@ -145,7 +152,7 @@
     margin-bottom: 15px;
     height: 30px;
     font-size: 18px;
-    text-align: left;
+    text-align: center;
 }
 
 .popup form .btn-submit {
@@ -182,6 +189,10 @@
     animation: entradaSubtitulo .8s ease .5s forwards;
 }
 
+.popup.active h5{
+    animation: entradaSubtitulo .8s ease .5s forwards;
+}
+
 .popup.active .contenedor-inputs {
     animation: entradaInputs 1s linear 1s forwards;
 }
@@ -190,9 +201,7 @@
     from {
         opacity: 0;
         transform: translateY(-25px);
-    }
-
-    to {
+    } to {
         transform: translateY(0);
         opacity: 1;
     }
@@ -202,9 +211,7 @@
     from {
         opacity: 0;
         transform: translateY(25px);
-    }
-
-    to {
+    } to {
         transform: translateY(0);
         opacity: 1;
     }
@@ -213,9 +220,7 @@
 @keyframes entradaInputs {
     from {
         opacity: 0;
-    }
-
-    to {
+    } to {
         opacity: 1;
     }
 }
@@ -318,6 +323,13 @@
 .popup2 h4 {
     font-size: 26px;
     font-weight: 300;
+    margin-bottom: 10px;
+    opacity: 0;
+}
+
+.popup2 h5{
+    font-size: 20px;
+    font-weight: 250;
     margin-bottom: 40px;
     opacity: 0;
 }
@@ -561,7 +573,7 @@ th {
 }
 
 .completo{
-    background-color: #f10032;
+    background-color: #8d0404;
     font-size: 25px;
 }
 

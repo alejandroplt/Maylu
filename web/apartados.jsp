@@ -40,16 +40,17 @@
                     <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
                     <h3>Apartar</h3>
                     <h4>Ingresa los datos</h4>
+                    <h5>* Campo obligatorio</h5>
                     <form action="">
                         <div class="contenedor-etiquetas">
-                            <h4>Vencimiento</h4>
-                            <h4>Modelo</h4>
-                            <h4>Cliente</h4>
-                            <h4>Número</h4>
-                            <h4>Color</h4>
-                            <h4>Precio</h4>
-                            <h4>Abono</h4>
-                            <h4>Saldo</h4>
+                            <h4>Vencimiento*</h4>
+                            <h4>Modelo*</h4>
+                            <h4>Cliente*</h4>
+                            <h4>Número*</h4>
+                            <h4>Color*</h4>
+                            <h4>Precio*</h4>
+                            <h4>Abono*</h4>
+                            <h4>Saldo*</h4>
                         </div>
                         <div class="contenedor-inputs">
                             <input type="date" id="fecha" onclick="">
@@ -59,7 +60,7 @@
                             <input type="text" name="color" placeholder="Color">
                             <input type="text" name="precio" placeholder="Precio">
                             <input type="text" name="abono" placeholder="¿Cuanto abona el cliente?">
-                            <input type="text" name="saldo" placeholder="¿Cuanto resta el cliente?">
+                            <label id="resta"></label>
                         </div>
                         <br>
                         <input type="submit" class="btn-submit" name="guardar" value="Guardar">
@@ -73,7 +74,6 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
                         aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-
                 </button>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                     <nav id="sidebar" class="sidebar-wrapper">
@@ -254,7 +254,7 @@
                                         <th>Precio</th>
                                         <th>Abonó</th>
                                         <th>Saldo</th>
-                                        <th>Marcar como completado</th>
+                                        <th>Status</th>
                                     </tr>
                                 </thead>
 

@@ -223,8 +223,11 @@
                                                         <td>22</td>
                                                         <td>Rojo</td>
                                                         <td>7</td>
-                                                        <td><button class="quitar" onclick="borraElemento(this);"><i
-                                                                    class="fas fa-trash-alt"></i></button></td>
+                                                        <td>
+                                                            <button class="quitar" onclick="borraElemento(this);">
+                                                                <i class="fas fa-trash-alt"></i>
+                                                            </button>
+                                                        </td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -278,7 +281,6 @@
                                 </div>
                             </div>
                         </div>
-
                     </article>
                 </section>
             </main>
