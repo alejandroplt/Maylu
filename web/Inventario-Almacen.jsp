@@ -1,13 +1,13 @@
 <%-- 
-    Document   : Inventario-Almacen
-    Created on : 13/01/2021, 07:30:48 PM
+    Document   : Inventario-Vendedor.jsp
+    Created on : 15/01/2021, 03:54:01 PM
     Author     : Carlos Loaeza
 --%>
 
-<%@page import="java.sql.*,java.util.*"%>
-
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.sql.*"%>
 <!DOCTYPE html>
-<html lang="es"> 
+<html lang="es">
 
     <head>
         <meta charset="utf-8">
@@ -15,7 +15,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description"
               content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
-        <title>MayLú - Vendedor</title>
+        <title>MayLÃº - AlmacÃ©n</title>
 
         <!-- using online links -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
@@ -35,14 +35,147 @@
 
     <body>
 
+        <div id="container">
+            <div class="overlay" id="overlay">
+                <div class="popup" id="popup">
+                    <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+                    <h3>Agregar Producto</h3>
+                    <h4>Ingresa los datos</h4>
+                    <form action="">
+                        <div class="contenedor-etiquetas">
+                            <h4>Modelo</h4>
+                            <h4>Proveedor</h4>
+                            <h4>NÃºmero</h4>
+                            <h4>Color</h4>
+                            <h4>Precio Compra</h4>
+                            <h4>Precio Venta</h4>
+                            <h4>Stock</h4>
+                        </div>
+                        <div class="contenedor-inputs">
+
+                            <input type="text" name= "modelo" placeholder="Modelo">
+
+                            <select name="Proveedor" class="select">
+                                <option selected value="0"> Elige una opciÃ³n </option>
+                                <option value="1">Windows Vista</option>
+                                <option value="2">Windows 7</option>
+                                <option value="3">Windows XP</option>
+                                <option value="10">Fedora</option>
+                                <option value="11">Debian</option>
+                                <option value="12">Suse</option>
+                            </select>
+
+                            <input type="text" name="talla" placeholder="NÃºmero">
+
+                            <input type="text" name="color" placeholder="Color">
+
+                            <input type="text" name="precio_compra" placeholder="Precio Compra">
+
+                            <input type="text" name="precio_venta" placeholder="Precio Venta">
+
+                            <input type="text" name="stock" placeholder="Stock">
+                        </div>
+                        <div class="contenedor-imagen">
+                            <input type="file" placeholder="Cargar">
+                        </div>
+                        <br>
+                        <input type="submit" class="btn-submit" name="guardar" value="Guardar">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <%
+            if (request.getParameter("guardar") != null) {
+                String modelo = request.getParameter("modelo");
+                //int proveedor = Integer.parseInt(request.getParameter("proveedor"));
+                int talla = Integer.parseInt(request.getParameter("talla"));
+                String color = request.getParameter("color");
+                int precio_compra = Integer.parseInt(request.getParameter("precio_compra"));
+                int precio_venta = Integer.parseInt(request.getParameter("precio_venta"));
+                int stock = Integer.parseInt(request.getParameter("stock"));
+
+                Connection cn = null;
+                ResultSet rsl = null;
+                Statement stat = null;
+
+                try {
+
+                    Class.forName("com.mysql.jdbc.Driver");
+                    cn = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
+
+                    stat = cn.createStatement();
+                    stat.executeUpdate("INSERT INTO zapato (modelo,talla,color,precio_compra, precio_venta,stock) VALUES('" + modelo + "'," + talla + ",'" + color + "'," + precio_compra + "," + precio_venta + "," + stock + ")");
+                    request.getRequestDispatcher("Inventario-Administrador.jsp").forward(request, response);
+
+                } catch (Exception e) {
+                    out.print(e + "");
+                }
+            }
+
+        %>
+
+        <div id="container">
+            <div class="overlay2" id="overlay2">
+                <div class="popup2" id="popup2">
+                    <a href="#" id="btn-cerrar-popup2" class="btn-cerrar-popup2"><i class="fas fa-times"></i></a>
+                    <h3>Actualizar Producto</h3>
+                    <h4>Ingresa los datos</h4>
+                    <form action="">
+                        <div class="contenedor-etiquetas2">
+                            <h4>Modelo</h4>
+                            <h4>Proveedor</h4>
+                            <h4>Talla</h4>
+                            <h4>Color</h4>
+                            <h4>Precio Compra</h4>
+                            <h4>Precio Venta</h4>
+                            <h4>Stock</h4>
+                        </div>
+                        <div class="contenedor-inputs2">
+
+                            <input type="text" placeholder="Modelo">
+
+                            <select name="Proveedor" class="select">
+                                <option selected value="0"> Elige una opciÃƒÂ³n </option>
+                                <option value="1">Windows Vista</option>
+                                <option value="2">Windows 7</option>
+                                <option value="3">Windows XP</option>
+                                <option value="10">Fedora</option>
+                                <option value="11">Debian</option>
+                                <option value="12">Suse</option>
+                            </select>
+
+                            <input type="text" placeholder="Talla">
+
+                            <input type="text" placeholder="Color">
+
+                            <input type="text" placeholder="Precio Compra">
+
+                            <input type="text" placeholder="Precio Venta">
+
+                            <input type="text" placeholder="Stock">
+                        </div>
+                        <div class="contenedor-imagen">
+                            <input type="file" placeholder="Cargar">
+                        </div>
+                        <br>
+                        <input type="submit" class="btn-submit" value="Guardar">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+
         <div class="page-wrapper default-theme sidebar-bg bg1 toggled">
             <nav id="sidebar" class="sidebar-wrapper">
                 <div class="sidebar-content">
                     <!-- sidebar-brand  -->
                     <div class="sidebar-item sidebar-brand">
-                        <a href="#" align="center">
+                        <span align="center">
                             <i class="fa fa-shoe-prints"></i>
-                            MayLú</a>
+                            MayLÃƒÂº
+                        </span>
                     </div>
                     <!-- sidebar-header  -->
                     <div class="sidebar-item sidebar-header d-flex flex-nowrap">
@@ -53,7 +186,7 @@
                             <span class="user-name"><strong>Carlos
                                     Loaeza</strong>
                             </span>
-                            <span class="user-role">Vendedor</span>
+                            <span class="user-role">Almacenista</span>
                             <span class="user-status">
                                 <i class="fa fa-circle"></i>
                                 <span>Online</span>
@@ -67,19 +200,13 @@
                                 <span>General</span>
                             </li>
                             <li>
-                                <a href="principal-vendedor.jsp">
+                                <a href="principal-almacen.jsp">
                                     <i class="fa fa-tachometer-alt"></i>
                                     <span class="menu-text">Dashboard</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="PuntoVenta-Vendedor.jsp">
-                                    <i class="fa fa-shopping-cart"></i>
-                                    <span class="menu-text">Punto de Venta</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="Inventario-Vendedor.jsp">
+                                <a href="Inventario-Administrador.jsp">
                                     <i class="fa fa-warehouse"></i>
                                     <span class="menu-text">Inventario</span>
                                 </a>
@@ -104,7 +231,7 @@
                             <li>
                                 <a href="#" id="btnabrir" >
                                     <i class="fa fa-power-off"></i>
-                                    <span class="menu-text" onclick="cierra()">Cerrar sesión</span>
+                                    <span class="menu-text" onclick="cierra()">Cerrar sesiÃ³n</span>
                                 </a>
                             </li>
                         </ul>
@@ -127,7 +254,7 @@
                     <div class="modal">
                         <div class="modal_titulo">ADVERTENCIA</div>
                         <div class="modal_mensaje">
-                            <p>¿Seguro que desea salir?</p>
+                            <p>Â¿Seguro que desea salir?</p>
                         </div>
                         <div class="modal_botones">
                             <a href="login.jsp" class="boton" id="btn-yes">SI</a>
@@ -139,10 +266,9 @@
                 <section id="main-content">
 
                     <article>
-
                         <div id="divcerrar">
                             <button class="btn-tiny btn-danger">
-                                Cerrar Sesión <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                Cerrar SesiÃ³n <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                    fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"
                                       d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
@@ -158,10 +284,13 @@
                             <h1>Inventario</h1>
                         </header>
 
-                        <div id="container1">
+                        <div id="container1">                            
                             <div class="field" id="searchform">
                                 <input type="text" id="searchterm" placeholder="Ingresar Modelo" />
                                 <button type="button" id="search">Buscar</button>
+                                <button type="button" id="btn-abrir-popup"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+                                    </svg> Agregar</button>
                             </div>
                         </div>
 
@@ -171,19 +300,18 @@
                                     <tr>
                                         <th>Modelo</th>
                                         <th>Proveedor</th>
-                                        <th>Descripción</th>
-                                        <th>Número</th>
+                                        <th>NÃºmero</th>
                                         <th>Color</th>
                                         <th>Precio Compra</th>
                                         <th>Precio Venta</th>
                                         <th>Stock</th>
+                                        <th>Opciones</th>
                                     </tr>
                                 </thead>
 
                                 <tbody>
                                     <tr>
-                                        <%
-                                            Connection con = null;
+                                        <%                                            Connection con = null;
                                             Statement sta = null;
                                             ResultSet rs = null;
 
@@ -196,38 +324,60 @@
 
                                                 while (rs.next()) {
                                         %>
-                                    </tr>
                                     <tr>
-
                                         <td><%= rs.getString("modelo")%></td>
                                         <td><%=rs.getString("proveedor")%></td>
                                         <td><%=rs.getString("talla")%></td>
                                         <td><%=rs.getString("color")%></td>
                                         <td><%=rs.getString("precio_compra")%></td>
-                                        <td><%=rs.getString("precio_venta")%></td>
-                                        <td><%=rs.getString("descuento")%></td>
-                                        <td><%=rs.getString("stock")%></td>
+                                        <td><%=rs.getString("precio_venta")%></td>  
+                                        <td><%=rs.getString("stock")%></td>  
+
+                                        <td>
+                                            <button id="btn-abrir-popup2" class=" btn-abrir-popup2 btn btn-warning">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                     fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
+                                                <path fill-rule="evenodd"
+                                                      d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
+                                                </svg>
+                                            </button>
+                                            <button class="btn btn-danger">
+                                                <i class="fas fa-eye-slash"></i>
+                                            </button>
+                                        </td>
                                     </tr>
-                                    <tr>
-                                        <%
-                                                }
-                                                sta.close();
-                                                rs.close();
-                                                con.close();
-                                            } catch (Exception e) {
+
+
+                                    <%
                                             }
-                                        %>
+
+                                            sta.close();
+                                            rs.close();
+                                            con.close();
+
+                                        } catch (Exception e) {
+                                        }
+
+                                    %>
                                     </tr>
                                 </tbody>
                             </table>
                             <br>
                         </div>
+
                     </article>
                 </section>
+
+
             </main>
-            <!--page-content" -->
+
+            <!-- page-content" -->
         </div>
+
         <!-- page-wrapper -->
+
         <!-- using online scripts -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"

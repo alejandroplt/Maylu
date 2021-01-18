@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description"
               content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
-        <title>MayLu - Almacén</title>
+        <title>MayLú - Administrador</title>
 
         <!-- using online links -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
@@ -16,11 +16,6 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
               integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
         <link rel="stylesheet" href="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css">
-
-        <!-- using local links -->
-        <!-- <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
-        <link rel="stylesheet" href="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css"> -->
 
         <link rel="stylesheet" href="styles/estilos-principal.css">
         <link rel="stylesheet" href="styles/sidebar-themes.css">
@@ -32,27 +27,25 @@
     </head>
 
     <body>
-
         <div id="container">
             <div class="overlay" id="overlay">
                 <div class="popup" id="popup">
                     <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
                     <h3>Agregar Producto</h3>
                     <h4>Ingresa los datos</h4>
+                    <h5>* Campo obligatorio</h5>
                     <form action="">
                         <div class="contenedor-etiquetas">
-                            <h4>Modelo</h4>
-                            <h4>Proveedor</h4>
-                            <h4>Número</h4>
-                            <h4>Color</h4>
-                            <h4>Precio Compra</h4>
-                            <h4>Precio Venta</h4>
-                            <h4>Stock</h4>
+                            <h4>* Modelo</h4>
+                            <h4>* Proveedor</h4>
+                            <h4>* Número</h4>
+                            <h4>* Color</h4>
+                            <h4>* Precio Compra</h4>
+                            <h4>* Precio Venta</h4>
+                            <h4>* Stock</h4>
                         </div>
                         <div class="contenedor-inputs">
-
                             <input type="text" name= "modelo" placeholder="Modelo">
-
                             <select name="Proveedor" class="select">
                                 <option selected value="0"> Elige una opción </option>
                                 <option value="1">Windows Vista</option>
@@ -62,15 +55,10 @@
                                 <option value="11">Debian</option>
                                 <option value="12">Suse</option>
                             </select>
-
                             <input type="text" name="talla" placeholder="Número">
-
                             <input type="text" name="color" placeholder="Color">
-
                             <input type="text" name="precio_compra" placeholder="Precio Compra">
-
                             <input type="text" name="precio_venta" placeholder="Precio Venta">
-
                             <input type="text" name="stock" placeholder="Stock">
                         </div>
                         <div class="contenedor-imagen">
@@ -118,22 +106,23 @@
                     <a href="#" id="btn-cerrar-popup2" class="btn-cerrar-popup2"><i class="fas fa-times"></i></a>
                     <h3>Actualizar Producto</h3>
                     <h4>Ingresa los datos</h4>
+                    <h5>* Campo obligatorio</h5>
                     <form action="">
                         <div class="contenedor-etiquetas2">
-                            <h4>Modelo</h4>
-                            <h4>Proveedor</h4>
-                            <h4>Talla</h4>
-                            <h4>Color</h4>
-                            <h4>Precio Compra</h4>
-                            <h4>Precio Venta</h4>
-                            <h4>Stock</h4>
+                            <h4>Modelo*</h4>
+                            <h4>Proveedor*</h4>
+                            <h4>Talla*</h4>
+                            <h4>Color*</h4>
+                            <h4>Precio Compra*</h4>
+                            <h4>Precio Venta*</h4>
+                            <h4>Stock*</h4>
                         </div>
                         <div class="contenedor-inputs2">
 
                             <input type="text" placeholder="Modelo">
 
                             <select name="Proveedor" class="select">
-                                <option selected value="0"> Elige una opciÃ³n </option>
+                                <option selected value="0"> Elige una opción </option>
                                 <option value="1">Windows Vista</option>
                                 <option value="2">Windows 7</option>
                                 <option value="3">Windows XP</option>
@@ -162,9 +151,6 @@
             </div>
         </div>
 
-
-
-
         <div class="page-wrapper default-theme sidebar-bg bg1 toggled">
             <nav id="sidebar" class="sidebar-wrapper">
                 <div class="sidebar-content">
@@ -172,7 +158,7 @@
                     <div class="sidebar-item sidebar-brand">
                         <span align="center">
                             <i class="fa fa-shoe-prints"></i>
-                            MayLÃº
+                            MayLú
                         </span>
                     </div>
                     <!-- sidebar-header  -->
@@ -192,7 +178,7 @@
                         </div>
                     </div>
                     <!-- sidebar-menu  -->
-                                        <div class=" sidebar-item sidebar-menu">
+                    <div class=" sidebar-item sidebar-menu">
                         <ul>
                             <li class="header-menu">
                                 <span>General</span>
@@ -204,7 +190,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="Punto-Venta-Admin.html">
+                                <a href="PuntoVenta-Admin.jsp">
                                     <i class="fa fa-shopping-cart"></i>
                                     <span class="menu-text">Punto de Venta</span>
                                 </a>
@@ -271,7 +257,7 @@
                             <li>
                                 <a href="#" id="btnabrir" >
                                     <i class="fa fa-power-off"></i>
-                                    <span class="menu-text" onclick="cierra()">Cerrar sesiÃ³n</span>
+                                    <span class="menu-text" onclick="cierra()">Cerrar sesión</span>
                                 </a>
                             </li>
                         </ul>
@@ -297,7 +283,7 @@
                             <p>Â¿Seguro que desea salir?</p>
                         </div>
                         <div class="modal_botones">
-                            <a href="login.html" class="boton" id="btn-yes">SI</a>
+                            <a href="login.jsp" class="boton" id="btn-yes">SI</a>
                             <a href="#" class="boton" id="btn-no" onclick="NO()">NO</a>
                         </div>
                     </div>
@@ -306,16 +292,10 @@
                 <section id="main-content">
 
                     <article>
-                        <div id="divnombre">
-                            <p id="pnombre"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                 fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                                </svg> Nombre</p>
-                        </div>
                         <div id="divcerrar">
                             <button class="btn-tiny btn-danger">
                                 Cerrar Sesión <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                    fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                                                   fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"
                                       d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
                                 <path fill-rule="evenodd"
@@ -331,16 +311,13 @@
                         </header>
 
                         <div id="container1">
-                            <div>
-                                <br>
-                                <a href="#" id="btn-abrir-popup" class="btn btn-success" data-toggle="modal">Agregar</a>
-                                <div class="field" id="searchform">
-                                    <input type="text" id="searchterm" placeholder="Ingresar Modelo" />
-                                    <button type="button" id="search">Buscar</button>
-                                </div>
-                            </div>
-
-
+                            <div class="field" id="searchform">
+                                <input type="text" id="searchterm" placeholder="Ingresar Modelo" />
+                                <button type="button" id="search">Buscar</button>
+                                <button type="button" id="btn-abrir-popup"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+                                    </svg> Agregar</button>
+                            </div>                                   
                         </div>
 
                         <div class="table-responsive">
@@ -393,11 +370,7 @@
                                                 </svg>
                                             </button>
                                             <button class="btn btn-danger">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                     fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
-                                                <path fill-rule="evenodd"
-                                                      d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z" />
-                                                </svg>
+                                                <i class="fas fa-eye-slash"></i>
                                             </button>
                                         </td>
                                     </tr>
@@ -440,12 +413,6 @@
                 integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
         </script>
         <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-
-        <!-- using local scripts -->
-        <!-- <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-        <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
-        <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script> -->
 
         <script src="js/popups.js"></script>
         <script src="js/almacen/principal-almacen.js"></script>

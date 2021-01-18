@@ -1,10 +1,12 @@
-
 <%-- 
-    Document   : principal-admin
-    Created on : 15/01/2021, 06:07:04 PM
+    Document   : reportes
+    Created on : 17/01/2021, 08:53:07 PM
     Author     : Carlos Loaeza
 --%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.*,java.util.*"%>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -14,7 +16,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description"
               content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
-        <title>MayLú - Administrador</title>
+        <title>MayLÃº - Administrador</title>
 
         <!-- using online links -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
@@ -25,6 +27,9 @@
 
         <link rel="stylesheet" href="styles/estilos-principal.css">
         <link rel="stylesheet" href="styles/sidebar-themes.css">
+        <link rel="stylesheet" href="styles/estilos-nuevoproducto.css">
+        <link rel="stylesheet" href="styles/popups.css">
+
         <link rel="shortcut icon" type="image/png" href="img/icon.png" />
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
@@ -38,7 +43,7 @@
                     <div class="sidebar-item sidebar-brand">
                         <span align="center">
                             <i class="fa fa-shoe-prints"></i>
-                            MayLú
+                            MayLÃº
                         </span>
                     </div>
                     <!-- sidebar-header  -->
@@ -82,7 +87,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="reportes.jsp">
+                                <a href="reportes.html">
                                     <i class="fa fa-chart-line"></i>
                                     <span class="menu-text">Reportes</span>
                                 </a>
@@ -100,7 +105,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="devoluciones.jsp">
+                                <a href="devoluciones.html">
                                     <i class="fa fa-sync-alt"></i>
                                     <span class="menu-text">Devoluciones</span>
                                 </a>
@@ -137,7 +142,7 @@
                             <li>
                                 <a href="#" id="btnabrir" >
                                     <i class="fa fa-power-off"></i>
-                                    <span class="menu-text" onclick="cierra()">Cerrar sesión</span>
+                                    <span class="menu-text" onclick="cierra()">Cerrar sesiÃ³n</span>
                                 </a>
                             </li>
                         </ul>
@@ -154,14 +159,14 @@
                     </div>
                 </div>
             </nav>
+
             <!-- contenido  -->
             <main class="page-content pt-2">
-
                 <div class="fondo_transparente">
                     <div class="modal">
                         <div class="modal_titulo">ADVERTENCIA</div>
                         <div class="modal_mensaje">
-                            <p>¿Seguro que desea salir?</p>
+                            <p>Â¿Seguro que desea salir?</p>
                         </div>
                         <div class="modal_botones">
                             <a href="login.jsp" class="boton" id="btn-yes">SI</a>
@@ -169,82 +174,56 @@
                         </div>
                     </div>
                 </div>
-
-                <div id="overlay" class="overlay"></div>
-                <div class="container p-5">
-                    <div class="row">
-                        <div class="form-group col-md-3 ">
-                            <div class="article">
-                                <a href="Inventario-Administrador.jsp">
-                                    <img src="img/cajitas.svg" width="200" height="150" alt="">
-                                    <p>Inventario</p>
-                                </a>
-                            </div>
+                <section id="main-content">
+                    <article>
+                        <div id="divcerrar">
+                            <button class="btn-tiny btn-danger">
+                                Cerrar SesiÃ³n <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                   fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                      d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
+                                <path fill-rule="evenodd"
+                                      d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+                                </svg></button>
                         </div>
-                        <div class="form-group col-md-3">
-                            <div class="article">
-                                <a href="PuntoVenta-Admin.jsp">
-                                    <img src="img/carrito.svg" width="200" height="150" alt="">
-                                    <p>Punto de Venta</p>
-                                </a>
-                            </div>
+                        <header id="encabezado">
+                            <img id="img-reportes" class="img-responsive img-rounded" src="img/pdf.png"
+                                 height="150" width="150" alt="Inventario picture">
+                            <br>
+                            <br>
+                            <h1>Reportes</h1>
+                        </header>
+                        <div id="container1">
+                            <div class="field">
+                                    <select name="Proveedor" class="slct">
+                                    <option selected value="0"> Selecciona el mes </option>
+                                    <option value="1">Enero</option>
+                                    <option value="2">Febrero</option>
+                                    <option value="3">Marzo</option>
+                                    <option value="4">Abril</option>
+                                    <option value="5">Mayo</option>
+                                    <option value="6">Junio</option>
+                                    <option value="7">Julio</option>
+                                    <option value="8">Agosto</option>
+                                    <option value="9">Septiembre</option>
+                                    <option value="10">Octubre</option>
+                                    <option value="11">Noviembre</option>
+                                    <option value="12">Diciembre</option>
+                                </select>
+                                <button type="button" id="search">Generar</button>
+                            </div>                                   
                         </div>
-                        <div class="form-group col-md-3">
-                            <div class="article">
-                                <a href="reportes.jsp">
-                                    <img src="img/document.svg" width="200" height="150" alt="">
-                                    <p>Reportes</p>
-                                </a>
-                            </div>
+                        <br>
+                        <div class="pdf">
+                            <h1>Reporte del mes: <label id="reporte"></label></h1>
+                            <br>
+                            <embed src="pdf/PrÃ¡ctia3-2.pdf" width="900px" height="2100px" />
                         </div>
-                        <div class="form-group col-md-3">
-                            <div class="article">
-                                <a href="AdminCaja.jsp">
-                                    <img src="img/wallet.svg" width="200" height="150" alt="">
-                                    <p>Caja</p>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="form-group col-md-3">
-                            <div class="article">
-                                <a href="devoluciones.jsp">
-                                    <img src="img/broked.svg" width="200" height="150" alt="">
-                                    <p>Devoluciones</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="form-group col-md-3">
-                            <div class="article">
-                                <a href="Proveedor-Administrador.jsp">
-                                    <img src="img/provider.svg" width="200" height="150" alt="">
-                                    <p>Proveedores</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="form-group col-md-3">
-                            <div class="article">
-                                <a href="Usuario-Administrador.jsp">
-                                    <img src="img/user.svg" width="200" height="150" alt="">
-                                    <p>Usuarios</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="form-group col-md-3">
-                            <div class="article">
-                                <a href="">
-                                    <img src="img/questions.svg" width="200" height="150" alt="">
-                                    <p>Ayuda</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    </article>
+                </section>
             </main>
-            <!-- page-content" -->
         </div>
-        <!-- page-wrapper -->
 
-        <!-- using online scripts -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
                 integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
@@ -255,7 +234,6 @@
         <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
 
         <script src="js/administrador/principal-admin.js"></script>
-
     </body>
 
 </html>

@@ -96,6 +96,13 @@
 .popup h4 {
     font-size: 26px;
     font-weight: 300;
+    margin-bottom: 10px;
+    opacity: 0;
+}
+
+.popup h5{
+    font-size: 20px;
+    font-weight: 250;
     margin-bottom: 40px;
     opacity: 0;
 }
@@ -127,8 +134,9 @@
 .popup form .contenedor-etiquetas {
     width: 50%;
     height: 15px;
-    font-size: 18px;
-    text-align: left;
+    font-size: 20px;
+    text-align: right;
+    padding-top: 20px;
 }
 
 .popup form .contenedor-etiquetas h4 {
@@ -136,8 +144,7 @@
     height: 5px;
     font-size: 18px;
     line-height: 52px;
-    text-align: left;
-
+    text-align: right;
 }
 
 .popup form .contenedor-imagen input {
@@ -145,7 +152,7 @@
     margin-bottom: 15px;
     height: 30px;
     font-size: 18px;
-    text-align: left;
+    text-align: center;
 }
 
 .popup form .btn-submit {
@@ -182,6 +189,10 @@
     animation: entradaSubtitulo .8s ease .5s forwards;
 }
 
+.popup.active h5{
+    animation: entradaSubtitulo .8s ease .5s forwards;
+}
+
 .popup.active .contenedor-inputs {
     animation: entradaInputs 1s linear 1s forwards;
 }
@@ -190,9 +201,7 @@
     from {
         opacity: 0;
         transform: translateY(-25px);
-    }
-
-    to {
+    } to {
         transform: translateY(0);
         opacity: 1;
     }
@@ -202,9 +211,7 @@
     from {
         opacity: 0;
         transform: translateY(25px);
-    }
-
-    to {
+    } to {
         transform: translateY(0);
         opacity: 1;
     }
@@ -213,9 +220,7 @@
 @keyframes entradaInputs {
     from {
         opacity: 0;
-    }
-
-    to {
+    } to {
         opacity: 1;
     }
 }
@@ -318,6 +323,13 @@
 .popup2 h4 {
     font-size: 26px;
     font-weight: 300;
+    margin-bottom: 10px;
+    opacity: 0;
+}
+
+.popup2 h5{
+    font-size: 20px;
+    font-weight: 250;
     margin-bottom: 40px;
     opacity: 0;
 }
@@ -453,83 +465,100 @@ th {
 }
 
 .ventas{
-	width: 100%;
+    width: 100%;
 }
 
 .datos{
-	margin: 0;
+    margin: 0;
 }
 
 .datos >table{
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .detalles{
-	border-style: solid;
+    border-style: solid;
     width: 100%;
 }
 
 .detalles >h1{
-	color: #030249;
-	padding-left: 80px;
+    color: #030249;
+    padding-left: 80px;
 }
 
 .detalles >h3{
-	color: #030249;
-	font-size: larger;
+    color: #030249;
+    font-size: larger;
     padding-left: 10px;
+}
+.detalles .recibido{
+    padding-left: 10px;
+    display: flex;
+}
+
+.detalles .recibido >h3{
+    color: #030249;
+    font-size: larger;
+    width: 30%
+}
+
+.detalles .recibido > input {
+    width: 60%;
+    margin-bottom: 15px;
+    height: 30px;
+    font-size: 18px;
+    text-align: left;
 }
 
 #HoraActual{
-		font-size: larger;
-		font-family: Arial,sans-serif;
-		color: #030249;
-
+    font-size: larger;
+    font-family: Arial,sans-serif;
+    color: #030249;
 }
 
 .botones{
-	padding-left: 10px;
-	padding-bottom: 10px;
-	width: 100%;
-	display: inline-block;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    display: inline-block;
 }
 
 #hecho {
-	
+
 }
 
 #cancel{
-	background-color: rgb(146, 13, 13);
+    background-color: rgb(146, 13, 13);
 }
 
 .wrap {
-	width: 90%;
-	max-width: 1000px;
-	/*margin:auto;*/
+    width: 90%;
+    max-width: 1000px;
+    /*margin:auto;*/
 }
 
 .wrap p {
-	display: inline-block;
-	line-height: 1em;
-	color: #43434b;
+    display: inline-block;
+    line-height: 1em;
+    color: #43434b;
 }
 
 .fecha {
-	text-align: center;
-	font-size:1em;
-	padding: 5px;
-	width: 100%;
+    text-align: center;
+    font-size:1em;
+    padding: 5px;
+    width: 100%;
 }
 
 .reloj {
-	width: 100%;
-	font-size: 1em;
-	text-align: center;
+    width: 100%;
+    font-size: 1em;
+    text-align: center;
 }
 
 .quitar {
-    background-color: #f10032;
+    background-color: rgb(146, 13, 13);
     border-radius: 8px;
     color: #ffffff;
     height: 40px;
@@ -544,7 +573,7 @@ th {
 }
 
 .completo{
-    background-color: #f10032;
+    background-color: #8d0404;
     font-size: 25px;
 }
 
@@ -556,7 +585,7 @@ th {
     border-radius: 3px;
 }
 
- .completo:hover {
+.completo:hover {
     background: rgba(94, 125, 227, .9);
 }
 

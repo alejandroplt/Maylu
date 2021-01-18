@@ -1,9 +1,10 @@
-
 <%-- 
-    Document   : principal-admin
-    Created on : 15/01/2021, 06:07:04 PM
+    Document   : PuntoVenta-Admin
+    Created on : 15/01/2021, 06:02:09 PM
     Author     : Carlos Loaeza
 --%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.*,java.util.*"%>
 <!DOCTYPE html>
 <html lang="es">
@@ -14,7 +15,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description"
               content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
-        <title>MayLú - Administrador</title>
+        <title>MayLu - Administrador</title>
 
         <!-- using online links -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
@@ -25,12 +26,16 @@
 
         <link rel="stylesheet" href="styles/estilos-principal.css">
         <link rel="stylesheet" href="styles/sidebar-themes.css">
+        <link rel="stylesheet" href="styles/estilos-nuevoproducto.css">
+        <link rel="stylesheet" href="styles/popups.css">
+
         <link rel="shortcut icon" type="image/png" href="img/icon.png" />
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     </head>
 
-    <body>
+    <body >
+
         <div class="page-wrapper default-theme sidebar-bg bg1 toggled">
             <nav id="sidebar" class="sidebar-wrapper">
                 <div class="sidebar-content">
@@ -38,7 +43,7 @@
                     <div class="sidebar-item sidebar-brand">
                         <span align="center">
                             <i class="fa fa-shoe-prints"></i>
-                            MayLú
+                            MayLÃº
                         </span>
                     </div>
                     <!-- sidebar-header  -->
@@ -82,7 +87,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="reportes.jsp">
+                                <a href="reportes.html">
                                     <i class="fa fa-chart-line"></i>
                                     <span class="menu-text">Reportes</span>
                                 </a>
@@ -100,7 +105,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="devoluciones.jsp">
+                                <a href="devoluciones.html">
                                     <i class="fa fa-sync-alt"></i>
                                     <span class="menu-text">Devoluciones</span>
                                 </a>
@@ -137,7 +142,7 @@
                             <li>
                                 <a href="#" id="btnabrir" >
                                     <i class="fa fa-power-off"></i>
-                                    <span class="menu-text" onclick="cierra()">Cerrar sesión</span>
+                                    <span class="menu-text" onclick="cierra()">Cerrar sesiÃ³n</span>
                                 </a>
                             </li>
                         </ul>
@@ -156,12 +161,11 @@
             </nav>
             <!-- contenido  -->
             <main class="page-content pt-2">
-
                 <div class="fondo_transparente">
                     <div class="modal">
                         <div class="modal_titulo">ADVERTENCIA</div>
                         <div class="modal_mensaje">
-                            <p>¿Seguro que desea salir?</p>
+                            <p>Â¿Seguro que desea salir?</p>
                         </div>
                         <div class="modal_botones">
                             <a href="login.jsp" class="boton" id="btn-yes">SI</a>
@@ -169,79 +173,121 @@
                         </div>
                     </div>
                 </div>
-
                 <div id="overlay" class="overlay"></div>
-                <div class="container p-5">
-                    <div class="row">
-                        <div class="form-group col-md-3 ">
-                            <div class="article">
-                                <a href="Inventario-Administrador.jsp">
-                                    <img src="img/cajitas.svg" width="200" height="150" alt="">
-                                    <p>Inventario</p>
-                                </a>
-                            </div>
+                <section id="main-content">
+                    <article>
+                        <div id="divcerrar">
+                            <button class="btn-tiny btn-danger">
+                                Cerrar SesiÃ³n <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                   fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                      d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
+                                <path fill-rule="evenodd"
+                                      d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+                                </svg></button>
                         </div>
-                        <div class="form-group col-md-3">
-                            <div class="article">
-                                <a href="PuntoVenta-Admin.jsp">
-                                    <img src="img/carrito.svg" width="200" height="150" alt="">
-                                    <p>Punto de Venta</p>
-                                </a>
+                        <br>
+                        <div class="row ventas">
+                            <div class="col-md-8">
+                                <header id="encabezado">
+                                    <img id="img-inventario" class="img-responsive img-rounded" src="img/punto.png" height="150"
+                                         width="150" alt="Inventario picture">
+                                    <br>
+                                    <br>
+                                    <h1>Punto de Venta</h1>
+                                </header>
+                                <div class="datos">
+                                    <div id="container">
+                                        <div class="field" id="searchform">
+                                            <input type="text" id="searchterm" placeholder="Ingresar Modelo" />
+                                            <button type="button" id="search">Agregar</button>
+                                        </div>
+                                        <div class="table-responsive">
+                                            <table class="table table-hover table-bordered" id="tablee">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Codigo</th>
+                                                        <th>Foto</th>
+                                                        <th>Cantidad</th>
+                                                        <th>Talla</th>
+                                                        <th>Color</th>
+                                                        <th>Precio</th>
+                                                        <th>Quitar</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>4500MX</td>
+                                                        <td></td>
+                                                        <td>$250</td>
+                                                        <td>22</td>
+                                                        <td>Rojo</td>
+                                                        <td>7</td>
+                                                        <td>
+                                                            <button class="quitar" onclick="borraElemento(this);">
+                                                                <i class="fas fa-trash-alt"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <br>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group col-md-3">
-                            <div class="article">
-                                <a href="reportes.jsp">
-                                    <img src="img/document.svg" width="200" height="150" alt="">
-                                    <p>Reportes</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="form-group col-md-3">
-                            <div class="article">
-                                <a href="AdminCaja.jsp">
-                                    <img src="img/wallet.svg" width="200" height="150" alt="">
-                                    <p>Caja</p>
-                                </a>
-                            </div>
-                        </div>
+                            <div class="col-md-4">
+                                <div class="detalles">
+                                    <p align="center"><img src="img/logito.jpg" width="250" height="150" alt=""></p>
+                                    <h1>Detalles</h1>
+                                    <h3>Fecha y hora: </h3>
+                                    <div class="wrap">
+                                        <div class="fecha">
+                                            <p id="diaSemana" class="diaSemana"></p>
+                                            <p id="dia" class="dia"></p>
+                                            <p>de </p>
+                                            <p id="mes" class="mes"></p>
+                                            <p>del </p>
+                                            <p id="year" class="year"></p>
+                                            <div class="reloj">
+                                                <p id="horas" class="horas"></p>
+                                                <p>:</p>
+                                                <p id="minutos" class="minutos"></p>
+                                                <p>:</p>                                   
+                                                <p id="segundos" class="segundos"></p>
+                                                <p id="ampm" class="ampm"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h3>Vendedor: </h3>
+                                    <h3>Subtotal: </h3>
+                                    <h3>Iva: </h3>
+                                    <h3>Total: </h3>
+                                    <div class="recibido">
+                                        <h3>Recibido: </h3>
+                                        <input type="text" name="recibido" value=""  maxlength="9" required 
+                                               placeholder="Â¿Con cuanto paga?"/>
+                                    </div>
+                                    <h3>Cambio:</h3>
 
-                        <div class="form-group col-md-3">
-                            <div class="article">
-                                <a href="devoluciones.jsp">
-                                    <img src="img/broked.svg" width="200" height="150" alt="">
-                                    <p>Devoluciones</p>
-                                </a>
+                                    <div class="botones">
+                                        <button id="hecho" class="btn btn-success">
+                                            <i class="fas fa-check"></i> Concretar Venta
+                                        </button>
+                                        <button id="cancel" class="btn btn-success">
+                                            <i class="fas fa-times"></i> Cancelar
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="form-group col-md-3">
-                            <div class="article">
-                                <a href="Proveedor-Administrador.jsp">
-                                    <img src="img/provider.svg" width="200" height="150" alt="">
-                                    <p>Proveedores</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="form-group col-md-3">
-                            <div class="article">
-                                <a href="Usuario-Administrador.jsp">
-                                    <img src="img/user.svg" width="200" height="150" alt="">
-                                    <p>Usuarios</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="form-group col-md-3">
-                            <div class="article">
-                                <a href="">
-                                    <img src="img/questions.svg" width="200" height="150" alt="">
-                                    <p>Ayuda</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    </article>
+                </section>
             </main>
+
             <!-- page-content" -->
         </div>
+
         <!-- page-wrapper -->
 
         <!-- using online scripts -->
@@ -254,6 +300,7 @@
         </script>
         <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
 
+        <script src="js/popups.js"></script>
         <script src="js/administrador/principal-admin.js"></script>
 
     </body>

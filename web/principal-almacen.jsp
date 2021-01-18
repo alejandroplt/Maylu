@@ -1,3 +1,12 @@
+<%-- 
+    Document   : principal-almacen
+    Created on : 15/01/2021, 06:08:57 PM
+    Author     : Carlos Loaeza
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.sql.*,java.util.*"%>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -7,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description"
         content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
-    <title>MayLu - Almacén</title>
+    <title>MayLú - Almacén</title>
 
     <!-- using online links -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
@@ -16,10 +25,6 @@
         integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css">
 
-    <!-- using local links -->
-    <!-- <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
-    <link rel="stylesheet" href="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css"> -->
 
     <link rel="stylesheet" href="styles/estilos-principal.css">
     <link rel="stylesheet" href="styles/sidebar-themes.css">
@@ -67,7 +72,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="Inventario-Almacen.html">
+                            <a href="Inventario-Almacen.jsp">
                                 <i class="fa fa-warehouse"></i>
                                 <span class="menu-text">Inventario</span>
                             </a>
@@ -118,7 +123,7 @@
                         <p>¿Seguro que desea salir?</p>
                     </div>
                     <div class="modal_botones">
-                        <a href="login.html" class="boton" id="btn-yes">SI</a>
+                        <a href="login.jsp" class="boton" id="btn-yes">SI</a>
                         <a href="#" class="boton" id="btn-no" onclick="NO()">NO</a>
                     </div>
                 </div>
@@ -129,8 +134,8 @@
                     <div class="col-md-3"></div>
                     <div class="form-group col-md-6">
                         <div class="article">
-                            <a href="Inventario-Almacen.html">
-                                <img src="/img/cajitas.svg" width="400" height="350" alt="">
+                            <a href="Inventario-Almacen.jsp">
+                                <img src="img/cajitas.svg" width="400" height="350" alt="">
                                 <p>Almacen</p>
                             </a>
                         </div>
@@ -153,12 +158,6 @@
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
         </script>
     <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-
-    <!-- using local scripts -->
-    <!-- <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script> -->
 
 
     <script src="js/almacen/principal-almacen.js"></script>

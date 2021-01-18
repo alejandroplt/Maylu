@@ -1,13 +1,14 @@
 <%-- 
-    Document   : Inventario-Almacen
-    Created on : 13/01/2021, 07:30:48 PM
+    Document   : PuntoVenta-Vendedor
+    Created on : 15/01/2021, 06:04:01 PM
     Author     : Carlos Loaeza
 --%>
 
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.*,java.util.*"%>
 
 <!DOCTYPE html>
-<html lang="es"> 
+<html lang="es">
 
     <head>
         <meta charset="utf-8">
@@ -15,7 +16,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description"
               content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
-        <title>MayLú - Vendedor</title>
+        <title>MayLu - Vendedor</title>
 
         <!-- using online links -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
@@ -42,7 +43,7 @@
                     <div class="sidebar-item sidebar-brand">
                         <a href="#" align="center">
                             <i class="fa fa-shoe-prints"></i>
-                            MayLú</a>
+                            MayLÃº</a>
                     </div>
                     <!-- sidebar-header  -->
                     <div class="sidebar-item sidebar-header d-flex flex-nowrap">
@@ -67,13 +68,13 @@
                                 <span>General</span>
                             </li>
                             <li>
-                                <a href="principal-vendedor.jsp">
+                                <a href="principal-vendedor.html">
                                     <i class="fa fa-tachometer-alt"></i>
                                     <span class="menu-text">Dashboard</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="PuntoVenta-Vendedor.jsp">
+                                <a href="Punto-Venta-Vendedor.html">
                                     <i class="fa fa-shopping-cart"></i>
                                     <span class="menu-text">Punto de Venta</span>
                                 </a>
@@ -104,7 +105,7 @@
                             <li>
                                 <a href="#" id="btnabrir" >
                                     <i class="fa fa-power-off"></i>
-                                    <span class="menu-text" onclick="cierra()">Cerrar sesión</span>
+                                    <span class="menu-text" onclick="cierra()">Cerrar sesiÃ³n</span>
                                 </a>
                             </li>
                         </ul>
@@ -127,7 +128,7 @@
                     <div class="modal">
                         <div class="modal_titulo">ADVERTENCIA</div>
                         <div class="modal_mensaje">
-                            <p>¿Seguro que desea salir?</p>
+                            <p>Â¿Seguro que desea salir?</p>
                         </div>
                         <div class="modal_botones">
                             <a href="login.jsp" class="boton" id="btn-yes">SI</a>
@@ -137,12 +138,10 @@
                 </div>
                 <div id="overlay" class="overlay"></div>
                 <section id="main-content">
-
                     <article>
-
                         <div id="divcerrar">
                             <button class="btn-tiny btn-danger">
-                                Cerrar Sesión <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                Cerrar SesiÃ³n <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                    fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"
                                       d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
@@ -150,84 +149,107 @@
                                       d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
                                 </svg></button>
                         </div>
-                        <header id="encabezado">
-                            <img id="img-inventario" class="img-responsive img-rounded" src="img/inventario.png"
-                                 height="150" width="150" alt="Inventario picture">
-                            <br>
-                            <br>
-                            <h1>Inventario</h1>
-                        </header>
-
-                        <div id="container1">
-                            <div class="field" id="searchform">
-                                <input type="text" id="searchterm" placeholder="Ingresar Modelo" />
-                                <button type="button" id="search">Buscar</button>
+                        <br>
+                        <div class="row ventas">
+                            <div class="col-md-8">
+                                <header id="encabezado">
+                                    <img id="img-inventario" class="img-responsive img-rounded" src="img/punto.png" height="150"
+                                         width="150" alt="Inventario picture">
+                                    <br>
+                                    <br>
+                                    <h1>Punto de Venta</h1>
+                                </header>
+                                <div class="datos">
+                                    <div id="container">
+                                        <div class="field" id="searchform">
+                                            <input type="text" id="searchterm" placeholder="Ingresar Modelo" />
+                                            <button type="button" id="search">Agregar</button>
+                                        </div>
+                                        <div class="table-responsive">
+                                            <table class="table table-hover table-bordered" id="tablee">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Codigo</th>
+                                                        <th>Foto</th>
+                                                        <th>Cantidad</th>
+                                                        <th>Talla</th>
+                                                        <th>Color</th>
+                                                        <th>Precio</th>
+                                                        <th>Quitar</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>4500MX</td>
+                                                        <td></td>
+                                                        <td>$250</td>
+                                                        <td>22</td>
+                                                        <td>Rojo</td>
+                                                        <td>7</td>
+                                                        <td><button class="quitar" onclick="borraElemento(this);"><i
+                                                                    class="fas fa-trash-alt"></i></button></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <br>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                            <div class="col-md-4">
+                                <div class="detalles">
+                                    <p align="center"><img src="img/logito.jpg" width="250" height="150" alt=""></p>
+                                    <h1>Detalles</h1>
+                                    <h3>Fecha y hora: </h3>
+                                    <div class="wrap">
+                                        <div class="fecha">
+                                            <p id="diaSemana" class="diaSemana"></p>
+                                            <p id="dia" class="dia"></p>
+                                            <p>de </p>
+                                            <p id="mes" class="mes"></p>
+                                            <p>del </p>
+                                            <p id="year" class="year"></p>
+                                            <div class="reloj">
+                                                <p id="horas" class="horas"></p>
+                                                <p>:</p>
+                                                <p id="minutos" class="minutos"></p>
+                                                <p>:</p>                                   
+                                                <p id="segundos" class="segundos"></p>
+                                                <p id="ampm" class="ampm"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h3>Vendedor: </h3>
+                                    <h3>Subtotal: </h3>
+                                    <h3>Iva: </h3>
+                                    <h3>Total: </h3>
+                                    <div class="recibido">
+                                        <h3>Recibido: </h3>
+                                        <input type="text" name="recibido" value=""  maxlength="9" required 
+                                               placeholder="Â¿Con cuanto paga?"/>
+                                    </div>
+                                    <h3>Cambio:</h3>
 
-                        <div class="table-responsive">
-                            <table class="table table-hover" id="tablee">
-                                <thead>
-                                    <tr>
-                                        <th>Modelo</th>
-                                        <th>Proveedor</th>
-                                        <th>Descripción</th>
-                                        <th>Número</th>
-                                        <th>Color</th>
-                                        <th>Precio Compra</th>
-                                        <th>Precio Venta</th>
-                                        <th>Stock</th>
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-                                    <tr>
-                                        <%
-                                            Connection con = null;
-                                            Statement sta = null;
-                                            ResultSet rs = null;
-
-                                            try {
-                                                Class.forName("com.mysql.jdbc.Driver");
-                                                con = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
-
-                                                sta = con.createStatement();
-                                                rs = sta.executeQuery("SELECT * FROM zapato");
-
-                                                while (rs.next()) {
-                                        %>
-                                    </tr>
-                                    <tr>
-
-                                        <td><%= rs.getString("modelo")%></td>
-                                        <td><%=rs.getString("proveedor")%></td>
-                                        <td><%=rs.getString("talla")%></td>
-                                        <td><%=rs.getString("color")%></td>
-                                        <td><%=rs.getString("precio_compra")%></td>
-                                        <td><%=rs.getString("precio_venta")%></td>
-                                        <td><%=rs.getString("descuento")%></td>
-                                        <td><%=rs.getString("stock")%></td>
-                                    </tr>
-                                    <tr>
-                                        <%
-                                                }
-                                                sta.close();
-                                                rs.close();
-                                                con.close();
-                                            } catch (Exception e) {
-                                            }
-                                        %>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <br>
+                                    <div class="botones">
+                                        <button id="hecho" class="btn btn-success">
+                                            <i class="fas fa-check"></i> Concretar Venta
+                                        </button>
+                                        <button id="cancel" class="btn btn-success">
+                                            <i class="fas fa-times"></i> Cancelar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </article>
                 </section>
             </main>
-            <!--page-content" -->
+
+            <!-- page-content" -->
         </div>
+
         <!-- page-wrapper -->
+
         <!-- using online scripts -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
@@ -239,7 +261,7 @@
         <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
 
         <script src="js/popups.js"></script>
-        <script src="js/almacen/principal-almacen.js"></script>
+        <script src="js/vendedor/principal-vendedor.js"></script>
 
     </body>
 

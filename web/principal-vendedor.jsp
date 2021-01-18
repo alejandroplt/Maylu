@@ -1,3 +1,14 @@
+<%-- 
+    Document   : principalVendedor
+    Created on : 15/01/2021, 06:07:04 PM
+    Author     : Carlos Loaeza
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.sql.*,java.util.*"%>
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -15,11 +26,6 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
               integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
         <link rel="stylesheet" href="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css">
-
-        <!-- using local links -->
-        <!-- <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
-        <link rel="stylesheet" href="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css"> -->
 
         <link rel="stylesheet" href="styles/estilos-principal.css">
         <link rel="stylesheet" href="styles/sidebar-themes.css">
@@ -67,7 +73,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="Punto-Venta-Vendedor.html">
+                                <a href="PuntoVenta-Vendedor.jsp">
                                     <i class="fa fa-shopping-cart"></i>
                                     <span class="menu-text">Punto de Venta</span>
                                 </a>
@@ -125,7 +131,7 @@
                             <p>¿Seguro que desea salir?</p>
                         </div>
                         <div class="modal_botones">
-                            <a href="login.html" class="boton" id="btn-yes">SI</a>
+                            <a href="login.jsp" class="boton" id="btn-yes">SI</a>
                             <a href="#" class="boton" id="btn-no" onclick="NO()">NO</a>
                         </div>
                     </div>
@@ -135,7 +141,7 @@
                     <div class="row ">
                         <div class="form-group col-md-6">
                             <div class="article">
-                                <a href="Punto-Venta-Vendedor.html">
+                                <a href="PuntoVenta-Vendedor.jsp">
                                     <img src="img/carrito.svg" width="400" height="350" alt="">
                                     <p>Punto de Venta</p>
                                 </a>
@@ -143,7 +149,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <div class="article">
-                                <a href="Almacen-Vendedor.html">
+                                <a href="Inventario-Vendedor.jsp">
                                     <img src="img/cajitas.svg" width="400" height="350" alt="">
                                     <p>Inventario</p>
                                 </a>
@@ -166,13 +172,6 @@
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
 </script>
 <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-
-<!-- using local scripts -->
-<!-- <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-<script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
-<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script> -->
-
 
 <script src="js/vendedor/principal-vendedor.js"></script>
 </body>
