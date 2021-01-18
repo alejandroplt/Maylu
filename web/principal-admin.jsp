@@ -82,7 +82,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="reportes.html">
+                                <a href="reportes.jsp">
                                     <i class="fa fa-chart-line"></i>
                                     <span class="menu-text">Reportes</span>
                                 </a>
@@ -100,7 +100,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="devoluciones.html">
+                                <a href="devoluciones.jsp">
                                     <i class="fa fa-sync-alt"></i>
                                     <span class="menu-text">Devoluciones</span>
                                 </a>
@@ -191,7 +191,7 @@
                         </div>
                         <div class="form-group col-md-3">
                             <div class="article">
-                                <a href="reportes.html">
+                                <a href="reportes.jsp">
                                     <img src="img/document.svg" width="200" height="150" alt="">
                                     <p>Reportes</p>
                                 </a>
@@ -208,7 +208,7 @@
 
                         <div class="form-group col-md-3">
                             <div class="article">
-                                <a href="devoluciones.html">
+                                <a href="devoluciones.jsp">
                                     <img src="img/broked.svg" width="200" height="150" alt="">
                                     <p>Devoluciones</p>
                                 </a>

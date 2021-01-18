@@ -36,6 +36,11 @@ body {
     float: left;
 }
 
+#img-reportes {
+    margin-right: 15px;
+    float: left;
+}
+
 #main-content header,
 #main-content .content {
     padding: 20px;
@@ -46,6 +51,10 @@ body {
 }
 
 .flexsearch--input {
+    width: 30%;
+}
+
+.flexsearch--select{
     width: 30%;
 }
 
@@ -68,7 +77,31 @@ body {
     -moz-appearance: none;
 }
 
+.flexsearch--select{
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 20px;
+    padding: 0 26px 0 10px;
+    border-color: #888;
+    border-radius: 35px; /* (height/2) + border-width */
+    border-style: solid;
+    border-width: 3px;
+    margin-top: 15px;
+    margin-left: 250px;
+    color: #333;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 15px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
 .flexsearch--input:focus {
+    outline: none;
+    border-color: #333;
+}
+
+.flexsearch--select:focus {
     outline: none;
     border-color: #333;
 }
@@ -102,9 +135,10 @@ body {
 }
 
 .field>input[type=text],
-.field>button {
+.field>button,
+.field>select{
     display:block;
-    font:1.2em 'Montserrat Alternates';
+    font:1.6em 'Montserrat Alternates';
     font-family: Helvetica, Arial, sans-serif;
 }
 
@@ -131,6 +165,12 @@ body {
     background-color: #030249;
     color:white;
     border:none;
+}
+
+.field>select{
+    width: 100%;
+    background-color: #030249;
+    color: #ffffff;
 }
 
 #tablee {

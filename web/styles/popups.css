@@ -134,8 +134,9 @@
 .popup form .contenedor-etiquetas {
     width: 50%;
     height: 15px;
-    font-size: 18px;
+    font-size: 20px;
     text-align: right;
+    padding-top: 20px;
 }
 
 .popup form .contenedor-etiquetas h4 {
@@ -144,7 +145,6 @@
     font-size: 18px;
     line-height: 52px;
     text-align: right;
-
 }
 
 .popup form .contenedor-imagen input {

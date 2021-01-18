@@ -20,8 +20,9 @@
         <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Lobster+Two&display=swap" rel="stylesheet">
     </head>
- 
+
     <body background="img/zapato-1.jpg">
+
         <section class="container">
             <section class="left" id="left" >
                 <img src="img/maylu.png" alt="logo" width="530" height="510" />
@@ -42,7 +43,6 @@
                     <button type="submit" name="enviar_formulario" id="enviar"><label class="tipo">Entrar</label></button>
                 </div>
             </section>
-    </section>
-       
+        </section>
     </body>
 </hmtl>

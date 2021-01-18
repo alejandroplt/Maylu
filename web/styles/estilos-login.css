@@ -60,17 +60,16 @@ h1 {
 }
 
 h3 {
-    font-size: 50px;
+    font-size: 90px; 
     margin-top: 20px;
     padding-left: 80px;
     font-size: 25px;
     font-family: "Tangerine";
-    font-weight: lighter;
 }
 
 label {
     padding-left: 10px;
-    font-size: 20px;
+    font-size: 50px;
     font-family: "Tangerine";
     color: #000000;
 }
@@ -92,6 +91,7 @@ input {
     font-family: 'Lobster', cursive;
     font-weight: lighter;
     font-size: 20px;
+    cursor: pointer;
 }
 
 button {
@@ -114,10 +114,12 @@ button {
 
 button:hover {
     background-color: #000000;
-    color: #fff;
+    color: #ffffff;
   }
 
-
+  .tipo:hover{
+      color: #ffffff;
+  }
 
 @media screen and (max-width:910px) {
 

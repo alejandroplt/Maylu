@@ -36,18 +36,16 @@
                     <h5>* Campo obligatorio</h5>
                     <form action="">
                         <div class="contenedor-etiquetas">
-                            <h4>Modelo*</h4>
-                            <h4>Proveedor*</h4>
-                            <h4>Número*</h4>
-                            <h4>Color*</h4>
-                            <h4>Precio Compra*</h4>
-                            <h4>Precio Venta*</h4>
-                            <h4>Stock*</h4>
+                            <h4>* Modelo</h4>
+                            <h4>* Proveedor</h4>
+                            <h4>* Número</h4>
+                            <h4>* Color</h4>
+                            <h4>* Precio Compra</h4>
+                            <h4>* Precio Venta</h4>
+                            <h4>* Stock</h4>
                         </div>
                         <div class="contenedor-inputs">
-
                             <input type="text" name= "modelo" placeholder="Modelo">
-
                             <select name="Proveedor" class="select">
                                 <option selected value="0"> Elige una opción </option>
                                 <option value="1">Windows Vista</option>
@@ -57,15 +55,10 @@
                                 <option value="11">Debian</option>
                                 <option value="12">Suse</option>
                             </select>
-
                             <input type="text" name="talla" placeholder="Número">
-
                             <input type="text" name="color" placeholder="Color">
-
                             <input type="text" name="precio_compra" placeholder="Precio Compra">
-
                             <input type="text" name="precio_venta" placeholder="Precio Venta">
-
                             <input type="text" name="stock" placeholder="Stock">
                         </div>
                         <div class="contenedor-imagen">
@@ -325,7 +318,6 @@
                                     <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
                                     </svg> Agregar</button>
                             </div>                                   
-
                         </div>
 
                         <div class="table-responsive">
