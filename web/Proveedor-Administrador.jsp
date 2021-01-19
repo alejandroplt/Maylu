@@ -37,11 +37,11 @@
                     <h5>* Campo obligatorio</h5>
                     <form action="bd/insertProveedor.jsp" method="POST">
                         <div class="contenedor-etiquetas">
-                            <h4>Nombre*</h4>
-                            <h4>Agente*</h4>
-                            <h4>Direccion*</h4>
-                            <h4>Telefono*</h4>
-                            <h4>Correo*</h4>
+                            <h4>* Nombre</h4>
+                            <h4>* Agente</h4>
+                            <h4>* Direccion</h4>
+                            <h4>* Telefono</h4>
+                            <h4>* Correo</h4>
                         </div>
                         <div class="contenedor-inputs">
 
@@ -114,7 +114,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="reportes.html">
+                                <a href="reportes.jsp">
                                     <i class="fa fa-chart-line"></i>
                                     <span class="menu-text">Reportes</span>
                                 </a>
@@ -132,7 +132,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="devoluciones.html">
+                                <a href="devoluciones.jsp">
                                     <i class="fa fa-sync-alt"></i>
                                     <span class="menu-text">Devoluciones</span>
                                 </a>
@@ -278,7 +278,7 @@
                                         <td><%=rs.getString("email")%></td>
 
                                         <td>
-                                            <a href="bd/editProveedor.jsp?id_proveedor=<%=rs.getString("id_proveedor")%>">
+                                            <a href="editProveedor.jsp?id_proveedor=<%=rs.getString("id_proveedor")%>">
                                                 <!--<button id="btn-abrir-popup2" class=" btn-abrir-popup2 btn btn-warning">-->
                                                 <button class="btn btn-warning">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -300,6 +300,7 @@
                                                           d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z" />
                                                     </svg>
                                                 </button>
+                                            </a>
                                         </td>
                                     </tr>
                                     <%

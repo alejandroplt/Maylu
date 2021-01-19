@@ -87,7 +87,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="reportes.html">
+                                <a href="reportes.jsp">
                                     <i class="fa fa-chart-line"></i>
                                     <span class="menu-text">Reportes</span>
                                 </a>
@@ -105,7 +105,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="devoluciones.html">
+                                <a href="devoluciones.jsp">
                                     <i class="fa fa-sync-alt"></i>
                                     <span class="menu-text">Devoluciones</span>
                                 </a>

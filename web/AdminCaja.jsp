@@ -37,8 +37,8 @@
                     <h5>* Campo obligatorio</h5>
                     <form action="bd/InsertCaja.jsp" method="post">
                         <div class="contenedor-etiquetas">
-                            <h4>Nombre/Codigo*</h4>
-                            <h4>Efectivo*</h4>
+                            <h4>* Nombre/Codigo</h4>
+                            <h4>* Efectivo</h4>
                         </div>
                         <div class="contenedor-inputs">
                             <input type="text" name="nombre_codigo" placeholder="Nombre o codigo de caja">
@@ -103,7 +103,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="reportes.html">
+                                <a href="reportes.jsp">
                                     <i class="fa fa-chart-line"></i>
                                     <span class="menu-text">Reportes</span>
                                 </a>
@@ -121,7 +121,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="devoluciones.html">
+                                <a href="devoluciones.jsp">
                                     <i class="fa fa-sync-alt"></i>
                                     <span class="menu-text">Devoluciones</span>
                                 </a>
@@ -163,7 +163,6 @@
                             </li>
                         </ul>
                     </div>
-                </div>
                 <!-- sidebar-menu  -->
                 <div class="sidebar-footer">
                     <div class="dropdown">
@@ -260,7 +259,7 @@
                                         <td><%= rs.getString("nombre_codigo")%></td>
                                         <td><%=rs.getString("efectivo")%></td>
                                         <td>
-                                            <a href="bd/editCaja.jsp?id_caja=<%=rs.getString("id_caja")%>">
+                                            <a href="editCaja.jsp?id_caja=<%=rs.getString("id_caja")%>">
                                                 <!--< <button id="btn-abrir-popup2" class=" btn-abrir-popup2 btn btn-warning">-->
                                                 <button class="btn btn-warning">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"

@@ -41,15 +41,16 @@
                     <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
                     <h3>Agregar Producto</h3>
                     <h4>Ingresa los datos</h4>
+                    <h5>* Campo obligatorio</h5>
                     <form action="">
                         <div class="contenedor-etiquetas">
-                            <h4>Modelo</h4>
-                            <h4>Proveedor</h4>
-                            <h4>Número</h4>
-                            <h4>Color</h4>
-                            <h4>Precio Compra</h4>
-                            <h4>Precio Venta</h4>
-                            <h4>Stock</h4>
+                            <h4>* Modelo</h4>
+                            <h4>* Proveedor</h4>
+                            <h4>* Número</h4>
+                            <h4>* Color</h4>
+                            <h4>* Precio Compra</h4>
+                            <h4>* Precio Venta</h4>
+                            <h4>* Stock</h4>
                         </div>
                         <div class="contenedor-inputs">
 
@@ -120,22 +121,23 @@
                     <a href="#" id="btn-cerrar-popup2" class="btn-cerrar-popup2"><i class="fas fa-times"></i></a>
                     <h3>Actualizar Producto</h3>
                     <h4>Ingresa los datos</h4>
+                    <h5>* Campo obligatorio</h5>
                     <form action="">
                         <div class="contenedor-etiquetas2">
-                            <h4>Modelo</h4>
-                            <h4>Proveedor</h4>
-                            <h4>Talla</h4>
-                            <h4>Color</h4>
-                            <h4>Precio Compra</h4>
-                            <h4>Precio Venta</h4>
-                            <h4>Stock</h4>
+                            <h4>* Modelo</h4>
+                            <h4>* Proveedor</h4>
+                            <h4>* Talla</h4>
+                            <h4>* Color</h4>
+                            <h4>* Precio Compra</h4>
+                            <h4>* Precio Venta</h4>
+                            <h4>* Stock</h4>
                         </div>
                         <div class="contenedor-inputs2">
 
                             <input type="text" placeholder="Modelo">
 
                             <select name="Proveedor" class="select">
-                                <option selected value="0"> Elige una opciÃ³n </option>
+                                <option selected value="0"> Elige una opción </option>
                                 <option value="1">Windows Vista</option>
                                 <option value="2">Windows 7</option>
                                 <option value="3">Windows XP</option>

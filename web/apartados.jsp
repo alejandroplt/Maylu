@@ -43,14 +43,14 @@
                     <h5>* Campo obligatorio</h5>
                     <form action="">
                         <div class="contenedor-etiquetas">
-                            <h4>Vencimiento*</h4>
-                            <h4>Modelo*</h4>
-                            <h4>Cliente*</h4>
-                            <h4>Número*</h4>
-                            <h4>Color*</h4>
-                            <h4>Precio*</h4>
-                            <h4>Abono*</h4>
-                            <h4>Saldo*</h4>
+                            <h4>* Vencimiento</h4>
+                            <h4>* Modelo</h4>
+                            <h4>* Cliente</h4>
+                            <h4>* Número</h4>
+                            <h4>* Color</h4>
+                            <h4>* Precio</h4>
+                            <h4>* Abono</h4>
+                            <h4>* Saldo</h4>
                         </div>
                         <div class="contenedor-inputs">
                             <input type="date" id="fecha" onclick="">
@@ -103,89 +103,89 @@
                             </div>
                             <!-- sidebar-menu  -->
                             <div class=" sidebar-item sidebar-menu">
-                                <ul>
-                                    <li class="header-menu">
-                                        <span>General</span>
-                                    </li>
-                                    <li>
-                                        <a href="principal-admin.jsp">
-                                            <i class="fa fa-tachometer-alt"></i>
-                                            <span class="menu-text">Dashboard</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="PuntoVenta-Admin.jsp">
-                                            <i class="fa fa-shopping-cart"></i>
-                                            <span class="menu-text">Punto de Venta</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="Inventario-Administrador.jsp">
-                                            <i class="fa fa-warehouse"></i>
-                                            <span class="menu-text">Inventario</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="reportes.html">
-                                            <i class="fa fa-chart-line"></i>
-                                            <span class="menu-text">Reportes</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="AdminCaja.jsp">
-                                            <i class="fa fa-cash-register"></i>
-                                            <span class="menu-text">Caja</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="apartados.jsp">
-                                            <i class="fa fa-cart-plus"></i>
-                                            <span class="menu-text">Apartados</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="devoluciones.html">
-                                            <i class="fa fa-sync-alt"></i>
-                                            <span class="menu-text">Devoluciones</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="Usuario-Administrador.jsp">
-                                            <i class="fa fa-users"></i>
-                                            <span class="menu-text">Usuarios</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="Proveedor-Administrador.jsp">
-                                            <i class="fa fa-truck"></i>
-                                            <span class="menu-text">Proveedores</span>
-                                        </a>
-                                    </li>
-                                    <li class="header-menu">
-                                        <span>Extra</span>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-question"></i>
-                                            <span class="menu-text">Ayuda</span>
-                                            <span class="badge badge-pill badge-primary">Prox</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-calendar"></i>
-                                            <span class="menu-text">Calendario</span>
-                                            <span class="badge badge-pill badge-primary">Prox</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" id="btnabrir" >
-                                            <i class="fa fa-power-off"></i>
-                                            <span class="menu-text" onclick="cierra()">Cerrar sesión</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+                        <ul>
+                            <li class="header-menu">
+                                <span>General</span>
+                            </li>
+                            <li>
+                                <a href="principal-admin.jsp">
+                                    <i class="fa fa-tachometer-alt"></i>
+                                    <span class="menu-text">Dashboard</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="PuntoVenta-Admin.jsp">
+                                    <i class="fa fa-shopping-cart"></i>
+                                    <span class="menu-text">Punto de Venta</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="Inventario-Administrador.jsp">
+                                    <i class="fa fa-warehouse"></i>
+                                    <span class="menu-text">Inventario</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="reportes.jsp">
+                                    <i class="fa fa-chart-line"></i>
+                                    <span class="menu-text">Reportes</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="AdminCaja.jsp">
+                                    <i class="fa fa-cash-register"></i>
+                                    <span class="menu-text">Caja</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="apartados.jsp">
+                                    <i class="fa fa-cart-plus"></i>
+                                    <span class="menu-text">Apartados</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="devoluciones.jsp">
+                                    <i class="fa fa-sync-alt"></i>
+                                    <span class="menu-text">Devoluciones</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="Usuario-Administrador.jsp">
+                                    <i class="fa fa-users"></i>
+                                    <span class="menu-text">Usuarios</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="Proveedor-Administrador.jsp">
+                                    <i class="fa fa-truck"></i>
+                                    <span class="menu-text">Proveedores</span>
+                                </a>
+                            </li>
+                            <li class="header-menu">
+                                <span>Extra</span>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-question"></i>
+                                    <span class="menu-text">Ayuda</span>
+                                    <span class="badge badge-pill badge-primary">Prox</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-calendar"></i>
+                                    <span class="menu-text">Calendario</span>
+                                    <span class="badge badge-pill badge-primary">Prox</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" id="btnabrir" >
+                                    <i class="fa fa-power-off"></i>
+                                    <span class="menu-text" onclick="cierra()">Cerrar sesión</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                             <!-- sidebar-menu  -->
                         </div>
                         <div class="sidebar-footer">

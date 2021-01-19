@@ -177,3 +177,17 @@ body {
     margin: 50px;
     width: 90%;
 }
+
+#encabezado{
+    display: flex;
+}
+
+.puestos1{
+    width:60%;
+    float: left;
+}
+
+.puestos2{
+    widht:40%;
+    float: left;
+}

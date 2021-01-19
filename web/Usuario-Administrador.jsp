@@ -22,6 +22,7 @@
         <link rel="stylesheet" href="styles/sidebar-themes.css">
         <link rel="stylesheet" href="styles/estilos-nuevoproducto.css">
         <link rel="stylesheet" href="styles/popups.css">
+        
         <link rel="shortcut icon" type="image/png" href="img/icon.png" />
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
@@ -34,19 +35,21 @@
                 <div class="popup" id="popup">
                     <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
                     <h3>Agregar Usuario</h3>
-                    <h2>Ingresa los datos</h4>
-                    <h5>* Campo obligatorio</h5>
+                    <h4>Ingresa los datos</h4>
+                    <h5>* Campo obligatorio <br>
+                        ** La contraseña debe tener una longitud entre 8 y 15 caracteres 
+                        (Debe contener letras minúsculas, mayúsculas, números y símbolos)</h5>
                         <form action="bd/insertUser.jsp" method="post">
                             <div class="contenedor-etiquetas">
-                                <h4>Nombre*</h4>
-                                <h4>Puesto*</h4>
-                                <h4>Caja*</h4>
-                                <h4>Genero*</h4>
-                                <h4>Dirección*</h4>
-                                <h4>Telefono*</h4>
-                                <h4>Correo*</h4>
-                                <h4>Usuario*</h4>
-                                <h4>Contraseña*</h4>
+                                <h4>* Nombre</h4>
+                                <h4>* Puesto</h4>
+                                <h4>* Caja</h4>
+                                <h4>* Genero</h4>
+                                <h4>* Dirección</h4>
+                                <h4>* Telefono</h4>
+                                <h4>* Correo</h4>
+                                <h4>* Usuario</h4>
+                                <h4>** Contraseña</h4>
                             </div>
                             <div class="contenedor-inputs">
                                 <input type="text" name="nombre_com" placeholder="Nombre completo">
@@ -129,7 +132,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="reportes.html">
+                                <a href="reportes.jsp">
                                     <i class="fa fa-chart-line"></i>
                                     <span class="menu-text">Reportes</span>
                                 </a>
@@ -147,7 +150,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="devoluciones.html">
+                                <a href="devoluciones.jsp">
                                     <i class="fa fa-sync-alt"></i>
                                     <span class="menu-text">Devoluciones</span>
                                 </a>
@@ -233,11 +236,13 @@
                             </a>
                         </div>
                         <header id="encabezado">
-                            <img id="img-inventario" class="img-responsive img-rounded" src="img/usuario.png" height="150"
+                            <div class="puestos1">
+                                <img id="img-inventario" class="img-responsive img-rounded" src="img/usuario.png" height="150"
                                  width="150" alt="Usuario picture">
                             <br>
                             <br>
-                            <h1>Usuarios</h1>
+                            <h1>Usuarios</h1></div>
+                            <div class="puestos2"><h4>Puesto: <br> 1.- Administrador <br> 2.- Almacén <br> 3.- Vendedor</h2></div>
                         </header>
 
                         <div id="container1">

@@ -1,15 +1,15 @@
 <%-- 
-    Document   : reportes
-    Created on : 17/01/2021, 08:53:07 PM
+    Document   : editProveedor
+    Created on : 18/01/2021, 09:34:52 PM
     Author     : Carlos Loaeza
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.*,java.util.*"%>
 
+
 <!DOCTYPE html>
 <html lang="es">
-
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,14 +28,14 @@
         <link rel="stylesheet" href="styles/estilos-principal.css">
         <link rel="stylesheet" href="styles/sidebar-themes.css">
         <link rel="stylesheet" href="styles/estilos-nuevoproducto.css">
-        <link rel="stylesheet" href="styles/popups.css">
+        <link rel="stylesheet" href="styles/popups.css">  
 
         <link rel="shortcut icon" type="image/png" href="img/icon.png" />
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     </head>
-
     <body>
+
         <div class="page-wrapper default-theme sidebar-bg bg1 toggled">
             <nav id="sidebar" class="sidebar-wrapper">
                 <div class="sidebar-content">
@@ -63,7 +63,7 @@
                         </div>
                     </div>
                     <!-- sidebar-menu  -->
-                   <div class=" sidebar-item sidebar-menu">
+                    <div class=" sidebar-item sidebar-menu">
                         <ul>
                             <li class="header-menu">
                                 <span>General</span>
@@ -174,56 +174,91 @@
                         </div>
                     </div>
                 </div>
+                <div id="overlay" class="overlay"></div>
                 <section id="main-content">
+
                     <article>
                         <div id="divcerrar">
-                            <button class="btn-tiny btn-danger">
-                                Cerrar Sesión <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                   fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                      d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
-                                <path fill-rule="evenodd"
-                                      d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
-                                </svg></button>
+                            <a href="login.jsp">
+                                <button class="btn-tiny btn-danger">
+                                    Cerrar Sesion <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                       fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                          d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
+                                    <path fill-rule="evenodd"
+                                          d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+                                    </svg>
+                                </button>
+                            </a>
                         </div>
                         <header id="encabezado">
-                            <img id="img-reportes" class="img-responsive img-rounded" src="img/pdf.png"
-                                 height="150" width="150" alt="Inventario picture">
+                            <img id="img-inventario" class="img-responsive img-rounded" src="img/prove.png" height="150"
+                                 width="150" alt="Proveedor picture">
                             <br>
                             <br>
-                            <h1>Reportes</h1>
+                            <h1>Proveedores</h1>
                         </header>
-                        <div id="container1">
-                            <div class="field">
-                                    <select name="Proveedor" class="slct">
-                                    <option selected value="0"> Selecciona el mes </option>
-                                    <option value="1">Enero</option>
-                                    <option value="2">Febrero</option>
-                                    <option value="3">Marzo</option>
-                                    <option value="4">Abril</option>
-                                    <option value="5">Mayo</option>
-                                    <option value="6">Junio</option>
-                                    <option value="7">Julio</option>
-                                    <option value="8">Agosto</option>
-                                    <option value="9">Septiembre</option>
-                                    <option value="10">Octubre</option>
-                                    <option value="11">Noviembre</option>
-                                    <option value="12">Diciembre</option>
-                                </select>
-                                <button type="button" id="search">Generar</button>
-                            </div>                                   
-                        </div>
+
+                        <div class="actualiza">
+                            <h3>Actualizar Proveedor</h3>
+                            <h4>Ingresa los datos</h4>
+                            <h5>* Campo obligatorio </h5>
+                            <form action="bd/update-processCaja.jsp" method="post" name="update"> 
+                                <div class="contenedor-etiquetas-actualiza">
+                                    <h4>* Nombre</h4>
+                                    <h4>* Agente</h4>
+                                    <h4>* Direccion</h4>
+                                    <h4>* Telefono</h4>
+                                    <h4>* Correo</h4>
+                                </div> 
+                                <div class="contenedor-inputs-actualiza">
+                                    <%
+                                        String id_proveedor = request.getParameter("id_proveedor");
+                                        Connection connection = null;
+                                        Statement statement = null;
+                                        ResultSet resultSet = null;
+                                        String driver = "com.mysql.jdbc.Driver";
+                                        try {
+                                            Class.forName(driver);
+                                        } catch (ClassNotFoundException e) {
+                                            e.printStackTrace();
+                                        }
+                                        try {
+                                            connection = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
+                                            statement = connection.createStatement();
+                                            String sql = "select * from proveedor where id_proveedor=" + id_proveedor;
+                                            resultSet = statement.executeQuery(sql);
+                                            while (resultSet.next()) {
+                                    %>
+                                    <input type="text" name="nombre_empresa" value="<%=resultSet.getString("nombre_empresa")%>" placeholder="Nombre de la empresa">
+
+                                    <input type="text" name="nombre_agente" value="<%=resultSet.getString("nombre_agente")%>" placeholder="Nombre del agente">
+
+                                    <input type="text" name="direccion" value="<%=resultSet.getString("direccion")%>" placeholder="Direccion">
+
+                                    <input type="text" name="tel" value="<%=resultSet.getString("tel")%>" placeholder="Telefono">
+
+                                    <input type="text" name="email" value="<%=resultSet.getString("email")%>" placeholder="Correo electronico">
+                                    <%
+                                            }
+                                        } catch (Exception e) {
+                                            e.printStackTrace();
+                                        }
+                                    %>  
+                                </div>
+                                <br>
+
+                                <input type="submit" class="btn-submit btn-block" name="actualizar" value="Actualizar">
+                            </form>
+                        </div> 
                         <br>
-                        <div class="pdf">
-                            <h1>Reporte del mes: <label id="reporte"></label></h1>
-                            <br>
-                            <embed src="pdf/Práctia3-2.pdf" width="900px" height="2100px" />
-                        </div>
                     </article>
                 </section>
             </main>
+            <!-- page-content" -->
         </div>
-
+        <!-- page-wrapper -->
+        <!-- using online scripts -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
                 integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
@@ -234,6 +269,6 @@
         <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
 
         <script src="js/administrador/principal-admin.js"></script>
-    </body>
 
+    </body>
 </html>

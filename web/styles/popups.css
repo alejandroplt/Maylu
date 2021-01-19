@@ -66,11 +66,22 @@
     font-family: 'Montserrat', sans-serif;
     padding: 20px;
     text-align: center;
-    width: 550px;
+    width: 650px;
     margin-left: 170px;
     transition: .3s ease all;
     transform: scale(0.7);
     opacity: 0;
+}
+
+.actualiza{
+    background: #F8F8F8;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 20px;
+    text-align: center;
+    width: 650px;
+    margin-left: 170px;
 }
 
 .popup .btn-cerrar-popup {
@@ -128,7 +139,28 @@
     height: 30px;
     font-size: 18px;
     text-align: left;
+}
 
+.actualiza form .contenedor-inputs-actualiza {
+    width: 50%;
+    margin-left: 200px;
+    margin-right: 10px;
+}
+
+.actualiza form .contenedor-inputs-actualiza select {
+    width: 100%;
+    margin-bottom: 15px;
+    height: 30px;
+    font-size: 18px;
+    text-align: left;
+}
+
+.actualiza form .contenedor-inputs-actualiza input {
+    width: 100%;
+    margin-bottom: 15px;
+    height: 30px;
+    font-size: 18px;
+    text-align: left;
 }
 
 .popup form .contenedor-etiquetas {
@@ -136,15 +168,35 @@
     height: 15px;
     font-size: 20px;
     text-align: right;
-    padding-top: 20px;
+    margin-top: 0;
 }
 
 .popup form .contenedor-etiquetas h4 {
     width: 50%;
     height: 5px;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 52px;
     text-align: right;
+    margin-bottom: 40px;
+    margin-top: 5px;
+}
+
+.actualiza form .contenedor-etiquetas-actualiza {
+    width: 50%;
+    height: 15px;
+    font-size: 20px;
+    text-align: right;
+    margin-top: 0;
+}
+
+.actualiza form .contenedor-etiquetas-actualiza h4 {
+    width: 50%;
+    height: 5px;
+    font-size: 20px;
+    line-height: 52px;
+    text-align: right;
+    margin-bottom: 40px;
+    margin-top: 5px;
 }
 
 .popup form .contenedor-imagen input {

@@ -42,6 +42,7 @@
                     <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
                     <h3>Generar Devolucion</h3>
                     <h4>Ingresa los datos</h4>
+                    <h5>* Campo obligatorio</h5>
                     <form action="">
                         <div class="field" id="searchform">
                             <input type="text" id="searchterm" placeholder="Cantidad" />
@@ -136,7 +137,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="reportes.html">
+                                <a href="reportes.jsp">
                                     <i class="fa fa-chart-line"></i>
                                     <span class="menu-text">Reportes</span>
                                 </a>
@@ -154,7 +155,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="devoluciones.html">
+                                <a href="devoluciones.jsp">
                                     <i class="fa fa-sync-alt"></i>
                                     <span class="menu-text">Devoluciones</span>
                                 </a>
@@ -226,12 +227,6 @@
                 <section id="main-content">
 
                     <article>
-                        <div id="divnombre">
-                            <p id="pnombre"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                 fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                                </svg> Nombre</p>
-                        </div>
                         <div id="divcerrar">
                             <button class="btn-tiny btn-danger">
                                 Cerrar Sesión <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"

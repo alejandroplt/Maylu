@@ -1,15 +1,15 @@
 <%-- 
-    Document   : reportes
-    Created on : 17/01/2021, 08:53:07 PM
+    Document   : editProducto
+    Created on : 18/01/2021, 10:08:01 PM
     Author     : Carlos Loaeza
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.*,java.util.*"%>
 
+
 <!DOCTYPE html>
 <html lang="es">
-
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,14 +28,14 @@
         <link rel="stylesheet" href="styles/estilos-principal.css">
         <link rel="stylesheet" href="styles/sidebar-themes.css">
         <link rel="stylesheet" href="styles/estilos-nuevoproducto.css">
-        <link rel="stylesheet" href="styles/popups.css">
+        <link rel="stylesheet" href="styles/popups.css">  
 
         <link rel="shortcut icon" type="image/png" href="img/icon.png" />
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     </head>
-
     <body>
+
         <div class="page-wrapper default-theme sidebar-bg bg1 toggled">
             <nav id="sidebar" class="sidebar-wrapper">
                 <div class="sidebar-content">
@@ -63,7 +63,7 @@
                         </div>
                     </div>
                     <!-- sidebar-menu  -->
-                   <div class=" sidebar-item sidebar-menu">
+                    <div class=" sidebar-item sidebar-menu">
                         <ul>
                             <li class="header-menu">
                                 <span>General</span>
@@ -174,56 +174,104 @@
                         </div>
                     </div>
                 </div>
+                <div id="overlay" class="overlay"></div>
                 <section id="main-content">
+
                     <article>
                         <div id="divcerrar">
-                            <button class="btn-tiny btn-danger">
-                                Cerrar Sesión <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                   fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                      d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
-                                <path fill-rule="evenodd"
-                                      d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
-                                </svg></button>
+                            <a href="login.jsp">
+                                <button class="btn-tiny btn-danger">
+                                    Cerrar Sesion <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                       fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                          d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
+                                    <path fill-rule="evenodd"
+                                          d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+                                    </svg>
+                                </button>
+                            </a>
                         </div>
                         <header id="encabezado">
-                            <img id="img-reportes" class="img-responsive img-rounded" src="img/pdf.png"
+                            <img id="img-inventario" class="img-responsive img-rounded" src="img/inventario.png"
                                  height="150" width="150" alt="Inventario picture">
                             <br>
                             <br>
-                            <h1>Reportes</h1>
+                            <h1>Inventario</h1>
                         </header>
-                        <div id="container1">
-                            <div class="field">
-                                    <select name="Proveedor" class="slct">
-                                    <option selected value="0"> Selecciona el mes </option>
-                                    <option value="1">Enero</option>
-                                    <option value="2">Febrero</option>
-                                    <option value="3">Marzo</option>
-                                    <option value="4">Abril</option>
-                                    <option value="5">Mayo</option>
-                                    <option value="6">Junio</option>
-                                    <option value="7">Julio</option>
-                                    <option value="8">Agosto</option>
-                                    <option value="9">Septiembre</option>
-                                    <option value="10">Octubre</option>
-                                    <option value="11">Noviembre</option>
-                                    <option value="12">Diciembre</option>
-                                </select>
-                                <button type="button" id="search">Generar</button>
-                            </div>                                   
-                        </div>
+
+                        <div class="actualiza">
+                            <h3>Actualizar Zapato</h3>
+                            <h4>Ingresa los datos</h4>
+                            <h5>* Campo obligatorio </h5>
+                            <form action="" method="post" name="update"> 
+                                <div class="contenedor-etiquetas-actualiza">
+                                    <h4>* Modelo</h4>
+                                    <h4>* Proveedor</h4>
+                                    <h4>* Talla</h4>
+                                    <h4>* Color</h4>
+                                    <h4>* Precio Compra</h4>
+                                    <h4>* Precio Venta</h4>
+                                    <h4>* Stock</h4>
+                                </div> 
+                                <div class="contenedor-inputs-actualiza">
+                                    <%
+                                        String id_zapato = request.getParameter("id_zapato");
+                                        Connection connection = null;
+                                        Statement statement = null;
+                                        ResultSet resultSet = null;
+                                        String driver = "com.mysql.jdbc.Driver";
+                                        try {
+                                            Class.forName(driver);
+                                        } catch (ClassNotFoundException e) {
+                                            e.printStackTrace();
+                                        }
+                                        try {
+                                            connection = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
+                                            statement = connection.createStatement();
+                                            String sql = "select * from zapato where id_zapato=" + id_zapato;
+                                            resultSet = statement.executeQuery(sql);
+                                            while (resultSet.next()) {
+                                    %>
+                                    <input type="text" value="<%=resultSet.getString("modelo")%>" placeholder="Modelo">
+                                    <select name="Proveedor" class="select">
+                                        <option selected value="0" Elige una opción><%=resultSet.getString("proveedor")%></option>
+                                        <option value="1">Windows Vista</option>
+                                        <option value="2">Windows 7</option>
+                                        <option value="3">Windows XP</option>
+                                        <option value="10">Fedora</option>
+                                        <option value="11">Debian</option>
+                                        <option value="12">Suse</option>
+                                    </select>
+                                    <input type="text" value="<%=resultSet.getString("talla")%>" placeholder="Talla">
+                                    <input type="text" value="<%=resultSet.getString("color")%>" placeholder="Color">
+                                    <input type="text" value="<%=resultSet.getString("precio_compra")%>" placeholder="Precio Compra">
+                                    <input type="text" value="<%=resultSet.getString("precio_venta")%>" placeholder="Precio Venta">
+                                    <input type="text" value="<%=resultSet.getString("stock")%>" placeholder="Stock">
+                                </div>
+                                <div class="contenedor-imagen">
+                                    <input type="file" placeholder="Cargar">
+                                </div>
+                                <br>
+                                <%
+                                        }
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
+                                    }
+                                %>  
+                                </div>
+                                <br>
+
+                                <input type="submit" class="btn-submit btn-block" name="actualizar" value="Actualizar">
+                            </form>
+                        </div> 
                         <br>
-                        <div class="pdf">
-                            <h1>Reporte del mes: <label id="reporte"></label></h1>
-                            <br>
-                            <embed src="pdf/Práctia3-2.pdf" width="900px" height="2100px" />
-                        </div>
                     </article>
                 </section>
             </main>
+            <!-- page-content" -->
         </div>
-
+        <!-- page-wrapper -->
+        <!-- using online scripts -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
                 integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
@@ -234,6 +282,6 @@
         <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
 
         <script src="js/administrador/principal-admin.js"></script>
-    </body>
 
+    </body>
 </html>

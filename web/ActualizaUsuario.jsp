@@ -1,7 +1,7 @@
-    <%-- 
-    Document   : ActualizaUsuario
-    Created on : 13/01/2021, 05:55:33 PM
-    Author     : Carlos Loaeza
+<%-- 
+Document   : ActualizaUsuario
+Created on : 13/01/2021, 05:55:33 PM
+Author     : Carlos Loaeza
 --%>
 
 <%@page import="java.sql.*,java.util.*"%>
@@ -28,106 +28,13 @@
         <link rel="stylesheet" href="styles/sidebar-themes.css">
         <link rel="stylesheet" href="styles/estilos-nuevoproducto.css">
         <link rel="stylesheet" href="styles/popups.css">
+
         <link rel="shortcut icon" type="image/png" href="img/icon.png" />
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     </head>
 
     <body>
-
-        <script>
-            <%
-                Connection con = null;
-                Statement sta = null;
-                ResultSet rs = null;
-                int user = Integer.parseInt(request.getParameter("id_usuario"));
-                try {
-                    Class.forName("com.mysql.jdbc.Driver");
-                    con = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
-
-                    sta = con.createStatement();
-                    rs = sta.executeQuery("SELECT * FROM usuario WHERE id_usuario=" + user + ";");
-
-                    String nombre_com = "";
-                    String puesto = "";
-                    int id_caja = 0;
-                    String genero = "";
-                    String direccion = "";
-                    String tel = "";
-                    String correo = "";
-                    String usuario = "";
-                    String contraseña = "";
-
-        while (rs.next()) {
-            nombre_com = (rs.getString("nombre_com"));%>
-
-                    $("#nombre_com2").val($(<%=nombre_com%>).val());
-
-            <%
-                        puesto = (rs.getString("puesto"));
-                        id_caja = (rs.getInt("id_caja"));
-                        genero = (rs.getString("genero"));
-                        direccion = (rs.getString("direccion"));
-                        tel = (rs.getString("tel"));
-                        correo = (rs.getString("email"));
-                        usuario = (rs.getString("usuario"));
-                        contraseña = (rs.getString("contra"));
-                    }
-                } catch (Exception e) {
-                    out.println("Error al CARGAR DATOS  " + e);
-                }
-            %>
-
-        </script>
-
-        <div id="container">
-            <div class="overlay2" id="overlay2">
-                <div class="popup2" id="popup2">
-                    <a href="#" id="btn-cerrar-popup2" class="btn-cerrar-popup2"><i class="fas fa-times"></i></a>
-                    <h3>Agregar Usuario</h3>
-                    <h2>Ingresa los datos</h4>
-                        <form action="bd/consultUser.jsp" method="post" name="update">
-                            <div class="contenedor-etiquetas2">
-                                <h4>Nombre</h4>
-                                <h4>Puesto</h4>
-                                <h4>Caja</h4>
-                                <h4>Genero</h4>
-                                <h4>Dirección</h4>
-                                <h4>Telefono</h4>
-                                <h4>Correo</h4>
-                                <h4>Usuario</h4>
-                                <h4>Contraseña</h4>
-                            </div> 
-                            <div class="contenedor-inputs2">
-                                <input type="text" name="nombre_com2" placeholder="Nombre completo" id="nombre_com2">
-                                <select name="puesto2" class="select">
-                                    <option selected value="0"> Elige una opción </option>
-                                    <option value="1">Admistrador</option>
-                                    <option value="2">Vendedor</option>
-                                    <option value="3">Almacenista</option>
-                                </select>
-                                <select name="id_caja2" class="select">
-                                    <option selected value="0"> Elige una opción </option>
-                                    <option value="1">1</option>
-                                </select>
-                                <select name="genero2" class="select">
-                                    <option selected value="0"> Elige una opción </option>
-                                    <option value="1">Masculino</option>
-                                    <option value="2">Femenino</option>
-                                </select>
-                                <input type="text" name="direccion2" placeholder="Dirección">
-                                <input type="text" name="tel2" placeholder="Telefono">
-                                <input type="text" name="email2" placeholder="Correo electrónico">
-                                <input type="text" name="usuario2" placeholder="Usuario">
-                                <input type="text" name="contra2" placeholder="Contraseña">
-                            </div>
-                            <br>
-                            <input type="submit" class="btn-submit btn-block" name="guardar" value="Guardar">
-                        </form>
-                </div>
-            </div>
-        </div>
-
         <div class="page-wrapper default-theme sidebar-bg bg1 toggled">
             <nav id="sidebar" class="sidebar-wrapper">
                 <div class="sidebar-content">
@@ -135,7 +42,7 @@
                     <div class="sidebar-item sidebar-brand">
                         <span align="center">
                             <i class="fa fa-shoe-prints"></i>
-                            MayLu
+                            MayLú
                         </span>
                     </div>
                     <!-- sidebar-header  -->
@@ -179,7 +86,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="reportes.html">
+                                <a href="reportes.jsp">
                                     <i class="fa fa-chart-line"></i>
                                     <span class="menu-text">Reportes</span>
                                 </a>
@@ -197,7 +104,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="devoluciones.html">
+                                <a href="devoluciones.jsp">
                                     <i class="fa fa-sync-alt"></i>
                                     <span class="menu-text">Devoluciones</span>
                                 </a>
@@ -251,6 +158,7 @@
                     </div>
                 </div>
             </nav>
+
             <!-- contenido  -->
             <main class="page-content pt-2">
                 <div class="fondo_transparente">
@@ -288,59 +196,87 @@
                             <br>
                             <br>
                             <h1>Usuarios</h1>
+                            <div class="puestos2"><h4>   Puesto: <br>    1.- Administrador <br>    2.- Almacén <br>    3.- Vendedor</h2></div>
                         </header>
 
                         <div class="actualiza">
-                            <h3>Agregar Usuario</h3>
-                            <h2>Ingresa los datos</h4>
-                                <form action="bd/consultUser.jsp" method="post" name="update">
-                                    <div class="contenedor-etiquetas2">
-                                        <h4>Nombre</h4>
-                                        <h4>Puesto</h4>
-                                        <h4>Caja</h4>
-                                        <h4>Genero</h4>
-                                        <h4>Dirección</h4>
-                                        <h4>Telefono</h4>
-                                        <h4>Correo</h4>
-                                        <h4>Usuario</h4>
-                                        <h4>Contraseña</h4>
-                                    </div>
-                                    <div class="contenedor-inputs2">
-                                        <input type="text" name="nombre_com2" placeholder="Nombre completo" id="nombre_com2">
-                                        <select name="puesto2" class="select">
-                                            <option selected value="0"> Elige una opción </option>
-                                            <option value="1">Admistrador</option>
-                                            <option value="2">Vendedor</option>
-                                            <option value="3">Almacenista</option>
-                                        </select>
-                                        <select name="id_caja2" class="select">
-                                            <option selected value="0"> Elige una opción </option>
-                                            <option value="1">1</option>
-                                        </select>
-                                        <select name="genero2" class="select">
-                                            <option selected value="0"> Elige una opción </option>
-                                            <option value="1">Masculino</option>
-                                            <option value="2">Femenino</option>
-                                        </select>
-                                        <input type="text" name="direccion2" placeholder="Dirección">
-                                        <input type="text" name="tel2" placeholder="Telefono">
-                                        <input type="text" name="email2" placeholder="Correo electrónico">
-                                        <input type="text" name="usuario2" placeholder="Usuario">
-                                        <input type="text" name="contra2" placeholder="Contraseña">
-                                    </div>
-                                    <br>
-                                    <input type="submit" class="btn-submit btn-block" name="guardar" value="Guardar">
-                                </form>
+                            <h3>Actualizar Usuario</h3>
+                            <h4>Ingresa los datos</h4>
+                            <h5>* Campo obligatorio <br>
+                                ** La contraseña debe tener una longitud entre 8 y 15 caracteres 
+                                (Debe contener letras minúsculas, mayúsculas, números y símbolos)</h5>
+                            <form action="bd/consultUser.jsp" method="post" name="update">
+                                <div class="contenedor-etiquetas-actualiza">
+                                    <h4>* Nombre</h4>
+                                    <h4>* Puesto</h4>
+                                    <h4>* Caja</h4>
+                                    <h4>* Genero</h4>
+                                    <h4>* Dirección</h4>
+                                    <h4>* Telefono</h4>
+                                    <h4>* Correo</h4>
+                                    <h4>* Usuario</h4>
+                                    <h4>** Contraseña</h4>
+                                </div>
+                                <div class="contenedor-inputs-actualiza">
+                                    <%
+                                        String id_usuario = request.getParameter("id_usuario");
+                                        Connection connection = null;
+                                        Statement statement = null;
+                                        ResultSet resultSet = null;
+                                        String driver = "com.mysql.jdbc.Driver";
+                                        try {
+                                            Class.forName(driver);
+                                        } catch (ClassNotFoundException e) {
+                                            e.printStackTrace();
+                                        }
+                                        try {
+                                            connection = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
+                                            statement = connection.createStatement();
+                                            String sql = "select * from usuario where id_usuario=" + id_usuario;
+                                            resultSet = statement.executeQuery(sql);
+                                            while (resultSet.next()) {
+                                    %>
+                                    
+                                    <input type="text" name="nombre_com2" value="<%=resultSet.getString("nombre_com")%>" placeholder="Nombre completo" id="nombre_com2">
+                                    <select name="puesto2" class="select">
+                                        <option selected value="0"> <%=resultSet.getString("puesto")%></option>
+                                        <option value="1">Admistrador</option>
+                                        <option value="2">Vendedor</option>
+                                        <option value="3">Almacenista</option>
+                                    </select>
+                                    <select name="id_caja2" class="select">
+                                        <option selected value="0"> <%=resultSet.getString("id_caja")%> </option>
+                                        <option value="1">1</option>
+                                    </select>
+                                    <select name="genero2" class="select">
+                                        <option selected value="0"> <%=resultSet.getString("genero")%> </option>
+                                        <option value="1">Masculino</option>
+                                        <option value="2">Femenino</option>
+                                    </select>
+                                    <input type="text" name="direccion2" value="<%=resultSet.getString("direccion")%>" placeholder="Dirección">
+                                    <input type="text" name="tel2" value="<%=resultSet.getString("tel")%>" placeholder="Telefono">
+                                    <input type="text" name="email2" value="<%=resultSet.getString("email")%>" placeholder="Correo electrónico">
+                                    <input type="text" name="usuario2" value="<%=resultSet.getString("usuario")%>" placeholder="Usuario">
+                                    <input type="text" name="contra2" value="<%=resultSet.getString("contra")%>" placeholder="Contraseña">
+                                    
+                                    <%
+                                            }
+                                        } catch (Exception e) {
+                                            e.printStackTrace();
+                                        }
+                                    %>  
+                                </div>
+                                <br>
+                                <input type="submit" class="btn-submit btn-block" name="guardar" value="Actualizar">
+                            </form>
                         </div>
                         <br>
-                        </div>
                     </article>
                 </section>
             </main>
             <!-- page-content" -->
         </div>
         <!-- page-wrapper -->
-
         <!-- using online scripts -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
@@ -350,8 +286,7 @@
                 integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
         </script>
         <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-        
-        <script src="js/popups.js"></script>
+
         <script src="js/administrador/principal-admin.js"></script>
 
     </body>
