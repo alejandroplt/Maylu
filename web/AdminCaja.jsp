@@ -36,7 +36,7 @@
                     <h3>Agregar Caja</h3>
                     <h4>Ingresa los datos</h4>
                     <h5>* Campo obligatorio</h5>
-                    <form action="bd/InsertCaja.jsp" method="post">
+                    <form action="InsertCaja.jsp" method="post">
                         <div class="contenedor-etiquetas">
                             <h4>* Nombre/Cod</h4>
                             <h4>* Efectivo</h4>
@@ -198,7 +198,7 @@
 
                     <article>
                         <div id="divcerrar">
-                            <a href="login.html">
+                            <a href="login.jsp">
                                 <button class="btn-tiny btn-danger">
                                     Cerrar Sesión <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                        fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
@@ -272,7 +272,7 @@
                                                     </svg>
                                                 </button>
                                             </a>
-                                            <a href="bd/deleteCaja.jsp?id_caja=<%=rs.getString("id_caja")%>">
+                                            <a href="deleteCaja.jsp?id_caja=<%=rs.getString("id_caja")%>">
                                                 <button class="btn btn-danger">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                          fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">

@@ -197,98 +197,123 @@ Author     : Carlos Loaeza
                             <br>
                             <h1>Usuarios</h1>
                             <div class="puestos2"><h4>   Puesto: <br>    1.- Administrador <br>    2.- Almacén <br>    3.- Vendedor</h2></div>
-                        </header>
+                                    </header>
 
-                        <div class="actualiza">
-                            <h3>Actualizar Usuario</h3>
-                            <h4>Ingresa los datos</h4>
-                            <h5>* Campo obligatorio <br>
-                                ** La contraseña debe tener una longitud entre 8 y 15 caracteres 
-                                (Debe contener letras minúsculas, mayúsculas, números y símbolos)</h5>
-                            <form action="bd/consultUser.jsp" method="post" name="update">
-                                <div class="contenedor-etiquetas-actualiza">
-                                    <h4>* Nombre</h4>
-                                    <h4>* Puesto</h4>
-                                    <h4>* Caja</h4>
-                                    <h4>* Genero</h4>
-                                    <h4>* Dirección</h4>
-                                    <h4>* Telefono</h4>
-                                    <h4>* Correo</h4>
-                                    <h4>* Usuario</h4>
-                                    <h4>** Contraseña</h4>
-                                </div>
-                                <div class="contenedor-inputs-actualiza">
-                                    <%
-                                        String id_usuario = request.getParameter("id_usuario");
-                                        Connection connection = null;
-                                        Statement statement = null;
-                                        ResultSet resultSet = null;
-                                        String driver = "com.mysql.jdbc.Driver";
-                                        try {
-                                            Class.forName(driver);
-                                        } catch (ClassNotFoundException e) {
-                                            e.printStackTrace();
-                                        }
-                                        try {
-                                            connection = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
-                                            statement = connection.createStatement();
-                                            String sql = "select * from usuario where id_usuario=" + id_usuario;
-                                            resultSet = statement.executeQuery(sql);
-                                            while (resultSet.next()) {
-                                    %>
-                                    
-                                    <input type="text" name="nombre_com2" value="<%=resultSet.getString("nombre_com")%>" placeholder="Nombre completo" id="nombre_com2">
-                                    <select name="puesto2" class="select">
-                                        <option selected value="0"> <%=resultSet.getString("puesto")%></option>
-                                        <option value="1">Admistrador</option>
-                                        <option value="2">Vendedor</option>
-                                        <option value="3">Almacenista</option>
-                                    </select>
-                                    <select name="id_caja2" class="select">
-                                        <option selected value="0"> <%=resultSet.getString("id_caja")%> </option>
-                                        <option value="1">1</option>
-                                    </select>
-                                    <select name="genero2" class="select">
-                                        <option selected value="0"> <%=resultSet.getString("genero")%> </option>
-                                        <option value="1">Masculino</option>
-                                        <option value="2">Femenino</option>
-                                    </select>
-                                    <input type="text" name="direccion2" value="<%=resultSet.getString("direccion")%>" placeholder="Dirección">
-                                    <input type="text" name="tel2" value="<%=resultSet.getString("tel")%>" placeholder="Telefono">
-                                    <input type="text" name="email2" value="<%=resultSet.getString("email")%>" placeholder="Correo electrónico">
-                                    <input type="text" name="usuario2" value="<%=resultSet.getString("usuario")%>" placeholder="Usuario">
-                                    <input type="text" name="contra2" value="<%=resultSet.getString("contra")%>" placeholder="Contraseña">
-                                    
-                                    <%
+                                    <div class="actualiza">
+                                        <h3>Actualizar Usuario</h3>
+                                        <h4>Ingresa los datos</h4>
+                                        <h5>* Campo obligatorio <br>
+                                            ** La contraseña debe tener una longitud entre 8 y 15 caracteres 
+                                            (Debe contener letras minúsculas, mayúsculas, números y símbolos)</h5>
+                                        <!--<form action="bd/consultUser.jsp" method="post" name="update">-->
+                                        <%
+                                            Connection con;
+                                            String url = "jdbc:mysql://localhost/bdmaylu";
+                                            String Driver = "com.mysql.jdbc.Driver";
+                                            String user = "root";
+                                            String clave = "";
+                                            Class.forName(Driver);
+                                            con = DriverManager.getConnection(url, user, clave);
+
+                                            PreparedStatement ps;
+                                            ResultSet rs;
+                                            int id_usuario = Integer.parseInt(request.getParameter("id_usuario"));
+                                            ps = con.prepareStatement("select * from usuario where id_usuario=" + id_usuario);
+                                            rs = ps.executeQuery();
+                                            while (rs.next()) {
+
+                                        %>
+
+
+                                        <form action="" method="post"> 
+                                            <div class="contenedor-etiquetas-actualiza">
+                                                <h4>  Id_usuario</h4>
+                                                <h4>* Nombre</h4>
+                                                <h4>* Puesto</h4>
+                                                <h4>* Caja</h4>
+                                                <h4>* Genero</h4>
+                                                <h4>* Dirección</h4>
+                                                <h4>* Telefono</h4>
+                                                <h4>* Correo</h4>
+                                                <h4>* Usuario</h4>
+                                                <h4>** Contraseña</h4>
+                                            </div>
+                                            <div class="contenedor-inputs-actualiza">
+
+                                                <input type="text" readonly="" value="<%=rs.getInt("id_usuario")%>" > 
+                                                <input type="text" name="nombre_com2" value="<%=rs.getString("nombre_com")%>" placeholder="Nombre completo">
+                                                <select name="puesto2" class="select">
+                                                    <option selected value="0"> <%=rs.getString("puesto")%></option>
+                                                    <option value="1">Admistrador</option>
+                                                    <option value="2">Vendedor</option>
+                                                    <option value="3">Almacenista</option>
+                                                </select>
+                                                <select name="id_caja2" class="select">
+                                                    <option selected value="0"> <%=rs.getString("id_caja")%> </option>
+                                                    <option value="1">1</option>
+                                                </select>
+                                                <select name="genero2" class="select">
+                                                    <option selected value="0"> <%=rs.getString("genero")%> </option>
+                                                    <option value="1">Masculino</option>
+                                                    <option value="2">Femenino</option>
+                                                </select>
+                                                <input type="text" name="direccion2" value="<%=rs.getString("direccion")%>" placeholder="Dirección">
+                                                <input type="text" name="tel2" value="<%=rs.getString("tel")%>" placeholder="Telefono">
+                                                <input type="text" name="email2" value="<%=rs.getString("email")%>" placeholder="Correo electrónico">
+                                                <input type="text" name="usuario2" value="<%=rs.getString("usuario")%>" placeholder="Usuario">
+                                                <input type="text" name="contra2" value="<%=rs.getString("contra")%>" placeholder="Contraseña">
+
+
+                                            </div>
+                                            <br>
+
+                                            <input type="submit" class="btn-submit btn-block" name="actualizar" value="Actualizar">
+                                        </form>
+                                        <%
                                             }
-                                        } catch (Exception e) {
-                                            e.printStackTrace();
-                                        }
-                                    %>  
-                                </div>
-                                <br>
-                                <input type="submit" class="btn-submit btn-block" name="guardar" value="Actualizar">
-                            </form>
-                        </div>
-                        <br>
-                    </article>
-                </section>
-            </main>
-            <!-- page-content" -->
-        </div>
-        <!-- page-wrapper -->
-        <!-- using online scripts -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-                integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
-        </script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-                integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
-        </script>
-        <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+                                        %>
+                                        <%
+                                            String nombre_com = request.getParameter("nombre_com");
+                                            String puesto = request.getParameter("puesto");
+                                            String id_caja = request.getParameter("id_caja");
+                                            String genero = request.getParameter("genero");
+                                            String direccion = request.getParameter("direccion");
+                                            String tel = request.getParameter("tel");
+                                            String correo = request.getParameter("email");
+                                            String usuario = request.getParameter("usuario");
+                                            String contraseña = request.getParameter("contra");
+                                            //int efectivo = Integer.parseInt(request.getParameter("efectivo"));
 
-        <script src="js/administrador/principal-admin.js"></script>
+                                            if (nombre_com != null && puesto != null && id_caja != null && genero != null && direccion != null && tel != null && correo != null && usuario != null && contraseña != null) {
+                                                //ps = con.prepareStatement("update caja set nombre_codigo ='" + nombre_codigo + "', efectivo ='" + efectivo + "' where id_caja= " + id_caja);
+                                                ps = con.prepareStatement("update usuario set nombre_com ='" + nombre_com + "', puesto ='" + puesto + "', id_caja='" + id_caja + "',genero='" + genero + "', direccion='" + direccion + "', tel= '" + tel + "', correo= '" + correo + "', usuario= '" + usuario + "', contraseña= '" + contraseña + "' where id_usuario= " + id_usuario);
 
-    </body>
+                                                ps.executeUpdate();
+                                                out.println("Actualizado");
+                                                request.getRequestDispatcher("Usuario-Administrador.jsp").forward(request, response);
 
-</html>
+                                            }
+                                        %>
+                                    </div>
+
+                                    <br>
+                                    </article>
+                                    </section>
+                                    </main>
+                                    <!-- page-content" -->
+                                    </div>
+                                    <!-- page-wrapper -->
+                                    <!-- using online scripts -->
+                                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                                    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+                                            integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+                                    </script>
+                                    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+                                            integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+                                    </script>
+                                    <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+                                    <script src="js/administrador/principal-admin.js"></script>
+
+                                    </body>
+                                    </html>

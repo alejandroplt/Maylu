@@ -39,7 +39,7 @@
                     <h5>* Campo obligatorio <br>
                         ** La contraseña debe tener una longitud entre 8 y 15 caracteres 
                         (Debe contener letras minúsculas, mayúsculas, números y símbolos)</h5>
-                        <form action="bd/insertUser.jsp" method="post">
+                        <form action="insertUser.jsp" method="post">
                             <div class="contenedor-etiquetas">
                                 <h4>* Nombre</h4>
                                 <h4>* Puesto</h4>
@@ -318,7 +318,7 @@
                                                 </button>
                                             </a>
                                             <!--</a>-->
-                                            <a href="bd/deleteUser.jsp?id_usuario=<%=rs.getString("id_usuario")%>">
+                                            <a href="deleteUser.jsp?id_usuario=<%=rs.getString("id_usuario")%>">
                                                 <button class="btn btn-danger" >
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                          fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">

@@ -16,7 +16,6 @@
         int i = st.executeUpdate("DELETE FROM caja WHERE id_caja=" + id_caja);
         //out.println("Eliminado correctamente");
         request.getRequestDispatcher("AdminCaja.jsp").forward(request, response);
-
     } catch (Exception e) {
         System.out.print(e);
         e.printStackTrace();

@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="java.sql.*,java.util.*"%>
+<%@page import="java.sql.*"%>
 
 
 <!DOCTYPE html>
@@ -203,7 +203,25 @@
                             <h3>Actualizar Caja</h3>
                             <h4>Ingresa los datos</h4>
                             <h5>* Campo obligatorio </h5>
+
                             <%
+                                Connection con;
+                                String url = "jdbc:mysql://localhost/bdmaylu";
+                                String Driver = "com.mysql.jdbc.Driver";
+                                String user = "root";
+                                String clave = "";
+                                Class.forName(Driver);
+                                con = DriverManager.getConnection(url, user, clave);
+
+                                PreparedStatement ps;
+                                ResultSet rs;
+                                int id_caja = Integer.parseInt(request.getParameter("id_caja"));
+                                ps = con.prepareStatement("select * from caja where id_caja=" + id_caja);
+                                rs = ps.executeQuery();
+                                while (rs.next()) {
+
+                            %>
+                            <%--
                                 String id_caja = request.getParameter("id_caja");
 
                                 Connection connection = null;
@@ -219,16 +237,18 @@
                                     //String sql = "select * from caja where id_caja=" + id_caja;
                                     //resultSet = statement.executeQuery(sql);
                                     while (resultSet.next()) {
-                            %>
-                            <form method="post" action="bd/update-processCaja.jsp"> 
+                            --%>
+                            <form action="" method="post"> 
                                 <div class="contenedor-etiquetas-actualiza">
+                                    <h4>  Id Caja</h4>
                                     <h4>* Nombre</h4>
                                     <h4>* Efectivo</h4>
                                 </div> 
-                                <div class="contenedor-inputs-actualiza">
 
-                                    <input type="text" name="nombre_codigo" value="<%=resultSet.getString("nombre_codigo")%>" placeholder="Nombre o codigo de caja" >
-                                    <input type="text" name="efectivo" value="<%=resultSet.getString("efectivo")%>" placeholder="Cantidad de efectivo">
+                                <div class="contenedor-inputs-actualiza">
+                                    <input type="text" readonly="" value="<%=rs.getInt("id_caja")%>" > 
+                                    <input type="text" name="nombre_codigo" value="<%=rs.getString("nombre_codigo")%>" placeholder="Nombre o codigo de caja" >
+                                    <input type="text" name="efectivo" value="<%=rs.getString("efectivo")%>" placeholder="Cantidad de efectivo">
 
                                 </div>
                                 <br>
@@ -237,8 +257,22 @@
                                 <input type="submit" class="btn-submit btn-block" name="actualizar" value="Actualizar">
 
                             </form>
+                            <%
+                                }
+                            %>
+                            <%
+                                String nombre_codigo = request.getParameter("nombre_codigo");
+                                String efectivo = request.getParameter("efectivo");
+                                //int efectivo = Integer.parseInt(request.getParameter("efectivo"));
 
+                                if (nombre_codigo != null && efectivo != null) {
+                                    ps = con.prepareStatement("update caja set nombre_codigo ='" + nombre_codigo + "', efectivo ='" + efectivo + "' where id_caja= " + id_caja);
+                                    ps.executeUpdate();
+                                    out.println("Actualizado");
+                                    request.getRequestDispatcher("AdminCaja.jsp").forward(request, response);
 
+                                }
+                            %>
                         </div> 
                         <%--
   }
@@ -256,13 +290,14 @@ if (request.getParameter("actualizar") != null) {
 
 
                         --%> 
-                        <%
+                        <%--
                                 }
                                 connection.close();
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
-                        %>
+                        --%>
+
                         <br>
                     </article>
                 </section>
@@ -284,4 +319,3 @@ if (request.getParameter("actualizar") != null) {
 
     </body>
 </html>
-
