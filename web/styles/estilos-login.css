@@ -16,7 +16,7 @@ img {
     display: inline-flexbox;
     background-color: white;
     width: 55em;
-    height: 32em;
+    height: 32.5em;
     margin: auto;
     padding: 0px;
     margin-top: 70px;
@@ -29,9 +29,9 @@ img {
     font-family: 'Lobster', cursive;
     background-color: white;
     width: 21em;
-    height: 23em;
+    height: 26em;
     margin: auto;
-    margin-top: 65px;
+    margin-top: 30px;
     border-radius: 8px;
     margin-bottom: 29px;
     margin-left: 100px;
@@ -53,25 +53,26 @@ h1 {
     font-size: 50px;
     font-family: "Tangerine";
     color: black;
-    padding-left: 150px;
+    padding-left: 120px;
     margin-top: 18px;
     margin-bottom: 10px;
 
 }
 
 h3 {
-    font-size: 90px; 
-    margin-top: 20px;
-    padding-left: 80px;
-    font-size: 25px;
+    font-size: 50px; 
     font-family: "Tangerine";
+    color:black;
+    padding-left: 40px;
+    margin-top: 5px;
 }
 
 label {
     padding-left: 10px;
     font-size: 50px;
     font-family: "Tangerine";
-    color: #000000;
+    color:black;
+    color: #000000; 
 }
 
 input {
@@ -81,17 +82,10 @@ input {
     height: 40px;
     border-radius: 5px;
     border-style: none;
-    margin-top: 10px;
+    margin-top: 5px;
     padding-left: 10px;
     margin-bottom: 20px;
     margin-left: 20px;
-}
-
-.tipo {
-    font-family: 'Lobster', cursive;
-    font-weight: lighter;
-    font-size: 20px;
-    cursor: pointer;
 }
 
 button {
@@ -99,7 +93,7 @@ button {
     padding-left: 0px;
     padding-right: 5px;
     margin-bottom: 10px;
-    margin-top: 20px;
+    margin-top: 5px;
     text-transform: uppercase;
     border-style: solid;
     border-radius: 10px;
@@ -110,15 +104,16 @@ button {
     color: #fff;
     background-clip: padding-box;
     border: 2px solid #000000;
+    font-family: 'Lobster', cursive;
+    font-weight: lighter;
+    font-size: 20px;
+    cursor: pointer;
+    color: black;
 }
 
 button:hover {
     background-color: #000000;
     color: #ffffff;
-  }
-
-  .tipo:hover{
-      color: #ffffff;
   }
 
 @media screen and (max-width:910px) {
