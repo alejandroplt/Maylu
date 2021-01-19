@@ -1,6 +1,7 @@
 <%@page import="java.sql.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
+
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -37,7 +38,7 @@
                     <h5>* Campo obligatorio</h5>
                     <form action="bd/InsertCaja.jsp" method="post">
                         <div class="contenedor-etiquetas">
-                            <h4>* Nombre/Codigo</h4>
+                            <h4>* Nombre/Cod</h4>
                             <h4>* Efectivo</h4>
                         </div>
                         <div class="contenedor-inputs">
@@ -163,16 +164,16 @@
                             </li>
                         </ul>
                     </div>
-                <!-- sidebar-menu  -->
-                <div class="sidebar-footer">
-                    <div class="dropdown">
-                        <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-laptop-code"></i>
-                            <i class="fa fa-terminal"></i>
-                            <span> codiguITO</span>
-                        </a>
+                    <!-- sidebar-menu  -->
+                    <div class="sidebar-footer">
+                        <div class="dropdown">
+                            <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-laptop-code"></i>
+                                <i class="fa fa-terminal"></i>
+                                <span> codiguITO</span>
+                            </a>
+                        </div>
                     </div>
-                </div>
             </nav>
 
 

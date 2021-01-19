@@ -34,7 +34,7 @@
                     <h3>Agregar Producto</h3>
                     <h4>Ingresa los datos</h4>
                     <h5>* Campo obligatorio</h5>
-                    <form action="">
+                    <form action="bd/InsertZap.jsp"  method="post">
                         <div class="contenedor-etiquetas">
                             <h4>* Modelo</h4>
                             <h4>* Proveedor</h4>
@@ -46,14 +46,12 @@
                         </div>
                         <div class="contenedor-inputs">
                             <input type="text" name= "modelo" placeholder="Modelo">
-                            <select name="Proveedor" class="select">
+                            <select name="proveedor" class="select">
                                 <option selected value="0"> Elige una opción </option>
                                 <option value="1">Windows Vista</option>
                                 <option value="2">Windows 7</option>
                                 <option value="3">Windows XP</option>
-                                <option value="10">Fedora</option>
-                                <option value="11">Debian</option>
-                                <option value="12">Suse</option>
+                                <option value="4">Fedora</option>
                             </select>
                             <input type="text" name="talla" placeholder="Número">
                             <input type="text" name="color" placeholder="Color">
@@ -70,35 +68,7 @@
                 </div>
             </div>
         </div>
-        <%
-            if (request.getParameter("guardar") != null) {
-                String modelo = request.getParameter("modelo");
-                //int proveedor = Integer.parseInt(request.getParameter("proveedor"));
-                int talla = Integer.parseInt(request.getParameter("talla"));
-                String color = request.getParameter("color");
-                int precio_compra = Integer.parseInt(request.getParameter("precio_compra"));
-                int precio_venta = Integer.parseInt(request.getParameter("precio_venta"));
-                int stock = Integer.parseInt(request.getParameter("stock"));
-
-                Connection cn = null;
-                ResultSet rsl = null;
-                Statement stat = null;
-
-                try {
-
-                    Class.forName("com.mysql.jdbc.Driver");
-                    cn = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
-
-                    stat = cn.createStatement();
-                    stat.executeUpdate("INSERT INTO zapato (modelo,talla,color,precio_compra, precio_venta,stock) VALUES('" + modelo + "'," + talla + ",'" + color + "'," + precio_compra + "," + precio_venta + "," + stock + ")");
-                    request.getRequestDispatcher("Inventario-Administrador.jsp").forward(request, response);
-
-                } catch (Exception e) {
-                    out.print(e + "");
-                }
-            }
-
-        %>
+    
 
         <div class="page-wrapper default-theme sidebar-bg bg1 toggled">
             <nav id="sidebar" class="sidebar-wrapper">

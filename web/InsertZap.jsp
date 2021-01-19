@@ -1,0 +1,34 @@
+<%-- 
+    Document   : InsertZap
+    Created on : 14/01/2021, 02:56:30 PM
+    Author     : AlejandroPlatas
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.sql.*,java.util.*"%>
+
+<%
+    if (request.getParameter("guardar") != null) {
+        String modelo = request.getParameter("modelo");
+        int talla = Integer.parseInt(request.getParameter("talla"));
+        String color = request.getParameter("color");
+        int precio_compra = Integer.parseInt(request.getParameter("precio_compra"));
+        int precio_venta = Integer.parseInt(request.getParameter("precio_venta"));
+        int stock = Integer.parseInt(request.getParameter("stock"));
+        //int efectivo = Integer.parseInt(request.getParameter("efectivo"));
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
+            Statement st = conn.createStatement();
+
+            int i = st.executeUpdate("insert into zapato(modelo,talla,color,precio_compra,precio_venta,stock)values('" + modelo + "'," + talla + ",'" + color + "'," + precio_compra + "," + precio_venta + ", " + stock + ")");
+            out.println("Agregado correctamente");
+
+            request.getRequestDispatcher("Inventario-Administrador.jsp").forward(request, response);
+            //RequestDispatcher dispatcher=getServletContext().getRequestDispatcher( "Maylu/build/web/AdminCaja.jsp" ); dispatcher.forward( request, response ); 
+        } catch (Exception e) {
+            System.out.print(e);
+            e.printStackTrace();
+        }
+    }
+%>

@@ -6,28 +6,39 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.*,java.util.*"%>
+<%! String driverName = "com.mysql.jdbc.Driver";%>
+<%!String url = "jdbc:mysql://localhost/bdmaylu";%>
+<%!String user = "root";%>
+<%!String psw = "";%>
 
 
 <%
-    
-    int id_cajaa = Integer.parseInt(request.getParameter("id_cajaa"));
-    if (request.getParameter("guardar") != null) {
-        String nombre_codigo = request.getParameter("nombre_codigo");
-        int efectivo = Integer.parseInt(request.getParameter("efectivo"));
+    String id_caja = request.getParameter("id_caja");
+    String nombre_codigo = request.getParameter("nombre_codigo");
+    int efectivo = Integer.parseInt(request.getParameter("efectivo"));
+
+    if (id_caja != null) {
+        Connection con = null;
+        PreparedStatement ps = null;
+        int personID = Integer.parseInt(id_caja);
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
-            Statement st = conn.createStatement();
+            Class.forName(driverName);
+            con = DriverManager.getConnection(url, user, psw);
+            String sql = "update caja set id_caja=?,nombre_codigo=?,efectivo=? where id_caja=" + id_caja;
+            ps = con.prepareStatement(sql);
+            ps.setString(1, id_caja);
+            ps.setString(2, nombre_codigo);
+            ps.setInt(3, efectivo);
 
-            //int i = st.executeUpdate("insert into caja(nombre_codigo,efectivo)values('" + nombre_codigo + "'," + efectivo + ")");
-            int i= st.executeUpdate("UPDATE caja SET nombre_codigo='"+nombre_codigo+"',efectivo="+efectivo+" WHERE id_caja='"+id_cajaa+"'");
-            out.println("Actualizado correctamente");
-
-            //request.getRequestDispatcher("AdminCaja.jsp").forward(request, response);
-            //RequestDispatcher dispatcher=getServletContext().getRequestDispatcher( "Maylu/build/web/AdminCaja.jsp" ); dispatcher.forward( request, response ); 
-        } catch (Exception e) {
-            out.print(e);
-            e.printStackTrace();
+            int i = ps.executeUpdate();
+            if (i > 0) {
+                out.print("Record Updated Successfully");
+            } else {
+                out.print("There is a problem in updating Record.");
+            }
+        } catch (SQLException sql) {
+            request.setAttribute("error", sql);
+            out.println(sql);
         }
     }
 %>

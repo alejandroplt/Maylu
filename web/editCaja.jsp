@@ -203,44 +203,66 @@
                             <h3>Actualizar Caja</h3>
                             <h4>Ingresa los datos</h4>
                             <h5>* Campo obligatorio </h5>
-                            <form action="bd/update-processCaja.jsp" method="post" name="update"> 
+                            <%
+                                String id_caja = request.getParameter("id_caja");
+
+                                Connection connection = null;
+                                Statement statement = null;
+                                ResultSet resultSet = null;
+
+                                try {
+                                    Class.forName("com.mysql.jdbc.Driver");
+                                    connection = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
+
+                                    statement = connection.createStatement();
+                                    resultSet = statement.executeQuery("select * from caja where id_caja='" + id_caja + "'");
+                                    //String sql = "select * from caja where id_caja=" + id_caja;
+                                    //resultSet = statement.executeQuery(sql);
+                                    while (resultSet.next()) {
+                            %>
+                            <form method="post" action="bd/update-processCaja.jsp"> 
                                 <div class="contenedor-etiquetas-actualiza">
                                     <h4>* Nombre</h4>
                                     <h4>* Efectivo</h4>
                                 </div> 
                                 <div class="contenedor-inputs-actualiza">
-                                    <%
-                                        String id_cajaa = request.getParameter("id_caja");
-                                        Connection connection = null;
-                                        Statement statement = null;
-                                        ResultSet resultSet = null;
-                                        String driver = "com.mysql.jdbc.Driver";
-                                        try {
-                                            Class.forName(driver);
-                                        } catch (ClassNotFoundException e) {
-                                            e.printStackTrace();
-                                        }
-                                        try { 
-                                            connection = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
-                                            statement = connection.createStatement();
-                                            String sql = "select * from caja where id_caja=" + id_cajaa;
-                                            resultSet = statement.executeQuery(sql);
-                                            while (resultSet.next()) {
-                                    %>
+
                                     <input type="text" name="nombre_codigo" value="<%=resultSet.getString("nombre_codigo")%>" placeholder="Nombre o codigo de caja" >
                                     <input type="text" name="efectivo" value="<%=resultSet.getString("efectivo")%>" placeholder="Cantidad de efectivo">
-                                    <%
-                                            }
-                                        } catch (Exception e) {
-                                            e.printStackTrace();
-                                        }
-                                    %>  
+
                                 </div>
                                 <br>
 
+
                                 <input type="submit" class="btn-submit btn-block" name="actualizar" value="Actualizar">
+
                             </form>
+
+
                         </div> 
+                        <%--
+  }
+} catch (Exception e) {
+}
+if (request.getParameter("actualizar") != null) {
+
+                                    String nombre_codigo = request.getParameter("nombre_codigo");
+                                    int efectivo = Integer.parseInt(request.getParameter("efectivo"));
+
+                                    statement.executeUpdate("update caja set nombre_codigo ='" + nombre_codigo + "', efectivo =" + efectivo + " where id_caja= '" + id_caja + "'");
+                                    out.println("Eliminado correctamente");
+                                    //request.getRequestDispatcher("AdminCaja.jsp").forward(request, response);
+                                }
+
+
+                        --%> 
+                        <%
+                                }
+                                connection.close();
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        %>
                         <br>
                     </article>
                 </section>
