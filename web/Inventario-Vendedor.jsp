@@ -158,11 +158,38 @@
                             <h1>Inventario</h1>
                         </header>
 
+                        <%
+                            Connection con = null;
+                            Statement sta = null;
+                            ResultSet rs = null;
+
+                            try {
+                                Class.forName("com.mysql.jdbc.Driver");
+                                con = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
+                                sta = con.createStatement();
+
+                                rs = sta.executeQuery("SELECT * FROM zapato ");
+                        %> 
+
                         <div id="container1">
-                            <div class="field" id="searchform">
-                                <input type="text" id="searchterm" placeholder="Ingresar Modelo" />
-                                <button type="button" id="search">Buscar</button>
-                            </div>
+                            <form>
+                                <div class="field" id="searchform">
+                                    <input type="text" id="searchterm" name="introducemodelo" placeholder="Ingresar Modelo" />
+                                    <input class="btn btn" type="submit" id="search" value="Buscar" "/>
+                                </div>
+                            </form>
+
+                            <%
+                                String modelo = request.getParameter("introducemodelo");
+                                if (modelo != null) {
+                                    sta = con.createStatement();
+
+                                    rs = sta.executeQuery("SELECT * FROM zapato WHERE modelo = '" + modelo + "'");
+                                } else {
+                                    System.out.println("Error");
+                                }
+
+                            %>
                         </div>
 
                         <div class="table-responsive">
@@ -183,18 +210,7 @@
                                 <tbody>
                                     <tr>
                                         <%
-                                            Connection con = null;
-                                            Statement sta = null;
-                                            ResultSet rs = null;
-
-                                            try {
-                                                Class.forName("com.mysql.jdbc.Driver");
-                                                con = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
-
-                                                sta = con.createStatement();
-                                                rs = sta.executeQuery("SELECT * FROM zapato");
-
-                                                while (rs.next()) {
+                                            while (rs.next()) {
                                         %>
                                     </tr>
                                     <tr>
