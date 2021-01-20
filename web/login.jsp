@@ -44,7 +44,8 @@
                         <button type="submit" name="enviar_formulario" id="enviar">Entrar</button>
                     </div>
                 </form>
-                <%                    String driver = "com.mysql.jdbc.Driver";
+                <%                    
+                    String driver = "com.mysql.jdbc.Driver";
                     String url = "jdbc:mysql://localhost/bdmaylu?user=root&password=";
 
                     Connection connection;
@@ -93,7 +94,6 @@
                             default:
                                 String mensaje = "<script language='javascript'>alert('Usuario o contraseña invalida');</script>";
                                 out.println(mensaje);
-                                //out.write("usuario o contraseña invalida");
                                 break;
                         }
                     }

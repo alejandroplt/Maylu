@@ -309,14 +309,14 @@
                                                 <div id="container1">
 
                                                     <form>
-                                                    <div class="field" id="searchform">
-                                                        <input type="text" id="searchterm" name="introducemodelo" placeholder="Ingresar Modelo" />
-                                                        <input class="btn btn" type="submit" id="search" value="Buscar" "/>
-                                                        <button type="button" id="btn-abrir-popup"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
-                                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
-                                                            </svg> Agregar</button>
-                                                    </div> 
-                                                        </form>
+                                                        <div class="field" id="searchform">
+                                                            <input type="text" id="searchterm" name="introducemodelo" placeholder="Ingresar Modelo" />
+                                                            <input class="btn btn" type="submit" id="search" value="Buscar"/>
+                                                            <button type="button" id="btn-abrir-popup"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                                                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+                                                                </svg> Agregar</button>
+                                                        </div> 
+                                                    </form>
                                                     <%
                                                         String modelo = request.getParameter("introducemodelo");
                                                         if (modelo != null) {
@@ -326,45 +326,38 @@
                                                         } else {
                                                             System.out.println("Error");
                                                         }
-
                                                     %>
-
-
-
                                                 </div>
-
-
                                                 <div class="table-responsive">
                                                     <table class="table table-hover" id="tablee">
                                                         <thead>
                                                             <tr>
                                                                 <th>Modelo</th>
-                                        <th>Número</th>
-                                        <th>Color</th>
-                                        <th>Precio Compra</th>
-                                        <th>Precio Venta</th>
-                                        <th>Existencias</th>
-                                        <th>Proveedor</th>
-                                        <th>Imagen</th>
-                                        <th>Opciones</th>
+                                                                <th>Número</th>
+                                                                <th>Color</th>
+                                                                <th>Precio Compra</th>
+                                                                <th>Precio Venta</th>
+                                                                <th>Existencias</th>
+                                                                <th>Proveedor</th>
+                                                                <th>Imagen</th>
+                                                                <th>Opciones</th>
                                                             </tr>
                                                         </thead>
 
                                                         <tbody>
                                                             <tr>
-
                                                                 <%
                                                                     while (rs.next()) {
                                                                 %>
                                                             <tr>
                                                                 <td><%= rs.getString("modelo")%></td>                                        
-                                        <td><%=rs.getString("talla")%></td>
-                                        <td><%=rs.getString("color")%></td>
-                                        <td><%=rs.getString("precio_compra")%></td>
-                                        <td><%=rs.getString("precio_venta")%></td>  
-                                        <td><%=rs.getString("existencias")%></td>  
-                                        <td><%=rs.getString("proveedor")%></td>
-                                        <td><img src="img/maylu.png" alt="logo" width="100" height="100" /></td>
+                                                                <td><%=rs.getString("talla")%></td>
+                                                                <td><%=rs.getString("color")%></td>
+                                                                <td><%=rs.getString("precio_compra")%></td>
+                                                                <td><%=rs.getString("precio_venta")%></td>  
+                                                                <td><%=rs.getString("existencias")%></td>  
+                                                                <td><%=rs.getString("proveedor")%></td>
+                                                                <td><img src="img/maylu.png" alt="logo" width="100" height="100" /></td>
 
                                                                 <td>
                                                                     <a href="editProducto.jsp?id_zapato=<%=rs.getString("id_zapato")%>">

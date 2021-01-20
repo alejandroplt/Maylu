@@ -187,6 +187,17 @@
                                 </svg></button>
                         </div>
                         <br>
+                        <%
+                            Connection con = null;
+                            Statement sta = null;
+                            ResultSet rs = null;
+
+                            try {
+                                Class.forName("com.mysql.jdbc.Driver");
+                                con = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
+                                sta = con.createStatement();
+                        %> 
+
                         <div class="row ventas">
                             <div class="col-md-8">
                                 <header id="encabezado">
@@ -197,17 +208,29 @@
                                     <h1>Punto de Venta</h1>
                                 </header>
                                 <div class="datos">
+
                                     <div id="container">
+                                        <form>
                                         <div class="field" id="searchform">
-                                            <input type="text" id="searchterm" placeholder="Ingresar Modelo" />
-                                            <button type="button" id="search">Agregar</button>
+                                            <input type="text" id="searchterm" name="introducemodelo" placeholder="Introduce el Modelo" />
+                                            <button type="submit" id="search">Agregar</button>
                                         </div>
+                                        </form>
+                                        <%
+                                        String modelo = request.getParameter("introducemodelo");
+                                        if (modelo != null) {
+                                            sta = con.createStatement();
+                                            rs = sta.executeQuery("SELECT * FROM zapato WHERE modelo = '" + modelo + "'");
+                                        } else {
+                                            System.out.println("Error");
+                                        }
+                                    %>
+
                                         <div class="table-responsive">
                                             <table class="table table-hover table-bordered" id="tablee">
                                                 <thead>
                                                     <tr>
-                                                        <th>Codigo</th>
-                                                        <th>Foto</th>
+                                                        <th>Codigo</th>                                                        
                                                         <th>Cantidad</th>
                                                         <th>Talla</th>
                                                         <th>Color</th>
@@ -216,19 +239,32 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+                                                    <%
+                                                        while (rs.next()) {
+                                                    %>
                                                     <tr>
-                                                        <td>4500MX</td>
-                                                        <td></td>
-                                                        <td>$250</td>
-                                                        <td>22</td>
-                                                        <td>Rojo</td>
-                                                        <td>7</td>
+                                                        <td><%= rs.getString("modelo")%></td>                                                        
+                                                        <td>2</td>
+                                                        <td><%=rs.getString("talla")%></td>
+                                                        <td><%=rs.getString("color")%></td>
+                                                        <td><%=rs.getString("precio_venta")%></td>
                                                         <td>
                                                             <button class="quitar" onclick="borraElemento(this);">
                                                                 <i class="fas fa-trash-alt"></i>
                                                             </button>
                                                         </td>
                                                     </tr>
+                                                    <%
+                                                            }
+
+                                                            sta.close();
+                                                            rs.close();
+                                                            con.close();
+
+                                                        } catch (Exception e) {
+                                                        }
+
+                                                    %>
                                                 </tbody>
                                             </table>
                                             <br>
@@ -259,10 +295,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <h3>Vendedor: </h3>
-                                    <h3>Subtotal: </h3>
+                                    <h3>Vendedor:</h3>
+                                    <h3>Subtotal:</h3>
                                     <h3>Iva: </h3>
-                                    <h3>Total: </h3>
+                                    <h3>Total:</h3>
                                     <div class="recibido">
                                         <h3>Recibido: </h3>
                                         <input type="text" name="recibido" value=""  maxlength="9" required 

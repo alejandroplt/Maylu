@@ -54,7 +54,7 @@
 
 
         <div class="page-wrapper default-theme sidebar-bg bg1 toggled">
-            <nav id="sidebar" class="sidebar-wrapper">
+<nav id="sidebar" class="sidebar-wrapper">
                 <div class="sidebar-content">
                     <!-- sidebar-brand  -->
                     <div class="sidebar-item sidebar-brand">
@@ -176,7 +176,6 @@
                     </div>
                 </div>
             </nav>
-
 
 
             <!-- contenido  -->
