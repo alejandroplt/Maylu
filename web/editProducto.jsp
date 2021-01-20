@@ -216,7 +216,7 @@
                                 PreparedStatement ps;
                                 ResultSet rs;
                                 int id_zapato = Integer.parseInt(request.getParameter("id_zapato"));
-                                ps = con.prepareStatement("select * from zapatos where id_zapato=" + id_zapato);
+                                ps = con.prepareStatement("select * from zapato where id_zapato=" + id_zapato);
                                 rs = ps.executeQuery();
                                 while (rs.next()) {
 
@@ -224,29 +224,24 @@
                             <form action="" method="post"> 
                                 <div class="contenedor-etiquetas-actualiza">
                                     <h4> ID Zapato</h4>
-                                    <h4>* Modelo</h4>
-                                    <h4>* Proveedor</h4>
+                                    <h4>* Modelo</h4>                                    
                                     <h4>* Talla</h4>
                                     <h4>* Color</h4>
                                     <h4>* Precio Compra</h4>
                                     <h4>* Precio Venta</h4>
-                                    <h4>* Stock</h4>
+                                    <h4>* Existencias</h4>
+                                    <h4>* Proveedor</h4>
                                 </div> 
                                 <div class="contenedor-inputs-actualiza">
 
-                                    <input type="text"  readonly="" value="<%=rs.getInt("id_zapato")%>" > 
-                                    <input type="text" name="modelo" value="<%=rs.getString("modelo")%>" placeholder="Modelo">
-                                    <select name="proveedor" reandonly="" class="select">
-                                        <option selected value="0" lige una opción><%=rs.getString("proveedor")%></option>
-                                        <option value="1">Windows Vista</option>
-                                        <option value="2">Windows 7</option>
-                                        <option value="3">Windows XP</option>
-                                    </select>
-                                    <input type="text" readonly="" name="talla" value="<%=rs.getString("talla")%>" placeholder="Talla">
-                                    <input type="text" readonly="" name="color" value="<%=rs.getString("color")%>" placeholder="Color">
+                                    <input type="text"  readonly="" value="<%=rs.getInt("id_zapato")%>" disabled > 
+                                    <input type="text" name="modelo" value="<%=rs.getString("modelo")%>" disabled placeholder="Modelo">                         
+                                    <input type="text" readonly="" name="talla" value="<%=rs.getString("talla")%>" placeholder="Talla" disabled>
+                                    <input type="text" readonly="" name="color" value="<%=rs.getString("color")%>" placeholder="Color" disabled>
                                     <input type="text" name="precio_compra" value="<%=rs.getString("precio_compra")%>" placeholder="Precio Compra">
                                     <input type="text" name= "precio_venta" value="<%=rs.getString("precio_venta")%>" placeholder="Precio Venta">
-                                    <input type="text" name= "stock" value="<%=rs.getString("stock")%>" placeholder="Stock">
+                                    <input type="text" name= "existencias" value="<%=rs.getString("existencias")%>" placeholder="Existencias">
+                                    <input type="text" name="proveedor" value="<%=rs.getString("proveedor")%>" disabled placeholder="Proveedor" >
 
 
                                 </div>
@@ -264,10 +259,10 @@
                                 //String color = request.getParameter("color");
                                 String precio_compra = request.getParameter("precio_compra");
                                 String precio_venta = request.getParameter("precio_venta");
-                                String stock = request.getParameter("stock");
+                                String existencias = request.getParameter("existencias");
 
-                                if (precio_compra != null && precio_venta != null && stock != null) {
-                                    ps = con.prepareStatement("update zapato set precio_compra ='" + precio_compra + "', precio_venta ='" + precio_venta + "', stock='" + stock + "' where id_zapato= " + id_zapato);
+                                if (precio_compra != null && precio_venta != null && existencias != null) {
+                                    ps = con.prepareStatement("update zapato set precio_compra ='" + precio_compra + "', precio_venta ='" + precio_venta + "', existencias='" + existencias + "' where id_zapato= " + id_zapato);
                                     ps.executeUpdate();
                                     out.println("Actualizado");
                                     request.getRequestDispatcher("Inventario-Administrador.jsp").forward(request, response);

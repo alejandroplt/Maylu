@@ -244,14 +244,15 @@
                             <table class="table table-hover" id="tablee">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
+                          
                                         <th>Modelo</th>
-                                        <th>Proveedor</th>
                                         <th>Número</th>
                                         <th>Color</th>
                                         <th>Precio Compra</th>
                                         <th>Precio Venta</th>
-                                        <th>Stock</th>
+                                        <th>Existencias</th>
+                                        <th>Proveedor</th>
+                                        <th>Imagen</th>
                                         <th>Opciones</th>
                                     </tr>
                                 </thead>
@@ -268,19 +269,19 @@
                                                 con = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
 
                                                 sta = con.createStatement();
-                                                rs = sta.executeQuery("SELECT * FROM zapatos");
+                                                rs = sta.executeQuery("SELECT * FROM zapato");
 
                                                 while (rs.next()) {
                                         %>
                                     <tr>
-                                        <td><%= rs.getInt("id_zapato")%></td>
-                                        <td><%= rs.getString("modelo")%></td>
-                                        <td><%=rs.getString("proveedor")%></td>
+                                        <td><%= rs.getString("modelo")%></td>                                        
                                         <td><%=rs.getString("talla")%></td>
                                         <td><%=rs.getString("color")%></td>
                                         <td><%=rs.getString("precio_compra")%></td>
                                         <td><%=rs.getString("precio_venta")%></td>  
-                                        <td><%=rs.getString("stock")%></td>  
+                                        <td><%=rs.getString("existencias")%></td>  
+                                        <td><%=rs.getString("proveedor")%></td>
+                                        <td><img src="img/maylu.png" alt="logo" width="100" height="100" /></td>
 
                                         <td>
                                             <a href="editProducto.jsp?id_zapato=<%=rs.getString("id_zapato")%>">

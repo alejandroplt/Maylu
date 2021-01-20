@@ -22,7 +22,7 @@
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
             Statement st = conn.createStatement();
 
-            int i = st.executeUpdate("insert into zapatos(modelo,proveedor,talla,color,precio_compra,precio_venta,stock)"
+            int i = st.executeUpdate("insert into zapato(modelo,proveedor,talla,color,precio_compra,precio_venta,stock)"
                     + "values('" + modelo + "'," + proveedor + "," + talla + ",'" + color + "'," + precio_compra + "," + precio_venta + ", " + stock + ")");
             out.println("Agregado correctamente");
 
