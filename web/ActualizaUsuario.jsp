@@ -196,7 +196,8 @@ Author     : Carlos Loaeza
                             <br>
                             <br>
                             <h1>Usuarios</h1>
-                            <div class="puestos2"><h4>   Puesto: <br>    1.- Administrador <br>    2.- Almacén <br>    3.- Vendedor</h2></div>
+                            <div class="puestos2"><h4>   Puesto: <br>    1.- Administrador <br>    2.- Almacén <br>    3.- Vendedor</h2>
+                                    </div>
                                     </header>
 
                                     <div class="actualiza">
@@ -241,27 +242,27 @@ Author     : Carlos Loaeza
                                             <div class="contenedor-inputs-actualiza">
 
                                                 <input type="text" readonly="" value="<%=rs.getInt("id_usuario")%>" > 
-                                                <input type="text" name="nombre_com2" value="<%=rs.getString("nombre_com")%>" placeholder="Nombre completo">
+                                                <input type="text" name="nombre_com" value="<%=rs.getString("nombre_com")%>" placeholder="Nombre completo">
                                                 <select name="puesto2" class="select">
-                                                    <option selected value="0"> <%=rs.getString("puesto")%></option>
+                                                    <option selected value="0" name="puesto"> <%=rs.getString("puesto")%></option>
                                                     <option value="1">Admistrador</option>
                                                     <option value="2">Vendedor</option>
                                                     <option value="3">Almacenista</option>
                                                 </select>
-                                                <select name="id_caja2" class="select">
+                                                <select name="id_caja" class="select">
                                                     <option selected value="0"> <%=rs.getString("id_caja")%> </option>
                                                     <option value="1">1</option>
                                                 </select>
-                                                <select name="genero2" class="select">
+                                                <select name="genero" class="select">
                                                     <option selected value="0"> <%=rs.getString("genero")%> </option>
                                                     <option value="1">Masculino</option>
                                                     <option value="2">Femenino</option>
                                                 </select>
-                                                <input type="text" name="direccion2" value="<%=rs.getString("direccion")%>" placeholder="Dirección">
-                                                <input type="text" name="tel2" value="<%=rs.getString("tel")%>" placeholder="Telefono">
-                                                <input type="text" name="email2" value="<%=rs.getString("email")%>" placeholder="Correo electrónico">
-                                                <input type="text" name="usuario2" value="<%=rs.getString("usuario")%>" placeholder="Usuario">
-                                                <input type="text" name="contra2" value="<%=rs.getString("contra")%>" placeholder="Contraseña">
+                                                <input type="text" name="direccion" value="<%=rs.getString("direccion")%>" placeholder="Dirección">
+                                                <input type="text" name="tel" value="<%=rs.getString("tel")%>" placeholder="Telefono">
+                                                <input type="text" name="email" value="<%=rs.getString("email")%>" placeholder="Correo electrónico">
+                                                <input type="text" name="usuario" value="<%=rs.getString("usuario")%>" placeholder="Usuario">
+                                                <input type="text" name="contraseña" value="<%=rs.getString("contra")%>" placeholder="Contraseña">
 
 
                                             </div>

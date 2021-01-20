@@ -63,6 +63,8 @@
             </div>
         </div>
 
+        
+        
         <div class="page-wrapper default-theme sidebar-bg bg1 toggled">
             <nav id="sidebar" class="sidebar-wrapper">
                 <div class="sidebar-content">
@@ -187,6 +189,8 @@
                 </div>
             </nav>
 
+            
+            
             <!-- contenido  -->
             <main class="page-content pt-2">
                 <div class="fondo_transparente">

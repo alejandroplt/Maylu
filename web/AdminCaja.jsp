@@ -165,16 +165,18 @@
                         </ul>
                     </div>
                     <!-- sidebar-menu  -->
-                    <div class="sidebar-footer">
-                        <div class="dropdown">
-                            <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-laptop-code"></i>
-                                <i class="fa fa-terminal"></i>
-                                <span> codiguITO</span>
-                            </a>
-                        </div>
+                </div>
+                <div class="sidebar-footer">
+                    <div class="dropdown">
+                        <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-laptop-code"></i>
+                            <i class="fa fa-terminal"></i>
+                            <span> codiguITO</span>
+                        </a>
                     </div>
+                </div>
             </nav>
+
 
 
             <!-- contenido  -->
