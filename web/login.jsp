@@ -36,15 +36,12 @@
                 <form action="login.jsp" method="post">
                     <div class="container2">
                         <h3>Ingresa a tu cuenta</h3>
-
                         <label for="usuario" class="colocar_usuario">Usuario:</label>
                         <input type="text" name="introducir_usuario" id="usuario" required="obligatorio" placeholder="Ingresa tu usuario">
-
                         <label for="pass" class="colocar_pass">Contraseña:</label>
                         <input type="password" pattern="[A-Za-z0-9@#$%]{8,20}" minlength="8" maxlength="20"
                                name="introducir_pass" id="pass" required="obligatorio" placeholder="Ingresa tu contraeña">
-
-                        <button type="submit" name="enviar_formulario" id="enviar"><label class="tipo">Entrar</label></button>
+                        <button type="submit" name="enviar_formulario" id="enviar">Entrar</button>
                     </div>
                 </form>
                 <%                    String driver = "com.mysql.jdbc.Driver";
