@@ -29,6 +29,7 @@
         <link rel="stylesheet" href="styles/sidebar-themes.css">
         <link rel="stylesheet" href="styles/estilos-nuevoproducto.css">
         <link rel="stylesheet" href="styles/popups.css">  
+        <link rel="stylesheet" href="actualiza-styles.css">
 
         <link rel="shortcut icon" type="image/png" href="img/icon.png" />
         <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -198,7 +199,8 @@
                             <br>
                             <h1>Caja</h1>
                         </header>
-
+                        <br>
+                        <br>
                         <div class="actualiza">
                             <h3>Actualizar Caja</h3>
                             <h4>Ingresa los datos</h4>
@@ -221,23 +223,6 @@
                                 while (rs.next()) {
 
                             %>
-                            <%--
-                                String id_caja = request.getParameter("id_caja");
-
-                                Connection connection = null;
-                                Statement statement = null;
-                                ResultSet resultSet = null;
-
-                                try {
-                                    Class.forName("com.mysql.jdbc.Driver");
-                                    connection = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
-
-                                    statement = connection.createStatement();
-                                    resultSet = statement.executeQuery("select * from caja where id_caja='" + id_caja + "'");
-                                    //String sql = "select * from caja where id_caja=" + id_caja;
-                                    //resultSet = statement.executeQuery(sql);
-                                    while (resultSet.next()) {
-                            --%>
                             <form action="" method="post"> 
                                 <div class="contenedor-etiquetas-actualiza">
                                     <h4>  Id Caja</h4>
@@ -254,7 +239,7 @@
                                 <br>
 
 
-                                <input type="submit" class="btn-submit btn-block" name="actualizar" value="Actualizar">
+                                <input type="submit" class="btn-submit boton-actualiza" name="actualizar" value="Actualizar">
 
                             </form>
                             <%
@@ -274,30 +259,11 @@
                                 }
                             %>
                         </div> 
-                        <%--
-  }
-} catch (Exception e) {
-}
-if (request.getParameter("actualizar") != null) {
-
-                                    String nombre_codigo = request.getParameter("nombre_codigo");
-                                    int efectivo = Integer.parseInt(request.getParameter("efectivo"));
-
-                                    statement.executeUpdate("update caja set nombre_codigo ='" + nombre_codigo + "', efectivo =" + efectivo + " where id_caja= '" + id_caja + "'");
-                                    out.println("Eliminado correctamente");
-                                    //request.getRequestDispatcher("AdminCaja.jsp").forward(request, response);
-                                }
-
-
-                        --%> 
-                        <%--
-                                }
-                                connection.close();
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                        --%>
-
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
                         <br>
                     </article>
                 </section>
@@ -305,7 +271,6 @@ if (request.getParameter("actualizar") != null) {
             <!-- page-content" -->
         </div>
         <!-- page-wrapper -->
-        <!-- using online scripts -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
                 integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">

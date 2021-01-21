@@ -28,6 +28,7 @@ Author     : Carlos Loaeza
         <link rel="stylesheet" href="styles/sidebar-themes.css">
         <link rel="stylesheet" href="styles/estilos-nuevoproducto.css">
         <link rel="stylesheet" href="styles/popups.css">
+        <link rel="stylesheet" href="actualiza-styles.css">
 
         <link rel="shortcut icon" type="image/png" href="img/icon.png" />
         <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -191,11 +192,13 @@ Author     : Carlos Loaeza
                             </a>
                         </div>
                         <header id="encabezado">
-                            <img id="img-inventario" class="img-responsive img-rounded" src="img/usuario.png" height="150"
-                                 width="150" alt="Usuario picture">
-                            <br>
-                            <br>
-                            <h1>Usuarios</h1>
+                            <div class="puestos1">
+                                <img id="img-inventario" class="img-responsive img-rounded" src="img/usuario.png" height="150"
+                                     width="150" alt="Usuario picture">
+                                <br>
+                                <br>
+                                <h1>Usuarios</h1>
+                            </div>
                             <div class="puestos2"><h4>   Puesto: <br>    1.- Administrador <br>    2.- Almacén <br>    3.- Vendedor</h2>
                                     </div>
                                     </header>
@@ -203,8 +206,8 @@ Author     : Carlos Loaeza
                                     <div class="actualiza">
                                         <h3>Actualizar Usuario</h3>
                                         <h4>Ingresa los datos</h4>
-                                        <h5>* Campo obligatorio <br>
-                                            ** La contraseña debe tener una longitud entre 8 y 15 caracteres 
+                                        <h5><label>*</label> Campo obligatorio <br>
+                                            <label>**</label> La contraseña debe tener una longitud entre 8 y 15 caracteres 
                                             (Debe contener letras minúsculas, mayúsculas, números y símbolos)</h5>
                                         <!--<form action="bd/consultUser.jsp" method="post" name="update">-->
                                         <%
@@ -228,47 +231,38 @@ Author     : Carlos Loaeza
 
                                         <form action="" method="post"> 
                                             <div class="contenedor-etiquetas-actualiza">
-                                                <h4>  Id_usuario</h4>
-                                                <h4>* Nombre</h4>
-                                                <h4>* Puesto</h4>
-                                                <h4>* Caja</h4>
-                                                <h4>* Genero</h4>
-                                                <h4>* Dirección</h4>
-                                                <h4>* Telefono</h4>
-                                                <h4>* Correo</h4>
-                                                <h4>* Usuario</h4>
-                                                <h4>** Contraseña</h4>
+                                                <h4> Id_usuario</h4>
+                                                <h4><label>*</label> Nombre</h4>
+                                                <h4><label>*</label> Puesto</h4>
+                                                <h4><label>*</label> Caja</h4>
+                                                <h4><label>*</label> Genero</h4>
+                                                <h4><label>*</label> Dirección</h4>
+                                                <h4><label>*</label> Telefono</h4>
+                                                <h4><label>*</label> Correo</h4>
+                                                <h4><label>*</label> Usuario</h4>
+                                                <h4><label>**</label> Contraseña</h4>
                                             </div>
                                             <div class="contenedor-inputs-actualiza">
 
-                                                <input type="text" readonly="" value="<%=rs.getInt("id_usuario")%>" > 
-                                                <input type="text" name="nombre_com" value="<%=rs.getString("nombre_com")%>" placeholder="Nombre completo">
+                                                <input type="text" readonly="" value="<%=rs.getInt("id_usuario")%>" disabled> 
+                                                <input type="text" name="nombre_com" value="<%=rs.getString("nombre_com")%>" disabled>
                                                 <select name="puesto2" class="select">
                                                     <option selected value="0" name="puesto"> <%=rs.getString("puesto")%></option>
                                                     <option value="1">Admistrador</option>
                                                     <option value="2">Vendedor</option>
                                                     <option value="3">Almacenista</option>
                                                 </select>
-                                                <select name="id_caja" class="select">
-                                                    <option selected value="0"> <%=rs.getString("id_caja")%> </option>
-                                                    <option value="1">1</option>
-                                                </select>
-                                                <select name="genero" class="select">
-                                                    <option selected value="0"> <%=rs.getString("genero")%> </option>
-                                                    <option value="1">Masculino</option>
-                                                    <option value="2">Femenino</option>
-                                                </select>
+                                                    <input type="text" value="<%=rs.getString("id_caja")%> "disabled>
+                                                <input type="text" readonly="" value="<%=rs.getString("genero")%>" disabled>
                                                 <input type="text" name="direccion" value="<%=rs.getString("direccion")%>" placeholder="Dirección">
                                                 <input type="text" name="tel" value="<%=rs.getString("tel")%>" placeholder="Telefono">
                                                 <input type="text" name="email" value="<%=rs.getString("email")%>" placeholder="Correo electrónico">
-                                                <input type="text" name="usuario" value="<%=rs.getString("usuario")%>" placeholder="Usuario">
+                                                <input type="text" name="usuario" value="<%=rs.getString("usuario")%>" placeholder="Usuario" disabled>
                                                 <input type="text" name="contraseña" value="<%=rs.getString("contra")%>" placeholder="Contraseña">
-
-
                                             </div>
                                             <br>
 
-                                            <input type="submit" class="btn-submit btn-block" name="actualizar" value="Actualizar">
+                                            <input type="submit" class="btn-submit boton-actualiza" name="actualizar" value="Actualizar">
                                         </form>
                                         <%
                                             }
@@ -296,7 +290,7 @@ Author     : Carlos Loaeza
                                             }
                                         %>
                                     </div>
-
+                                    <br>
                                     <br>
                                     </article>
                                     </section>

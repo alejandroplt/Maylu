@@ -29,6 +29,7 @@
         <link rel="stylesheet" href="styles/sidebar-themes.css">
         <link rel="stylesheet" href="styles/estilos-nuevoproducto.css">
         <link rel="stylesheet" href="styles/popups.css">  
+        <link rel="stylesheet" href="actualiza-styles.css">
 
         <link rel="shortcut icon" type="image/png" href="img/icon.png" />
         <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -198,11 +199,11 @@
                             <br>
                             <h1>Proveedores</h1>
                         </header>
-
+                        <br>
                         <div class="actualiza">
                             <h3>Actualizar Proveedor</h3>
                             <h4>Ingresa los datos</h4>
-                            <h5>* Campo obligatorio </h5>
+                            <h5><label>*</label> Campo obligatorio </h5>
                             <%
                                 Connection con;
                                 String url = "jdbc:mysql://localhost/bdmaylu";
@@ -222,11 +223,11 @@
                             %>
                             <form action="" method="post"> 
                                 <div class="contenedor-etiquetas-actualiza">
-                                    <h4>* Nombre</h4>
-                                    <h4>* Agente</h4>
-                                    <h4>* Direccion</h4>
-                                    <h4>* Telefono</h4>
-                                    <h4>* Correo</h4>
+                                    <h4><label>*</label> Nombre</h4>
+                                    <h4><label>*</label> Agente</h4>
+                                    <h4><label>*</label> Direccion</h4>
+                                    <h4><label>*</label> Telefono</h4>
+                                    <h4><label>*</label> Correo</h4>
                                 </div> 
                                 <div class="contenedor-inputs-actualiza">
                                     <input type="text" name="nombre_empresa" value="<%=rs.getString("nombre_empresa")%>" placeholder="Nombre de la empresa">
@@ -242,7 +243,7 @@
                                 </div>
                                 <br>
 
-                                <input type="submit" class="btn-submit btn-block" name="actualizar" value="Actualizar">
+                                <input type="submit" class="btn-submit boton-actualiza" name="actualizar" value="Actualizar">
                             </form>
                             <%
                                 }
@@ -264,6 +265,8 @@
                                 }
                             %>
                         </div> 
+                        <br>
+                        <br>
                         <br>
                     </article>
                 </section>

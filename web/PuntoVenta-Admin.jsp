@@ -211,8 +211,9 @@
 
                                     <div id="container">
                                         <form>
-                                        <div class="field" id="searchform">
+                                        <div class="field-venta" id="searchform">
                                             <input type="text" id="searchterm" name="introducemodelo" placeholder="Introduce el Modelo" />
+                                            <input type="text" id="searhterm" name="introducecantidad" placeholder="Ingresa la cantidad"/>
                                             <button type="submit" id="search">Agregar</button>
                                         </div>
                                         </form>

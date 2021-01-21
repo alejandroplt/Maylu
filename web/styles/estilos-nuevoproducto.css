@@ -106,12 +106,41 @@ body {
     border-color: #333;
 }
 
-.field {
+.field{
     margin-left: 0px;
     margin-right: 50px;
     float: right;
     display:flex;
     width:70%;
+    flex-direction:row;
+    box-shadow:
+        1px 1px 0 #030249,
+        2px 2px 0 #030249,
+        3px 3px 0 #030249,
+        4px 4px 0 #030249,
+        5px 5px 0 #030249,
+        6px 6px 0 #030249,
+        7px 7px 0 #030249;
+    width:80%;
+    flex-direction:row;
+    box-shadow:
+        1px 1px 0 rgb(3, 7, 53),
+        2px 2px 0 rgb(3, 7, 53),
+        3px 3px 0 rgb(3, 7, 53),
+        4px 4px 0 rgb(3, 7, 53),
+        5px 5px 0 rgb(3, 7, 53),
+        6px 6px 0 rgb(3, 7, 53),
+        7px 7px 0 rgb(3, 7, 53)
+        ;
+}
+
+.field-venta{
+    margin-left: 0px;
+    margin-right: 50px;
+    float: right;
+    display:flex;
+    width:70%;
+    height: 50px;
     flex-direction:row;
     box-shadow:
         1px 1px 0 #030249,
@@ -141,6 +170,11 @@ body {
     font:1.6em 'Montserrat Alternates';
     font-family: Helvetica, Arial, sans-serif;
 }
+
+.field-venta>input[type=text]{
+    width: 45%
+}
+
 
 #btn-abrir-popup{
     display:block; 

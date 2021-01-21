@@ -29,6 +29,7 @@
         <link rel="stylesheet" href="styles/sidebar-themes.css">
         <link rel="stylesheet" href="styles/estilos-nuevoproducto.css">
         <link rel="stylesheet" href="styles/popups.css">  
+        <link rel="stylesheet" href="actualiza-styles.css">
 
         <link rel="shortcut icon" type="image/png" href="img/icon.png" />
         <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -202,7 +203,7 @@
                         <div class="actualiza">
                             <h3>Actualizar Zapato</h3>
                             <h4>Ingresa los datos</h4>
-                            <h5>* Campo obligatorio </h5>
+                            <h5><label>*</label> Campo obligatorio </h5>
 
                             <%
                                 Connection con;
@@ -224,13 +225,13 @@
                             <form action="" method="post"> 
                                 <div class="contenedor-etiquetas-actualiza">
                                     <h4> ID Zapato</h4>
-                                    <h4>* Modelo</h4>                                    
-                                    <h4>* Talla</h4>
-                                    <h4>* Color</h4>
-                                    <h4>* Precio Compra</h4>
-                                    <h4>* Precio Venta</h4>
-                                    <h4>* Existencias</h4>
-                                    <h4>* Proveedor</h4>
+                                    <h4><label>*</label> Modelo</h4>                                    
+                                    <h4><label>*</label> Talla</h4>
+                                    <h4><label>*</label> Color</h4>
+                                    <h4><label>*</label> Precio Compra</h4>
+                                    <h4><label>*</label> Precio Venta</h4>
+                                    <h4><label>*</label> Existencias</h4>
+                                    <h4><label>*</label> Proveedor</h4>
                                 </div> 
                                 <div class="contenedor-inputs-actualiza">
 
@@ -247,7 +248,7 @@
                                 </div>
                                 <br>
 
-                                <input type="submit" class="btn-submit btn-block" name="actualizar" value="Actualizar">
+                                <input type="submit" class="btn-submit boton-actualiza" name="actualizar" value="Actualizar">
                             </form>
                             <%
                                 }
@@ -270,6 +271,7 @@
                                 }
                             %>
                         </div> 
+                        <br>
                         <br>
                     </article>
                 </section>

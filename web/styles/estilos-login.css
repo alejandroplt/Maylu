@@ -71,7 +71,6 @@ label {
     padding-left: 10px;
     font-size: 50px;
     font-family: "Tangerine";
-    color:black;
     color: #000000; 
 }
 
@@ -94,20 +93,19 @@ button {
     padding-right: 5px;
     margin-bottom: 10px;
     margin-top: 5px;
-    text-transform: uppercase;
     border-style: solid;
     border-radius: 10px;
     width: 50%;
     cursor: pointer;
     margin-left: 80px;
     padding-top: 0px;
-    color: #fff;
+    background-color: #ffffff;
     background-clip: padding-box;
     border: 2px solid #000000;
-    font-family: 'Lobster', cursive;
+    font-family: "Tangerine";
     font-weight: lighter;
-    font-size: 20px;
-    cursor: pointer;
+    font-size: 40px;
+    font-weight: bold;
     color: black;
 }
 

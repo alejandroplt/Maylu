@@ -8,6 +8,33 @@ and open the template in the editor.
     Author     : Carlos Loaeza
 */
 
+.actualiza{
+    background-color: #ffffff;
+    box-shadow: 2px 8px 20px rgb(3, 7, 53);
+}
+
+
+
+.actualiza > h3, h4,h5 {
+    color:#030249;
+}
+
+.actualiza>h5>label{
+    color:red;
+}
+
+.actualiza form .boton-actualiza{
+    background-color:#030249;
+    color:#ffffff;
+    width: 150px;
+    height: 50px;
+    font-size: 25px;
+}
+
+.actualiza .contenedor-etiquetas-actualiza>h4>label{
+    color:red;
+}
+
 .overlay2 {
     background: rgba(0, 0, 0, .3);
     position: fixed;

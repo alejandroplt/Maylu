@@ -303,10 +303,10 @@
                                                         while (rs.next()) {
                                                     %>
 
-
+                                                </tr>
                                                 <tr>
 
-                                                    <td><%= rs.getString("nombre_com")%></td>
+                                                    <td><%=rs.getString("nombre_com")%></td>
                                                     <td><%=rs.getString("puesto")%></td>
                                                     <td><%=rs.getString("id_caja")%></td>
                                                     <td><%=rs.getString("genero")%></td>
