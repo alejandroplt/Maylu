@@ -82,13 +82,13 @@
                             case 2:
                                 sesion.setAttribute("user", nombre);
                                 sesion.setAttribute("nivel", "2");
-                                response.sendRedirect("principal-almacen.jsp");
+                                response.sendRedirect("principal-vendedor.jsp");
                                 break;
 
                             case 3:
                                 session.setAttribute("user", nombre);
                                 session.setAttribute("nivel", "3");
-                                response.sendRedirect("principal-vendedor.jsp");
+                                response.sendRedirect("principal-almacen.jsp");
                                 break;
 
                             default:

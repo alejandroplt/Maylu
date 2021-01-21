@@ -35,7 +35,7 @@
                     <h3>Agregar Proveedor</h3>
                     <h4>Ingresa los datos</h4>
                     <h5>* Campo obligatorio</h5>
-                    <form action="bd/insertProveedor.jsp" method="POST">
+                    <form action="insertProveedor.jsp" method="POST">
                         <div class="contenedor-etiquetas">
                             <h4>* Nombre</h4>
                             <h4>* Agente</h4>
@@ -63,8 +63,8 @@
             </div>
         </div>
 
-        
-        
+
+
         <div class="page-wrapper default-theme sidebar-bg bg1 toggled">
             <nav id="sidebar" class="sidebar-wrapper">
                 <div class="sidebar-content">
@@ -189,8 +189,8 @@
                 </div>
             </nav>
 
-            
-            
+
+
             <!-- contenido  -->
             <main class="page-content pt-2">
                 <div class="fondo_transparente">
@@ -228,19 +228,41 @@
                             <br>
                             <br>
                             <h1>Proveedores</h1>
+                            <%
+                                Connection con = null;
+                                Statement sta = null;
+                                ResultSet rs = null;
+
+                                try {
+                                    Class.forName("com.mysql.jdbc.Driver");
+                                    con = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
+                                    sta = con.createStatement();
+
+                                    rs = sta.executeQuery("SELECT * FROM proveedor ");
+                            %> 
                         </header>
 
                         <div id="container1">
-                            <div>
-                                <br>                                
+                            <form>
+
                                 <div class="field" id="searchform">
-                                    <input type="text" id="searchterm" placeholder="Ingresar nombre del proveedor" />
-                                    <button type="button" id="search">Buscar</button>
+                                    <input type="text" id="searchterm" name="ingresapro"placeholder="Ingresar nombre del proveedor" />
+                                    <input class="btn btn" type="submit" id="search" value="Buscar"/>
                                     <button type="button" id="btn-abrir-popup"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
                                         <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
                                         </svg> Agregar</button>
                                 </div>
-                            </div>
+                            </form>
+                            <%
+                            String id_proveedor = request.getParameter("ingresapro");
+                                if (id_proveedor != null) {
+                                    sta = con.createStatement();
+
+                                    rs = sta.executeQuery("SELECT * FROM proveedor WHERE id_proveedor = '" + id_proveedor + "'");
+                                } else {
+                                    System.out.println("Error");
+                                }
+                            %>
                         </div>
 
                         <div class="table-responsive">
@@ -260,19 +282,9 @@
 
                                     <tr>
                                         <%
-                                            Connection con = null;
-                                            Statement sta = null;
-                                            ResultSet rs = null;
-
-                                            try {
-                                                Class.forName("com.mysql.jdbc.Driver");
-                                                con = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
-
-                                                sta = con.createStatement();
-                                                rs = sta.executeQuery("SELECT * FROM proveedor");
-
-                                                while (rs.next()) {
+                                            while (rs.next()) {
                                         %>
+
                                     <tr>
 
                                         <td><%= rs.getString("nombre_empresa")%></td>
@@ -290,13 +302,13 @@
                                                     <path
                                                         d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
                                                     <path fill-rule="evenodd"
-                                                      
+
                                                           d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
                                                     </svg>
 
                                                 </button>
                                             </a>
-                                            <a href="bd/deleteProveedor.jsp?id_proveedor=<%=rs.getString("id_proveedor")%>">
+                                            <a href="deleteProveedor.jsp?id_proveedor=<%=rs.getString("id_proveedor")%>">
                                                 <button class="btn btn-danger">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                          fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">

@@ -203,7 +203,24 @@
                             <h3>Actualizar Proveedor</h3>
                             <h4>Ingresa los datos</h4>
                             <h5>* Campo obligatorio </h5>
-                            <form action="bd/update-processCaja.jsp" method="post" name="update"> 
+                            <%
+                                Connection con;
+                                String url = "jdbc:mysql://localhost/bdmaylu";
+                                String Driver = "com.mysql.jdbc.Driver";
+                                String user = "root";
+                                String clave = "";
+                                Class.forName(Driver);
+                                con = DriverManager.getConnection(url, user, clave);
+
+                                PreparedStatement ps;
+                                ResultSet rs;
+                                int id_proveedor = Integer.parseInt(request.getParameter("id_proveedor"));
+                                ps = con.prepareStatement("select * from proveedor where id_proveedor=" + id_proveedor);
+                                rs = ps.executeQuery();
+                                while (rs.next()) {
+
+                            %>
+                            <form action="" method="post"> 
                                 <div class="contenedor-etiquetas-actualiza">
                                     <h4>* Nombre</h4>
                                     <h4>* Agente</h4>
@@ -212,44 +229,40 @@
                                     <h4>* Correo</h4>
                                 </div> 
                                 <div class="contenedor-inputs-actualiza">
-                                    <%
-                                        String id_proveedor = request.getParameter("id_proveedor");
-                                        Connection connection = null;
-                                        Statement statement = null;
-                                        ResultSet resultSet = null;
-                                        String driver = "com.mysql.jdbc.Driver";
-                                        try {
-                                            Class.forName(driver);
-                                        } catch (ClassNotFoundException e) {
-                                            e.printStackTrace();
-                                        }
-                                        try {
-                                            connection = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
-                                            statement = connection.createStatement();
-                                            String sql = "select * from proveedor where id_proveedor=" + id_proveedor;
-                                            resultSet = statement.executeQuery(sql);
-                                            while (resultSet.next()) {
-                                    %>
-                                    <input type="text" name="nombre_empresa" value="<%=resultSet.getString("nombre_empresa")%>" placeholder="Nombre de la empresa">
+                                    <input type="text" name="nombre_empresa" value="<%=rs.getString("nombre_empresa")%>" placeholder="Nombre de la empresa">
 
-                                    <input type="text" name="nombre_agente" value="<%=resultSet.getString("nombre_agente")%>" placeholder="Nombre del agente">
+                                    <input type="text" name="nombre_agente" value="<%=rs.getString("nombre_agente")%>" placeholder="Nombre del agente">
 
-                                    <input type="text" name="direccion" value="<%=resultSet.getString("direccion")%>" placeholder="Direccion">
+                                    <input type="text" name="direccion" value="<%=rs.getString("direccion")%>" placeholder="Direccion">
 
-                                    <input type="text" name="tel" value="<%=resultSet.getString("tel")%>" placeholder="Telefono">
+                                    <input type="text" name="tel" value="<%=rs.getString("tel")%>" placeholder="Telefono">
 
-                                    <input type="text" name="email" value="<%=resultSet.getString("email")%>" placeholder="Correo electronico">
-                                    <%
-                                            }
-                                        } catch (Exception e) {
-                                            e.printStackTrace();
-                                        }
-                                    %>  
+                                    <input type="text" name="email" value="<%=rs.getString("email")%>" placeholder="Correo electronico">
+
                                 </div>
                                 <br>
 
                                 <input type="submit" class="btn-submit btn-block" name="actualizar" value="Actualizar">
                             </form>
+                            <%
+                                }
+                            %>
+                            <%
+                                String nombre_empresa = request.getParameter("nombre_empresa");
+                                String nombre_agente = request.getParameter("nombre_agente");
+                                String direccion = request.getParameter("direccion");
+                                String tel = request.getParameter("tel");
+                                //int tel = Integer.parseInt(request.getParameter("tel"));
+                                String email = request.getParameter("email");
+
+                                if (nombre_empresa != null && nombre_agente != null && direccion != null && tel != null && email != null) {
+                                    ps = con.prepareStatement("update proveedor set nombre_empresa ='" + nombre_empresa + "', nombre_agente ='" + nombre_agente + "', direccion ='" + direccion + "', tel ='" + tel + "', email ='" + email + "' where id_proveedor= " + id_proveedor);
+                                    ps.executeUpdate();
+                                    out.println("Actualizado");
+                                    request.getRequestDispatcher("Proveedor-Administrador.jsp").forward(request, response);
+
+                                }
+                            %>
                         </div> 
                         <br>
                     </article>

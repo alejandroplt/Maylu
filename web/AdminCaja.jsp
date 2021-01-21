@@ -54,7 +54,7 @@
 
 
         <div class="page-wrapper default-theme sidebar-bg bg1 toggled">
-<nav id="sidebar" class="sidebar-wrapper">
+            <nav id="sidebar" class="sidebar-wrapper">
                 <div class="sidebar-content">
                     <!-- sidebar-brand  -->
                     <div class="sidebar-item sidebar-brand">
@@ -217,19 +217,40 @@
                             <br>
                             <br>
                             <h1>Caja</h1>
+                            <%
+                                Connection con = null;
+                                Statement sta = null;
+                                ResultSet rs = null;
+
+                                try {
+                                    Class.forName("com.mysql.jdbc.Driver");
+                                    con = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
+                                    sta = con.createStatement();
+
+                                    rs = sta.executeQuery("SELECT * FROM caja ");
+                            %> 
                         </header>
 
                         <div id="container1">
-                            <div>
-                                <br>                               
+                            <form>                         
                                 <div class="field" id="searchform">
-                                    <input type="text" id="searchterm" placeholder="Ingresar nombre o codigo de caja" />
-                                    <button type="button" id="search">Buscar</button>
+                                    <input type="text" id="searchterm" name="ingresacaja" placeholder="Ingresar nombre o codigo de caja" />
+                                    <input class="btn btn" type="submit" id="search" value="Buscar"/>
                                     <button type="button" id="btn-abrir-popup"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
                                         <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
-                                        </svg></button>
+                                        </svg>Agregar</button>
                                 </div>
-                            </div>
+                            </form>
+                            <%
+                                String nombre_codigo = request.getParameter("ingresacaja");
+                                if (nombre_codigo != null) {
+                                    sta = con.createStatement();
+
+                                    rs = sta.executeQuery("SELECT * FROM caja WHERE nombre_codigo = '" + nombre_codigo + "'");
+                                } else {
+                                    System.out.println("Error");
+                                }
+                            %>
                         </div>
 
                         <div class="table-responsive">
@@ -244,19 +265,9 @@
                                 <tbody>
                                     <tr>
                                         <%
-                                            Connection con = null;
-                                            Statement sta = null;
-                                            ResultSet rs = null;
-                                            try {
-                                                Class.forName("com.mysql.jdbc.Driver");
-                                                con = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
-
-                                                sta = con.createStatement();
-                                                rs = sta.executeQuery("SELECT * FROM caja");
-
-                                                while (rs.next()) {
+                   while (rs.next()) {
                                         %>
-                                    </tr>
+
                                     <tr>
                                         <td><%= rs.getString("nombre_codigo")%></td>
                                         <td><%=rs.getString("efectivo")%></td>

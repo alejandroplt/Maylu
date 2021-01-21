@@ -39,7 +39,7 @@
                             <h4>* Modelo</h4>
                             <h4>* Talla</h4>
                             <h4>* Color</h4>
-                            <h4>* Precio Compra</h4>
+                            <h4>* Precio Unitario</h4>
                             <h4>* Precio Venta</h4>
                             <h4>* Existencias</h4>                            
                             <h4>* Proveedor</h4>
@@ -57,15 +57,16 @@
 
                             <!--<input type="text" name="talla" placeholder="Número">-->
                             <input type="text" name="color" placeholder="Color">
-                            <input type="text" name="precio_compra" placeholder="Precio Compra">
+                            <input type="text" name="precio_compra" placeholder="Precio Unitario">
                             <input type="text" name="precio_venta" placeholder="Precio Venta">
-                            <input type="text" name="existencias" placeholder="Existencias">
+                            <input type="text" name="existencias" placeholder="Cantidad en existencias">
                             
                             <select name="proveedor" class="select">
                                 <option selected value="0"> Elige una opción </option>
                                 <option value="Alma Pérez Vista">Alma Pérez Vista</option>
                                 <option value="Explorar">Explorar</option>
                                 <option value="Patey woman">Patey woman</option>
+                                <option value="Calzaleta">Calzaleta</option>
                             </select>
                         </div>
                         <div class="contenedor-imagen">
@@ -284,7 +285,7 @@
                                         <th>Modelo</th>
                                         <th>Talla</th>
                                         <th>Color</th>
-                                        <th>Precio Compra</th>
+                                        <th>Precio Unitario</th>
                                         <th>Precio Venta</th>
                                         <th>Existencias</th>
                                         <th>Proveedor</th>                                                               

@@ -22,7 +22,7 @@
         <link rel="stylesheet" href="styles/sidebar-themes.css">
         <link rel="stylesheet" href="styles/estilos-nuevoproducto.css">
         <link rel="stylesheet" href="styles/popups.css">
-        
+
         <link rel="shortcut icon" type="image/png" href="img/icon.png" />
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
@@ -39,44 +39,44 @@
                     <h5>* Campo obligatorio <br>
                         ** La contraseña debe tener una longitud entre 8 y 15 caracteres 
                         (Debe contener letras minúsculas, mayúsculas, números y símbolos)</h5>
-                        <form action="insertUser.jsp" method="post">
-                            <div class="contenedor-etiquetas">
-                                <h4>* Nombre</h4>
-                                <h4>* Puesto</h4>
-                                <h4>* Caja</h4>
-                                <h4>* Genero</h4>
-                                <h4>* Dirección</h4>
-                                <h4>* Telefono</h4>
-                                <h4>* Correo</h4>
-                                <h4>* Usuario</h4>
-                                <h4>** Contraseña</h4>
-                            </div>
-                            <div class="contenedor-inputs">
-                                <input type="text" name="nombre_com" placeholder="Nombre completo">
-                                <select name="puesto" class="select">
-                                    <option selected value="0"> Elige una opción </option>
-                                    <option value="1">Admistrador</option>
-                                    <option value="2">Vendedor</option>
-                                    <option value="3">Almacenista</option>
-                                </select>
-                                <select name="id_caja" class="select">
-                                    <option selected value="0"> Elige una opción </option>
-                                    <option value="1">1</option>
-                                </select>
-                                <select name="genero" class="select">
-                                    <option selected value="0"> Elige una opción </option>
-                                    <option value="1">Masculino</option>
-                                    <option value="2">Femenino</option>
-                                </select>
-                                <input type="text" name="direccion" placeholder="Dirección">
-                                <input type="text" name="tel" placeholder="Telefono">
-                                <input type="text" name="email" placeholder="Correo electrónico">
-                                <input type="text" name="usuario" placeholder="Usuario">
-                                <input type="text" name="contra" placeholder="Contraseña">
-                            </div>
-                            <br>
-                            <input type="submit" class="btn-submit btn-block" name="guardar" value="Guardar">
-                        </form>
+                    <form action="insertUser.jsp" method="post">
+                        <div class="contenedor-etiquetas">
+                            <h4>* Nombre</h4>
+                            <h4>* Puesto</h4>
+                            <h4>* Caja</h4>
+                            <h4>* Genero</h4>
+                            <h4>* Dirección</h4>
+                            <h4>* Telefono</h4>
+                            <h4>* Correo</h4>
+                            <h4>* Usuario</h4>
+                            <h4>** Contraseña</h4>
+                        </div>
+                        <div class="contenedor-inputs">
+                            <input type="text" name="nombre_com" placeholder="Nombre completo">
+                            <select name="puesto" class="select">
+                                <option selected value="0"> Elige una opción </option>
+                                <option value="1">Admistrador</option>
+                                <option value="2">Vendedor</option>
+                                <option value="3">Almacenista</option>
+                            </select>
+                            <select name="id_caja" class="select">
+                                <option selected value="0"> Elige una opción </option>
+                                <option value="1">1</option>
+                            </select>
+                            <select name="genero" class="select">
+                                <option selected value="0"> Elige una opción </option>
+                                <option value="1">Masculino</option>
+                                <option value="2">Femenino</option>
+                            </select>
+                            <input type="text" name="direccion" placeholder="Dirección">
+                            <input type="text" name="tel" placeholder="Telefono">
+                            <input type="text" name="email" placeholder="Correo electrónico">
+                            <input type="text" name="usuario" placeholder="Usuario">
+                            <input type="text" name="contra" placeholder="Contraseña">
+                        </div>
+                        <br>
+                        <input type="submit" class="btn-submit btn-block" name="guardar" value="Guardar">
+                    </form>
                 </div>
             </div>
         </div>
@@ -238,131 +238,142 @@
                         <header id="encabezado">
                             <div class="puestos1">
                                 <img id="img-inventario" class="img-responsive img-rounded" src="img/usuario.png" height="150"
-                                 width="150" alt="Usuario picture">
-                            <br>
-                            <br>
-                            <h1>Usuarios</h1></div>
-                            <div class="puestos2"><h4>Puesto: <br> 1.- Administrador <br> 2.- Almacén <br> 3.- Vendedor</h2></div>
-                        </header>
-
-                        <div id="container1">
-                            <div>
+                                     width="150" alt="Usuario picture">
                                 <br>
-                                <div class="field" id="searchform">
-                                    <input type="text" id="searchterm" placeholder="Ingresar nombre de usuario" />
-                                    <button type="button" id="search">Buscar</button>
-                                    <button type="button" id="btn-abrir-popup"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
-                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
-                                        </svg> Agregar</button>
-                                </div>
-                            </div>
-                        </div>
+                                <br>
+                                <h1>Usuarios</h1></div>
+                                <%
+                                    Connection con = null;
+                                    Statement sta = null;
+                                    ResultSet rs = null;
 
-                        <div class="table-responsive">
-                            <table border="1" class="table table-hover table-bordered" id="tablee">
-                                <thead>
-                                    <tr>
-                                        <th>Nombre</th>
-                                        <th>Puesto</th>
-                                        <th>Caja</th>
-                                        <th>Genero</th>
-                                        <th>Direccion</th>
-                                        <th>Telefono</th>
-                                        <th>Correo</th>
-                                        <th>Usuario</th>
-                                        <th>Contraseña</th>
-                                        <th>Opciones</th>
-                                    </tr>
-                                </thead>
+                                    try {
+                                        Class.forName("com.mysql.jdbc.Driver");
+                                        con = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
+                                        sta = con.createStatement();
 
-                                <tbody>
+                                        rs = sta.executeQuery("SELECT * FROM usuario ");
+                                %> 
+                            <div class="puestos2"><h4>Puesto: <br> 1.- Administrador <br> 2.- Almacén <br> 3.- Vendedor</h2></div>
+                                    </header>
 
-                                    <tr>
+                                    <div id="container1">
+                                        <form>    
+                                            <div class="field" id="searchform">
+                                                <input type="text" id="searchterm" placeholder="Ingresar nombre de usuario" />
+                                                <input class="btn btn" type="submit" id="search" value="Buscar"/>
+                                                <button type="button" id="btn-abrir-popup"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                                                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+                                                    </svg> Agregar</button>
+                                            </div>
+                                        </form>    
                                         <%
-                                            Connection con = null;
-                                            Statement sta = null;
-                                            ResultSet rs = null;
-
-                                            try {
-                                                Class.forName("com.mysql.jdbc.Driver");
-                                                con = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
-
+                                            String usuario = request.getParameter("usuario");
+                                            if (usuario != null) {
                                                 sta = con.createStatement();
-                                                rs = sta.executeQuery("SELECT * FROM usuario");
 
-                                                while (rs.next()) {
-                                        %>
-                                    </tr>
-                                    <tr>
-
-                                        <td><%= rs.getString("nombre_com")%></td>
-                                        <td><%=rs.getString("puesto")%></td>
-                                        <td><%=rs.getString("id_caja")%></td>
-                                        <td><%=rs.getString("genero")%></td>
-                                        <td><%=rs.getString("direccion")%></td>
-                                        <td><%=rs.getString("tel")%></td>
-                                        <td><%=rs.getString("email")%></td>
-                                        <td><%=rs.getString("usuario")%></td>
-                                        <td><%=rs.getString("contra")%></td>
-                                        <td>
-                                            <!--<a href="bd/consultUser.jsp?id_usuario=<%=rs.getString("id_usuario")%>">-->
-                                            <a href="ActualizaUsuario.jsp?id_usuario=<%=rs.getString("id_usuario")%>" method="post">
-                                                <button id="btn-abrir-popup2" class=" btn-abrir-popup2 btn btn-warning">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                         fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
-                                                    <path
-                                                        d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
-                                                    <path fill-rule="evenodd"
-                                                          d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
-                                                    </svg>
-                                                </button>
-                                            </a>
-                                            <!--</a>-->
-                                            <a href="deleteUser.jsp?id_usuario=<%=rs.getString("id_usuario")%>">
-                                                <button class="btn btn-danger" >
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                         fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
-                                                    <path fill-rule="evenodd"
-                                                          d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z" />
-                                                    </svg>
-                                                </button>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <%
-                                                }
-                                                sta.close();
-                                                rs.close();
-                                                con.close();
-                                            } catch (Exception e) {
+                                                rs = sta.executeQuery("SELECT * FROM usuario WHERE usuario = '" + usuario + "'");
+                                            } else {
+                                                System.out.println("Error");
                                             }
                                         %>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <br>
-                        </div>
-                    </article>
-                </section>
-            </main>
-            <!-- page-content" -->
-        </div>
-        <!-- page-wrapper -->
+                                    </div>
 
-        <!-- using online scripts -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-                integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
-        </script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-                integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
-        </script>
-        <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+                                    <div class="table-responsive">
+                                        <table border="1" class="table table-hover table-bordered" id="tablee">
+                                            <thead>
+                                                <tr>
+                                                    <th>Nombre</th>
+                                                    <th>Puesto</th>
+                                                    <th>Caja</th>
+                                                    <th>Genero</th>
+                                                    <th>Direccion</th>
+                                                    <th>Telefono</th>
+                                                    <th>Correo</th>
+                                                    <th>Usuario</th>
+                                                    <th>Contraseña</th>
+                                                    <th>Opciones</th>
+                                                </tr>
+                                            </thead>
 
-        <script src="js/popups.js"></script>
-        <script src="js/administrador/principal-admin.js"></script>
+                                            <tbody>
 
-    </body>
+                                                <tr>
+                                                    <%
+                                                        while (rs.next()) {
+                                                    %>
 
-</html>
+
+                                                <tr>
+
+                                                    <td><%= rs.getString("nombre_com")%></td>
+                                                    <td><%=rs.getString("puesto")%></td>
+                                                    <td><%=rs.getString("id_caja")%></td>
+                                                    <td><%=rs.getString("genero")%></td>
+                                                    <td><%=rs.getString("direccion")%></td>
+                                                    <td><%=rs.getString("tel")%></td>
+                                                    <td><%=rs.getString("email")%></td>
+                                                    <td><%=rs.getString("usuario")%></td>
+                                                    <td><%=rs.getString("contra")%></td>
+                                                    <td>
+                                                        <!--<a href="bd/consultUser.jsp?id_usuario=<%=rs.getString("id_usuario")%>">-->
+                                                        <a href="ActualizaUsuario.jsp?id_usuario=<%=rs.getString("id_usuario")%>" method="post">
+                                                            <button id="btn-abrir-popup2" class=" btn-abrir-popup2 btn btn-warning">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                                     fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
+                                                                <path fill-rule="evenodd"
+                                                                      d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
+                                                                </svg>
+                                                            </button>
+                                                        </a>
+                                                        <!--</a>-->
+                                                        <a href="deleteUser.jsp?id_usuario=<%=rs.getString("id_usuario")%>">
+                                                            <button class="btn btn-danger" >
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                                     fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                                                <path fill-rule="evenodd"
+                                                                      d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z" />
+                                                                </svg>
+                                                            </button>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <%
+                                                            }
+                                                            sta.close();
+                                                            rs.close();
+                                                            con.close();
+                                                        } catch (Exception e) {
+                                                        }
+                                                    %>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <br>
+                                    </div>
+                                    </article>
+                                    </section>
+                                    </main>
+                                    <!-- page-content" -->
+                            </div>
+                            <!-- page-wrapper -->
+
+                            <!-- using online scripts -->
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+                                    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+                            </script>
+                            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+                                    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+                            </script>
+                            <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+                            <script src="js/popups.js"></script>
+                            <script src="js/administrador/principal-admin.js"></script>
+
+                            </body>
+
+                            </html>

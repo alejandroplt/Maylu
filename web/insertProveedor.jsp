@@ -13,14 +13,15 @@
         String nombre_empresa = request.getParameter("nombre_empresa");
         String nombre_agente = request.getParameter("nombre_agente");
         String direccion = request.getParameter("direccion");
-        int tel = Integer.parseInt(request.getParameter("tel"));
+        String tel = request.getParameter("tel");
+        //int tel = Integer.parseInt(request.getParameter("tel"));
         String email = request.getParameter("email");
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
             Statement st = conn.createStatement();
 
-            int i = st.executeUpdate("insert into proveedor(nombre_empresa,nombre_agente,direccion,tel,email)values('" + nombre_empresa + "','" + nombre_agente + "','" + direccion + "' ," + tel + ", '" + email + "')");
+            int i = st.executeUpdate("insert into proveedor(nombre_empresa,nombre_agente,direccion,tel,email)values('" + nombre_empresa + "','" + nombre_agente + "','" + direccion + "' ,'" + tel + "', '" + email + "')");
             //out.println("Agregado correctamente");
 
             request.getRequestDispatcher("Proveedor-Administrador.jsp").forward(request, response);
