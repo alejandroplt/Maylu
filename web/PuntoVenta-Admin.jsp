@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="java.sql.*,java.util.*"%>
+<%@page import="java.sql.*,java.util.*,modelos.detalle_venta"%>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -229,17 +229,21 @@
                                             } else {
                                                 System.out.println("Error");
                                             }
-                                        %>
 
+                                            detalle_venta v = new detalle_venta();
+                                            //Al agregar, se instancia detalle_venta y se agrega a una lista
+                                            //esa lista se meterá a la tabla y se tendrá que recargar la página
+                                            //en tiempo real para mostrar los que se vayan agregando en el momento
+                                        %>
                                         <div class="table-responsive">
                                             <table class="table table-hover table-bordered" id="tabla">
                                                 <thead>
                                                     <tr>
                                                         <th>Modelo</th>                                                        
                                                         <th>Cantidad</th>
-                                                        <th>Talla</th>
-                                                        <th>Color</th>
                                                         <th>Descripción</th>
+                                                        <th>Talla</th>
+                                                        <th>Color</th>                                                        
                                                         <th>Precio</th>
                                                         <th>Quitar</th>
                                                     </tr>
@@ -251,9 +255,9 @@
                                                     <tr>
                                                         <td><%= rs.getString("modelo")%></td>                                                        
                                                         <td><%=cantidad%></td>
+                                                        <td><%=rs.getString("descripcion")%></td>
                                                         <td><%=rs.getString("talla")%></td>
-                                                        <td><%=rs.getString("color")%></td>
-                                                        <td>Tennis</td>
+                                                        <td><%=rs.getString("color")%></td>                                                        
                                                         <td><%=rs.getString("precio_venta")%></td>
                                                         <td>
                                                             <button class="quitar" onclick="borraElemento(this);">
