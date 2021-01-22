@@ -190,7 +190,7 @@
                         <%
 
                             ArrayList<detalle_venta> lista = new ArrayList<>();
-                            
+
                             Connection con = null;
                             Statement sta = null;
                             ResultSet rs = null;
@@ -223,29 +223,7 @@
                                                 <button type="submit" id="search">Agregar</button>
                                             </div>
                                         </form>
-                                        <%                                            
-                                            int cantidad = Integer.parseInt(request.getParameter("introducecantidad"));
-                                            String modelo = request.getParameter("introducemodelo");
-                                            detalle_venta v = new detalle_venta();
-                                            if (modelo != null) {
-                                                sta = con.createStatement();
-                                                rs = sta.executeQuery("SELECT * FROM zapato WHERE modelo = '" + modelo + "'");
-                                            } else {
-                                                System.out.println("Error");
-                                            }
-                                            v.setModelo(rs.getString("modelo"));
-                                            v.setCantidad(cantidad);
-                                            v.setDescripcion(rs.getString("descripcion"));
-                                            v.setTalla(Integer.parseInt(rs.getString("talla")));
-                                            v.setColor(rs.getString("color"));
-                                            v.setPrecio(Integer.parseInt(rs.getString("precio_venta")));
-                                            
-                                            lista.add(v);
-                                            //Al agregar, se instancia detalle_venta y se agrega a una lista
-                                            //esa lista se meterá a la tabla y se tendrá que recargar la página
-                                            //en tiempo real para mostrar los que se vayan agregando en el momento
-                                            
-                                        %>
+                                        
                                         <div class="table-responsive">
                                             <table class="table table-hover table-bordered" id="tabla">
                                                 <thead>
@@ -260,9 +238,33 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <%
-                                                    for(detalle_venta venta:lista){
-                                                    
+                                                    <%                                            
+                                            int cantidad = Integer.parseInt(request.getParameter("introducecantidad"));
+                                            String modelo = request.getParameter("introducemodelo");
+                                            detalle_venta v = new detalle_venta();
+                                            if (modelo != null) {
+                                                sta = con.createStatement();
+                                                rs = sta.executeQuery("SELECT * FROM zapato WHERE modelo = '" + modelo + "'");
+                                                
+                                                     v.setModelo(rs.getString("modelo"));
+                                                v.setCantidad(cantidad);
+                                                v.setDescripcion(rs.getString("descripcion"));
+                                                v.setTalla(Integer.parseInt(rs.getString("talla")));
+                                                v.setColor(rs.getString("color"));
+                                                v.setPrecio(Integer.parseInt(rs.getString("precio_venta")));
+                                                
+                                                lista.add(v);
+                                                
+                                            } else {
+                                                System.out.println("Error");
+                                            }
+
+                                            //Al agregar, se instancia detalle_venta y se agrega a una lista
+                                            //esa lista se meterá a la tabla y se tendrá que recargar la página
+                                            //en tiempo real para mostrar los que se vayan agregando en el momento   
+                                                                                                           
+                                                        for (detalle_venta venta : lista) {
+
                                                     %>
                                                     <tr>
                                                         <td><%venta.getModelo();%></td>                                                        
