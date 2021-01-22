@@ -228,8 +228,8 @@
                                     <h4><label>*</label> Modelo</h4>                                    
                                     <h4><label>*</label> Talla</h4>
                                     <h4><label>*</label> Color</h4>
-                                    <h4><label>*</label> Precio Compra</h4>
-                                    <h4><label>*</label> Precio Venta</h4>
+                                    <h4><label>*</label> Precio Compra ($)</h4>
+                                    <h4><label>*</label> Precio Venta ($)</h4>
                                     <h4><label>*</label> Existencias</h4>
                                     <h4><label>*</label> Proveedor</h4>
                                 </div> 
@@ -267,7 +267,6 @@
                                     ps.executeUpdate();
                                     out.println("Actualizado");
                                     request.getRequestDispatcher("Inventario-Administrador.jsp").forward(request, response);
-
                                 }
                             %>
                         </div> 

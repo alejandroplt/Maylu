@@ -172,9 +172,11 @@ body {
 }
 
 .field-venta>input[type=text]{
-    width: 45%
+    width: 55%
 }
-
+.field-venta>input[type=number]{
+    width: 35%
+}
 
 #btn-abrir-popup{
     display:block; 
@@ -218,7 +220,7 @@ body {
     color: #ffffff;
 }
 
-#tablee {
+#tabla {
     margin: 50px;
     width: 90%;
 }

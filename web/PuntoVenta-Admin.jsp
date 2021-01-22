@@ -175,6 +175,7 @@
                 </div>
                 <div id="overlay" class="overlay"></div>
                 <section id="main-content">
+
                     <article>
                         <div id="divcerrar">
                             <button class="btn-tiny btn-danger">
@@ -197,7 +198,9 @@
                                 con = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
                                 sta = con.createStatement();
                         %> 
-
+                        <br>
+                        <br>
+                        <br>
                         <div class="row ventas">
                             <div class="col-md-8">
                                 <header id="encabezado">
@@ -211,30 +214,32 @@
 
                                     <div id="container">
                                         <form>
-                                        <div class="field-venta" id="searchform">
-                                            <input type="text" id="searchterm" name="introducemodelo" placeholder="Introduce el Modelo" />
-                                            <input type="text" id="searhterm" name="introducecantidad" placeholder="Ingresa la cantidad"/>
-                                            <button type="submit" id="search">Agregar</button>
-                                        </div>
+                                            <div class="field-venta" id="searchform">
+                                                <input type="text" id="searchterm" name="introducemodelo" placeholder="Introduce el Modelo" required/>
+                                                <input type="number" id="searhterm" name="introducecantidad" placeholder="Ingresa la cantidad" required/>
+                                                <button type="submit" id="search">Agregar</button>
+                                            </div>
                                         </form>
                                         <%
-                                        String modelo = request.getParameter("introducemodelo");
-                                        if (modelo != null) {
-                                            sta = con.createStatement();
-                                            rs = sta.executeQuery("SELECT * FROM zapato WHERE modelo = '" + modelo + "'");
-                                        } else {
-                                            System.out.println("Error");
-                                        }
-                                    %>
+                                            String cantidad = request.getParameter("introducecantidad");
+                                            String modelo = request.getParameter("introducemodelo");
+                                            if (modelo != null) {
+                                                sta = con.createStatement();
+                                                rs = sta.executeQuery("SELECT * FROM zapato WHERE modelo = '" + modelo + "'");
+                                            } else {
+                                                System.out.println("Error");
+                                            }
+                                        %>
 
                                         <div class="table-responsive">
-                                            <table class="table table-hover table-bordered" id="tablee">
+                                            <table class="table table-hover table-bordered" id="tabla">
                                                 <thead>
                                                     <tr>
-                                                        <th>Codigo</th>                                                        
+                                                        <th>Modelo</th>                                                        
                                                         <th>Cantidad</th>
                                                         <th>Talla</th>
                                                         <th>Color</th>
+                                                        <th>Descripción</th>
                                                         <th>Precio</th>
                                                         <th>Quitar</th>
                                                     </tr>
@@ -245,9 +250,10 @@
                                                     %>
                                                     <tr>
                                                         <td><%= rs.getString("modelo")%></td>                                                        
-                                                        <td>2</td>
+                                                        <td><%=cantidad%></td>
                                                         <td><%=rs.getString("talla")%></td>
                                                         <td><%=rs.getString("color")%></td>
+                                                        <td>Tennis</td>
                                                         <td><%=rs.getString("precio_venta")%></td>
                                                         <td>
                                                             <button class="quitar" onclick="borraElemento(this);">
@@ -257,11 +263,9 @@
                                                     </tr>
                                                     <%
                                                             }
-
                                                             sta.close();
                                                             rs.close();
                                                             con.close();
-
                                                         } catch (Exception e) {
                                                         }
 
@@ -306,7 +310,6 @@
                                                placeholder="¿Con cuanto paga?"/>
                                     </div>
                                     <h3>Cambio:</h3>
-
                                     <div class="botones">
                                         <button id="hecho" class="btn btn-success">
                                             <i class="fas fa-check"></i> Concretar Venta
@@ -318,6 +321,9 @@
                                 </div>
                             </div>
                         </div>
+                        <br>
+                        <br>
+                        <br>
                     </article>
                 </section>
             </main>

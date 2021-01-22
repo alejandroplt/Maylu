@@ -1,3 +1,4 @@
+<%@page import="modelos.detalle_venta"%>
 <%@page import="java.sql.*"%>
 <!DOCTYPE html>
 <html lang="es">
@@ -262,11 +263,16 @@
                                 } else {
                                     System.out.println("Error");
                                 }
+                                
+                                detalle_venta v= new detalle_venta();
+                                //Al agregar, se instancia detalle_venta y se agrega a una lista
+                                //esa lista se meterá a la tabla y se tendrá que recargar la página
+                                //en tiempo real para mostrar los que se vayan agregando en el momento
                             %>
                         </div>
-
+                        
                         <div class="table-responsive">
-                            <table border="1" class="table table-hover table-bordered" id="tablee">
+                            <table border="1" class="table table-hover table-bordered" id="tabla">
                                 <thead>
                                     <tr>
                                         <th>Nombre empresa</th>

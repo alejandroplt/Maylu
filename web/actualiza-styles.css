@@ -11,9 +11,8 @@ and open the template in the editor.
 .actualiza{
     background-color: #ffffff;
     box-shadow: 2px 8px 20px rgb(3, 7, 53);
+    width: 900px;
 }
-
-
 
 .actualiza > h3, h4,h5 {
     color:#030249;

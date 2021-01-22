@@ -22,6 +22,7 @@
         <link rel="stylesheet" href="styles/sidebar-themes.css">
         <link rel="stylesheet" href="styles/estilos-nuevoproducto.css">
         <link rel="stylesheet" href="styles/popups.css">
+        <link rel="stylesheet" href="styles/estilos-apartados.css"
 
         <link rel="shortcut icon" type="image/png" href="img/icon.png" />
         <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -280,7 +281,7 @@
                                     </div>
 
                                     <div class="table-responsive">
-                                        <table border="1" class="table table-hover table-bordered" id="tablee">
+                                        <table border="1" class="table table-hover table-bordered" id="tabla">
                                             <thead>
                                                 <tr>
                                                     <th>Nombre</th>
@@ -289,7 +290,6 @@
                                                     <th>Genero</th>
                                                     <th>Direccion</th>
                                                     <th>Telefono</th>
-                                                    <th>Correo</th>
                                                     <th>Usuario</th>
                                                     <th>Contraseña</th>
                                                     <th>Opciones</th>
@@ -312,7 +312,6 @@
                                                     <td><%=rs.getString("genero")%></td>
                                                     <td><%=rs.getString("direccion")%></td>
                                                     <td><%=rs.getString("tel")%></td>
-                                                    <td><%=rs.getString("email")%></td>
                                                     <td><%=rs.getString("usuario")%></td>
                                                     <td><%=rs.getString("contra")%></td>
                                                     <td>
@@ -325,7 +324,7 @@
                                                                     d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
                                                                 <path fill-rule="evenodd"
                                                                       d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
-                                                                </svg>
+                                                                </svg> Editar
                                                             </button>
                                                         </a>
                                                         <!--</a>-->
@@ -335,7 +334,7 @@
                                                                      fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
                                                                 <path fill-rule="evenodd"
                                                                       d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z" />
-                                                                </svg>
+                                                                </svg> Eliminar
                                                             </button>
                                                         </a>
                                                     </td>

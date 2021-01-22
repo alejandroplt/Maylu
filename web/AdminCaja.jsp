@@ -254,7 +254,7 @@
                         </div>
 
                         <div class="table-responsive">
-                            <table class="table table-hover table-bordered" id="tablee">
+                            <table class="table table-hover table-bordered" id="tabla">
                                 <thead>
                                     <tr>
                                         <th>Nombre o codigo de caja</th>
