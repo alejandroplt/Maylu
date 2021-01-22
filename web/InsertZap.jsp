@@ -14,6 +14,7 @@
         int talla = Integer.parseInt(request.getParameter("talla"));
         //Blob img = request.getParameter("img");
         String color = request.getParameter("color");
+        String descripcion=request.getParameter("descripcion");
         int precio_compra = Integer.parseInt(request.getParameter("precio_compra"));
         int precio_venta = Integer.parseInt(request.getParameter("precio_venta"));
         int existencias = Integer.parseInt(request.getParameter("existencias"));
@@ -24,8 +25,8 @@
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
             Statement st = conn.createStatement();
 
-            int i = st.executeUpdate("insert into zapato(modelo,talla,color,precio_compra,precio_venta,stock, existencias, proveedor)"
-                    + "values('" + modelo + "'," + talla + ",'" + color + "'," + precio_compra + "," + precio_venta + "," + 5 + "," + existencias + ",'" + proveedor + "' )");
+            int i = st.executeUpdate("insert into zapato(modelo,descripcion,talla,color,precio_compra,precio_venta,stock, existencias, proveedor)"
+                    + "values('" + modelo +","+descripcion+ "'," + talla + ",'" + color + "'," + precio_compra + "," + precio_venta + "," + 5 + "," + existencias + ",'" + proveedor + "' )");
             //out.println("Agregado correctamente");
 
             request.getRequestDispatcher("Inventario-Administrador.jsp").forward(request, response);

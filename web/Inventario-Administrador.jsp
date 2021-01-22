@@ -37,6 +37,7 @@
                     <form action="InsertZap.jsp"  method="post">
                         <div class="contenedor-etiquetas">
                             <h4>* Modelo</h4>
+                            <h4>* Descripción</>
                             <h4>* Talla</h4>
                             <h4>* Color</h4>
                             <h4>* Precio Unitario</h4>
@@ -46,6 +47,16 @@
                         </div>
                         <div class="contenedor-inputs">
                             <input type="text" name= "modelo" placeholder="Modelo">
+                            <select name="descripcion" class="select">
+                                <option selected value="0"> Elige una opción </option>
+                                <option value="Tenis">Tenis</option>
+                                <option value="Zapatilla">Zapatilla</option>
+                                <option value="Flats">Flats</option>
+                                <option value="Bota">Bota</option>
+                                <option value="Botín">Botín</option>
+                                <option value="Sandalia">Sandalia</option>
+                                <option value="Zapato confort">Zapato confort</option>
+                            </select>
                             <select name="talla" class="select">
                                 <option selected value="0"> Elige una opción </option>
                                 <option value="23">23</option>
@@ -53,8 +64,7 @@
                                 <option value="25">25</option>
                                 <option value="26">26</option>
                             </select>
-                            
-
+                           
                             <!--<input type="text" name="talla" placeholder="Número">-->
                             <input type="text" name="color" placeholder="Color">
                             <input type="text" name="precio_compra" placeholder="Precio Unitario">
@@ -284,6 +294,7 @@
                                         <th>#</th>
                                         <th>Imagen</th>
                                         <th>Modelo</th>
+                                        <th>Descripción</th>
                                         <th>Talla</th>
                                         <th>Color</th>
                                         <th>Precio Unitario</th>
@@ -302,7 +313,8 @@
                                     <tr>
                                         <td><%= rs.getString("id_zapato")%></td> 
                                         <td><img src="img/maylu.png" alt="logo" width="100" height="100" /></td>
-                                        <td><%= rs.getString("modelo")%></td>                                        
+                                        <td><%= rs.getString("modelo")%></td>   
+                                        <td><%=rs.getString("descripcion")%></td>
                                         <td><%=rs.getString("talla")%></td>
                                         <td><%=rs.getString("color")%></td>
                                         <td>$ <%=rs.getString("precio_compra")%>.00</td>
@@ -326,36 +338,25 @@
                                             </button>
                                         </td>
                                     </tr>
-
-
                                     <%
                                             }
-
                                             sta.close();
                                             rs.close();
                                             con.close();
-
                                         } catch (Exception e) {
                                         }
-
                                     %>
                                     </tr>
                                 </tbody>
                             </table>
                             <br>
                         </div>
-
                     </article>
                 </section>
-
-
             </main>
-
             <!-- page-content" -->
         </div>
-
         <!-- page-wrapper -->
-
         <!-- using online scripts -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
@@ -370,5 +371,4 @@
         <script src="js/almacen/principal-almacen.js"></script>
 
     </body>
-
 </html>

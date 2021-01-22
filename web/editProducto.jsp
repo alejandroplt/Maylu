@@ -225,18 +225,20 @@
                             <form action="" method="post"> 
                                 <div class="contenedor-etiquetas-actualiza">
                                     <h4> ID Zapato</h4>
-                                    <h4><label>*</label> Modelo</h4>                                    
+                                    <h4><label>*</label> Modelo</h4> 
+                                    <h4><label>*</label> Descripción</h4>
                                     <h4><label>*</label> Talla</h4>
                                     <h4><label>*</label> Color</h4>
                                     <h4><label>*</label> Precio Compra ($)</h4>
                                     <h4><label>*</label> Precio Venta ($)</h4>
                                     <h4><label>*</label> Existencias</h4>
                                     <h4><label>*</label> Proveedor</h4>
-                                </div> 
-                                <div class="contenedor-inputs-actualiza">
+                                </div>
 
+                                <div class="contenedor-inputs-actualiza"> 
                                     <input type="text"  readonly="" value="<%=rs.getInt("id_zapato")%>" disabled > 
-                                    <input type="text" name="modelo" value="<%=rs.getString("modelo")%>" disabled placeholder="Modelo">                         
+                                    <input type="text" name="modelo" value="<%=rs.getString("modelo")%>" disabled placeholder="Modelo">  
+                                    <input type="text" name="descripcion" value="<%=rs.getString("descripcion")%>" disabled>              
                                     <input type="text" readonly="" name="talla" value="<%=rs.getString("talla")%>" placeholder="Talla" disabled>
                                     <input type="text" readonly="" name="color" value="<%=rs.getString("color")%>" placeholder="Color" disabled>
                                     <input type="text" name="precio_compra" value="<%=rs.getString("precio_compra")%>" placeholder="Precio Compra">
@@ -244,8 +246,9 @@
                                     <input type="text" name= "existencias" value="<%=rs.getString("existencias")%>" placeholder="Existencias">
                                     <input type="text" name="proveedor" value="<%=rs.getString("proveedor")%>" disabled placeholder="Proveedor" >
 
-
                                 </div>
+
+
                                 <br>
 
                                 <input type="submit" class="btn-submit boton-actualiza" name="actualizar" value="Actualizar">
@@ -254,10 +257,6 @@
                                 }
                             %>
                             <%
-                                //String modelo = request.getParameter("modelo");
-                                //String proveedor = request.getParameter("proveedor");
-                                //String talla = request.getParameter("talla");
-                                //String color = request.getParameter("color");
                                 String precio_compra = request.getParameter("precio_compra");
                                 String precio_venta = request.getParameter("precio_venta");
                                 String existencias = request.getParameter("existencias");
