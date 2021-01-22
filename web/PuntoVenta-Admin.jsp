@@ -35,7 +35,6 @@
     </head>
 
     <body >
-
         <div class="page-wrapper default-theme sidebar-bg bg1 toggled">
             <nav id="sidebar" class="sidebar-wrapper">
                 <div class="sidebar-content">
@@ -189,6 +188,9 @@
                         </div>
                         <br>
                         <%
+
+                            ArrayList<detalle_venta> lista = new ArrayList<>();
+                            
                             Connection con = null;
                             Statement sta = null;
                             ResultSet rs = null;
@@ -197,6 +199,7 @@
                                 Class.forName("com.mysql.jdbc.Driver");
                                 con = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
                                 sta = con.createStatement();
+
                         %> 
                         <br>
                         <br>
@@ -220,20 +223,28 @@
                                                 <button type="submit" id="search">Agregar</button>
                                             </div>
                                         </form>
-                                        <%
-                                            String cantidad = request.getParameter("introducecantidad");
+                                        <%                                            
+                                            int cantidad = Integer.parseInt(request.getParameter("introducecantidad"));
                                             String modelo = request.getParameter("introducemodelo");
+                                            detalle_venta v = new detalle_venta();
                                             if (modelo != null) {
                                                 sta = con.createStatement();
                                                 rs = sta.executeQuery("SELECT * FROM zapato WHERE modelo = '" + modelo + "'");
                                             } else {
                                                 System.out.println("Error");
                                             }
-
-                                            detalle_venta v = new detalle_venta();
+                                            v.setModelo(rs.getString("modelo"));
+                                            v.setCantidad(cantidad);
+                                            v.setDescripcion(rs.getString("descripcion"));
+                                            v.setTalla(Integer.parseInt(rs.getString("talla")));
+                                            v.setColor(rs.getString("color"));
+                                            v.setPrecio(Integer.parseInt(rs.getString("precio_venta")));
+                                            
+                                            lista.add(v);
                                             //Al agregar, se instancia detalle_venta y se agrega a una lista
                                             //esa lista se meterá a la tabla y se tendrá que recargar la página
                                             //en tiempo real para mostrar los que se vayan agregando en el momento
+                                            
                                         %>
                                         <div class="table-responsive">
                                             <table class="table table-hover table-bordered" id="tabla">
@@ -250,15 +261,16 @@
                                                 </thead>
                                                 <tbody>
                                                     <%
-                                                        while (rs.next()) {
+                                                    for(detalle_venta venta:lista){
+                                                    
                                                     %>
                                                     <tr>
-                                                        <td><%= rs.getString("modelo")%></td>                                                        
-                                                        <td><%=cantidad%></td>
-                                                        <td><%=rs.getString("descripcion")%></td>
-                                                        <td><%=rs.getString("talla")%></td>
-                                                        <td><%=rs.getString("color")%></td>                                                        
-                                                        <td><%=rs.getString("precio_venta")%></td>
+                                                        <td><%venta.getModelo();%></td>                                                        
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>                                                        
+                                                        <td></td>
                                                         <td>
                                                             <button class="quitar" onclick="borraElemento(this);">
                                                                 <i class="fas fa-trash-alt"></i>

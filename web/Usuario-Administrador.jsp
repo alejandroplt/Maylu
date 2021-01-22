@@ -24,7 +24,7 @@
         <link rel="stylesheet" href="styles/popups.css">
         <link rel="stylesheet" href="styles/estilos-apartados.css"
 
-        <link rel="shortcut icon" type="image/png" href="img/icon.png" />
+              <link rel="shortcut icon" type="image/png" href="img/icon.png" />
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     </head>
@@ -48,7 +48,6 @@
                             <h4>* Genero</h4>
                             <h4>* Dirección</h4>
                             <h4>* Telefono</h4>
-                            <h4>* Correo</h4>
                             <h4>* Usuario</h4>
                             <h4>** Contraseña</h4>
                         </div>
@@ -66,12 +65,11 @@
                             </select>
                             <select name="genero" class="select">
                                 <option selected value="0"> Elige una opción </option>
-                                <option value="1">Masculino</option>
-                                <option value="2">Femenino</option>
+                                <option value="Masculino">Masculino</option>
+                                <option value="Femenino">Femenino</option>
                             </select>
                             <input type="text" name="direccion" placeholder="Dirección">
                             <input type="text" name="tel" placeholder="Telefono">
-                            <input type="text" name="email" placeholder="Correo electrónico">
                             <input type="text" name="usuario" placeholder="Usuario">
                             <input type="text" name="contra" placeholder="Contraseña">
                         </div>

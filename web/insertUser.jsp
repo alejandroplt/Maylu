@@ -16,7 +16,6 @@
         String genero = request.getParameter("genero");
         String direccion = request.getParameter("direccion");
         String tel = request.getParameter("tel");
-        String correo = request.getParameter("email");
         String usuario = request.getParameter("usuario");
         String contraseña = request.getParameter("contra");
         try {
@@ -24,9 +23,9 @@
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/bdmaylu?user=root&password=");
             Statement st = conn.createStatement();
 
-            int i = st.executeUpdate("insert into usuario(nombre_com,puesto,id_caja,genero,direccion,tel,email,usuario,contra)"
+            int i = st.executeUpdate("insert into usuario(nombre_com,puesto,id_caja,genero,direccion,tel,usuario,contra)"
                     + "values('" + nombre_com + "','" + puesto + "'," + id_caja + ",'"
-                    + genero + "','" + direccion + "','" + tel + "','" + correo + "','" + usuario + "','" + contraseña + "')");
+                    + genero + "','" + direccion + "','" + tel + "','" + usuario + "','" + contraseña + "')");
             //out.println("Agregado correctamente");
             request.getRequestDispatcher("Usuario-Administrador.jsp").forward(request, response);
 
